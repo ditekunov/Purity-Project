@@ -1,12 +1,15 @@
 package functionalAlgorithms.encoders
 
+import utils.InputException
+import utils.ExceptionMessages.emptyInput
+
 object RLE {
 
   /**
     * Packs repeated elements in a list of lists
     */
-  def pack[A](input: List[A]): List[List[A]] = {
-    if (input.isEmpty) { List(List()) }
+  private def pack[A](input: List[A]): List[List[A]] = {
+    if (input.isEmpty) List(List())
     else {
       val (packed, next) = input span { _ == input.head }
 
@@ -19,7 +22,7 @@ object RLE {
     * Returns RLE-encoded sequence of tuples in (7, 'a) style
     */
   def encoding[A](input: List[A]): List[(Int, A)] = {
-    ( if (input.isEmpty) { List(List()) }
+    ( if (input.isEmpty) throw new InputException("\"RLE encoding\" " + emptyInput)
     else {
       val (packed, next) = input span { _ == input.head }
 
