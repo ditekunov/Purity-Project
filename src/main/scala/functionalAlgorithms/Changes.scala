@@ -20,7 +20,7 @@ object Changes {
 
 
   /**
-    * Counts, whether there were changes form positive integer to negative integer in a list
+    * Counts, whether there were changes from positive integer to negative integer in a list
     */
   def countSignChanges(input: List[Int]): List[Int] = input match {
     case List() =>
@@ -40,7 +40,7 @@ object Changes {
   }
 
   /**
-    * Counts, whether there were changes form vowel to consonant letter in a list
+    * Counts, whether there were changes from vowel to consonant letter in a list
     */
   def countLetterChanges(input: List[Char]): List[Int] = input match {
     case List() =>

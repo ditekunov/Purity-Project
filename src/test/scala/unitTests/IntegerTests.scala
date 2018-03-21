@@ -1,7 +1,7 @@
 package unitTests
 
-import org.scalatest.Matchers
+import org.scalatest.Matchers._
 
-class IntegerTests extends Matchers {
+class IntegerTests {
 
 }
