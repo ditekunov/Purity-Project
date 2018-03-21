@@ -3,7 +3,7 @@ package functionalAlgorithms.encoders
 import utils.InputException
 import utils.ExceptionMessages.EmptyInput
 
-object RLE {
+object RLE_Encoder {
 
   /**
     * Packs repeated elements in a list of lists
@@ -21,7 +21,7 @@ object RLE {
   /**
     * Returns RLE-encoded sequence of tuples in (7, 'a) style
     */
-  def encoding[A](input: List[A]): List[(Int, A)] = {
+  def encode[A](input: List[A]): List[(Int, A)] = {
     ( if (input.isEmpty) throw new InputException("\"RLE encoding\" " + EmptyInput)
     else {
       val (packed, next) = input span { _ == input.head }
