@@ -4,11 +4,15 @@ This project contains some common-used functions and algorithms, written in Scal
 
 Current list of supported algorithms:
 
-# List/values operation:
-1) Custom getting the Nth element in a List
+# Chars operations:
+1) Check, whether the char is vowel
+2) Check, whether the char is consonant
+
+# List/values operations:
+1) Functional getting the Nth element in a List
 2) Checking the List/value, whether it is a palindrome
 3) Counter for the number of sign changes in a list of integers
-
+4) Counter for the number of letter changes from vowel to consonant in a list of integers
 
 # Encoders:
 1) RLE 
@@ -18,4 +22,5 @@ Current list of supported algorithms:
 
 Planned:
 1) Huffman encoder/decoder
-2) Counter for the number of letter changes from vowel to consonant in a list of integers
+2) Operations with chars
+3) Operations with integers
