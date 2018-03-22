@@ -19,13 +19,13 @@ class CharTests extends FunSuite {
     't', 'v', 'w', 'x', 'z')
 
   test("Testing of isVowel") {
-    Vowels.foreach { cur: Char => cur.isVowel should be(true) }
-    Vowels.foreach { cur: Char => cur.isConsonant should be(false) }
+    Vowels.foreach { cur: Char => cur.isVowel shouldBe true }
+    Vowels.foreach { cur: Char => cur.isConsonant shouldBe false }
   }
 
   test("Testing of isConsonant") {
-    Consonants.foreach { cur: Char => cur.isConsonant should be(true) }
-    Consonants.foreach { cur: Char => cur.toUpper.isConsonant should be(true) }
-    Consonants.foreach { cur: Char => cur.isVowel should be(false) }
+    Consonants.foreach { cur: Char => cur.isConsonant shouldBe true }
+    Consonants.foreach { cur: Char => cur.toUpper.isConsonant shouldBe true  }
+    Consonants.foreach { cur: Char => cur.isVowel shouldBe false }
   }
 }
