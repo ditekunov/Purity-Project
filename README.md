@@ -33,3 +33,5 @@ Planned:
 1) Huffman encoder/decoder
 2) Operations with chars
 3) Operations with integers
+4) Classical data structures
+5) Classical algorithms
