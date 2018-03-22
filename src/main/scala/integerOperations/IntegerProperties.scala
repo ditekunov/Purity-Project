@@ -105,7 +105,7 @@ class IntegerProperties(val firstInt: Int) {
     */
   def nthGreatestDevisor(nPosition: Int): Int = {
     if (nPosition < 0) throw new InputException("\"nthGreatestDevisor\" " + NegativeInput)
-    else Try(firstInt.listDevisors(nPosition)) match {
+    else Try(firstInt.listDevisors.sortWith(_ > _)(nPosition)) match {
       case Success(something) => something
       case Failure(ex) => throw new InputException("\"nthGreatestDevisor\" got " + ex.toString)
     }

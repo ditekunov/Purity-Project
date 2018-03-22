@@ -9,6 +9,5 @@ import scala.concurrent.Future
 
 
 object Main extends App {
-  print(100.nthGreatestDevisor(100))
 
 }

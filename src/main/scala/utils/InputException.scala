@@ -17,7 +17,6 @@ class InputException(message: String = null, cause: Exception = null) extends Ex
     this(null, cause)
   }
 }
-
 object EmptyInputException {
   def apply(message: String) = new InputException(message, null)
   def apply(cause: Exception) = new InputException(null, cause)

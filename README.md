@@ -27,7 +27,7 @@ Current list of supported algorithms:
 # Encoders:
 1) RLE 
 
-# Decoders: 
+# Decoders:
 1) RLE
 
 Planned:

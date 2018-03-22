@@ -54,8 +54,8 @@ class IntegerTests extends FunSuite {
   }
 
   test("Testing of nthGreatestDevisor") {
-    100.nthGreatestDevisor(0) shouldBe 1
-    100.nthGreatestDevisor(2) shouldBe 4
+    100.nthGreatestDevisor(0) shouldBe 100
+    100.nthGreatestDevisor(2) shouldBe 25
     assertThrows[InputException] {
       100.nthGreatestDevisor(100)
     }
