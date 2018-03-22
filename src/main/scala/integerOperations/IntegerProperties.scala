@@ -1,6 +1,12 @@
 package integerOperations
 
+
+import utils.InputException
+
+import scala.util.{Failure, Success, Try}
+
 class IntegerProperties(val firstInt: Int) {
+
   import IntegerProperties._
 
   /**
@@ -26,6 +32,73 @@ class IntegerProperties(val firstInt: Int) {
     else false
   }
 
+  /**
+    * Finds the sum of number's digits
+    */
+  def sumOfDigits: Int = Try(sumOfDigitsLogic()) match {
+    case Success(something) => something
+    case Failure(ex) => throw new InputException(ex.toString)
+  }
+
+  /**
+    * Sub-function for sumOfDigits(), to provide errors handling
+    */
+  private def sumOfDigitsLogic(cur: Int = firstInt, sum: Int = 0): Int = cur match {
+    case 0 => sum
+    case _ => sumOfDigitsLogic(cur / 10, sum + (cur % 10))
+  }
+
+  /**
+    * Finds the composition of number's digits
+    */
+  def compositionOfDigits: Int = Try(compositionOfDigitsLogic()) match {
+    case Success(something) => something
+    case Failure(ex) => throw new InputException(ex.toString)
+  }
+
+  /**
+    * Sub-function for compositionOfDigits(), to provide errors handling
+    */
+  private def compositionOfDigitsLogic(cur: Int = firstInt, comp: Int = 1): Int = cur match {
+    case 0 => if (firstInt == 0) 0 else comp
+    case _ => compositionOfDigitsLogic(cur / 10, comp * (cur % 10))
+  }
+
+  /**
+    * Finds the number of digits in a number
+    */
+  def numOfDigits: Int = Try(numOfDigitsLogic()) match {
+    case Success(something) => something
+    case Failure(ex) => throw new InputException(ex.toString)
+  }
+
+  /**
+    * Sub-function for numOfDigits(), to provide errors handling
+    */
+  private def numOfDigitsLogic(cur: Int = firstInt, comp: Int = 0): Int = cur match {
+    case 0 => if (firstInt == 0) 1 else comp
+    case _ => numOfDigitsLogic(cur / 10, comp + 1)
+  }
+
+  /**
+    * Returns the list of all the divisors of a number.
+    */
+  def devisors: List[Int] = Try(devisorsLogic()) match {
+    case Success(something) => something
+    case Failure(ex) => throw new InputException(ex.toString)
+  }
+
+  /**
+    * Sub-function for devisors(), to provide deep recursion handling
+    */
+  private def devisorsLogic(devisorsList: List[Int] = List(firstInt), total: Int = 1): List[Int] = {
+      if (total == firstInt / 2) {
+        devisorsList :+ total
+      }
+      else if (total > firstInt / 2) devisorsList
+      else if (firstInt % total == 0) devisorsLogic(devisorsList :+ total, total + 1)
+      else devisorsLogic(devisorsList, total + 1)
+  }
 }
 
 object IntegerProperties {

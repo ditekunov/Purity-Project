@@ -9,9 +9,13 @@ Current list of supported algorithms:
 2) Check, whether the char is consonant
 
 # Integer operations:
-1) Check, whether the int is odd
-2) Check, whether the int is even
-3) Check, whether the int is a square (recursion sum of odds)
+1) .isOdd
+2) .isEven
+3) .isSquared
+4) .sumOfDigits
+5) .compositionOfDigits
+6) .numOfDigits
+7) .devisors
 
 # List/values operations:
 1) Functional getting the Nth element in a List

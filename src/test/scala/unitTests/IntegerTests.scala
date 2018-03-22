@@ -23,7 +23,30 @@ class IntegerTests extends FunSuite {
   test("Testing of isSquared") {
     testEvenList.foreach { cur: Int => cur.isSquared() shouldBe false }
     testSquaresList.foreach {cur: Int => cur.isSquared() shouldBe true}
+  }
 
+  test("Testing of sumOfDigits") {
+    0.sumOfDigits shouldBe 0
+    50.sumOfDigits shouldBe 5
+    123456789.sumOfDigits shouldBe 45
+  }
+
+  test("Testing of compositionOfDigits") {
+    0.compositionOfDigits shouldBe 0
+    50.compositionOfDigits shouldBe 0
+    999999999.compositionOfDigits shouldBe 387420489
+  }
+
+  test("Testing of numOfDigits") {
+    0.numOfDigits shouldBe 1
+    50.numOfDigits shouldBe 2
+    999999999.numOfDigits shouldBe 9
+  }
+
+  test("Testing of devisors") {
+    0.devisors shouldBe List(0)
+    50.devisors shouldBe List(50, 1, 2, 5, 10, 25)
+    1000000000.devisors should be
   }
 
 }

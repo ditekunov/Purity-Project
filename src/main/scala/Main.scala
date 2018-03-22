@@ -9,9 +9,5 @@ import scala.concurrent.Future
 
 
 object Main extends App {
-  final val TestList = List('a, 'a, 'a, 'b, 'b, 'b, 'a, 'a, 'c)
 
-  println(RLE_Encoder.encode(TestList))
-
-  println(166.isSquared())
 }
