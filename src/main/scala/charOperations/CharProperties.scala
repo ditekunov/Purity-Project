@@ -2,6 +2,10 @@ package charOperations
 
 import charOperations.miscellaneous.ImportantConstants._
 
+
+/**
+  * Contains functions, affecting char properties
+  */
 class CharProperties(val firstChar: Char) {
   import CharProperties._
 
@@ -18,5 +22,5 @@ class CharProperties(val firstChar: Char) {
 }
 
 object CharProperties {
-  implicit def charToCharProperties(a: Char) = new CharProperties(a)
+  implicit def charToCharProperties(a: Char): CharProperties = new CharProperties(a)
 }
