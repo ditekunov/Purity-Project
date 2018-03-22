@@ -10,6 +10,7 @@ class IntegerTests extends FunSuite {
   final val testEvenList: List[Int] = List(2,6,222,-2, 10000000)
   final val testOddList: List[Int] = List(1,3,15,275,100000001)
   final val testSquaresList: List[Int] = List(4,9,625,1000000)
+  final val emptyList = List()
 
   test("Testing of isEven") {
     testEvenList.foreach { cur: Int => cur.isEven shouldBe true }
@@ -45,8 +46,8 @@ class IntegerTests extends FunSuite {
   }
 
   test("Testing of devisors") {
-    0.listDevisors shouldBe List(0)
-    50.listDevisors shouldBe List(1, 2, 5, 10, 25, 50)
+    0.listDivisors shouldBe List(0)
+    50.listDivisors shouldBe List(1, 2, 5, 10, 25, 50)
     /**
       * WORKS SLOWLY (2-3 sec) can be activated/deactivated
       */
@@ -54,11 +55,24 @@ class IntegerTests extends FunSuite {
   }
 
   test("Testing of nthGreatestDevisor") {
-    100.nthGreatestDevisor(0) shouldBe 100
-    100.nthGreatestDevisor(2) shouldBe 25
+    100.nthGreatestDivisor(0) shouldBe 100
+    100.nthGreatestDivisor(2) shouldBe 25
     assertThrows[InputException] {
-      100.nthGreatestDevisor(100)
+      100.nthGreatestDivisor(100)
     }
   }
+
+  test("Testing of listBinaryDivisors") {
+    100.listBinaryDivisors shouldBe List(2, 4)
+    64.listBinaryDivisors shouldBe List(2, 4, 8, 16, 32, 64)
+    3.listBinaryDivisors shouldBe emptyList
+  }
+
+  test("Testing of listN_MultipleDivisors") {
+    100.listN_MultipleDivisors(100) shouldBe List(100)
+    10.listN_MultipleDivisors(1) shouldBe List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+  }
+
 
 }

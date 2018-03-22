@@ -10,6 +10,15 @@ class IntegerProperties(val firstInt: Int) {
   import IntegerProperties._
 
   /**
+    * Service function to generate lists
+    */
+  private def generateArithmeticRegression(until: Int, regressionList: List[Int] = List()): List[Int] =
+    until match {
+    case 0 => regressionList
+    case _ => generateArithmeticRegression(until - 1, regressionList :+ until)
+  }
+
+  /**
     * Checks, whether the number is even
     */
   def isEven: Boolean = firstInt % 2 == 0
@@ -33,7 +42,7 @@ class IntegerProperties(val firstInt: Int) {
   }
 
   /**
-    * Finds the sum of number's digits
+    * Finds the sum of number's digits.
     */
   def sumOfDigits: Int = Try(sumOfDigitsLogic()) match {
     case Success(something) => something
@@ -41,7 +50,7 @@ class IntegerProperties(val firstInt: Int) {
   }
 
   /**
-    * Sub-function for sumOfDigits(), to provide errors handling
+    * Sub-function for sumOfDigits(), to provide errors handling.
     */
   private def sumOfDigitsLogic(cur: Int = firstInt, sum: Int = 0): Int = cur match {
     case 0 => sum
@@ -49,7 +58,7 @@ class IntegerProperties(val firstInt: Int) {
   }
 
   /**
-    * Finds the composition of number's digits
+    * Finds the composition of number's digits.
     */
   def compositionOfDigits: Int = Try(compositionOfDigitsLogic()) match {
     case Success(something) => something
@@ -57,7 +66,7 @@ class IntegerProperties(val firstInt: Int) {
   }
 
   /**
-    * Sub-function for compositionOfDigits(), to provide errors handling
+    * Sub-function for compositionOfDigits(), to provide errors handling.
     */
   private def compositionOfDigitsLogic(cur: Int = firstInt, comp: Int = 1): Int = cur match {
     case 0 => if (firstInt == 0) 0 else comp
@@ -65,7 +74,7 @@ class IntegerProperties(val firstInt: Int) {
   }
 
   /**
-    * Finds the number of digits in a number
+    * Finds the number of digits in a number.
     */
   def numOfDigits: Int = Try(numOfDigitsLogic()) match {
     case Success(something) => something
@@ -73,7 +82,7 @@ class IntegerProperties(val firstInt: Int) {
   }
 
   /**
-    * Sub-function for numOfDigits(), to provide errors handling
+    * Sub-function for numOfDigits(), to provide errors handling.
     */
   private def numOfDigitsLogic(cur: Int = firstInt, comp: Int = 0): Int = cur match {
     case 0 => if (firstInt == 0) 1 else comp
@@ -83,35 +92,72 @@ class IntegerProperties(val firstInt: Int) {
   /**
     * Returns the list of all the divisors of a number.
     */
-  def listDevisors: List[Int] = Try(listDevisorsLogic()) match {
+  def listDivisors: List[Int] = Try(listDivisorsLogic()) match {
     case Success(something) => something.sorted
     case Failure(ex) => throw new InputException(ex.toString)
   }
 
   /**
-    * Sub-function for devisors(), to provide deep recursion handling
+    * Sub-function for listDivisors(), to provide deep recursion handling.
     */
-  private def listDevisorsLogic(devisorsList: List[Int] = List(firstInt), total: Int = 1): List[Int] = {
-      if (total == firstInt / 2) {
-        devisorsList :+ total
-      }
-      else if (total > firstInt / 2) devisorsList
-      else if (firstInt % total == 0) listDevisorsLogic(devisorsList :+ total, total + 1)
-      else listDevisorsLogic(devisorsList, total + 1)
+  private def listDivisorsLogic(divisorsList: List[Int] = List(firstInt), total: Int = 1): List[Int] = {
+      if (total == firstInt / 2) divisorsList :+ total
+      else if (total > firstInt / 2) divisorsList
+      else if (firstInt % total == 0) listDivisorsLogic(divisorsList :+ total, total + 1)
+      else listDivisorsLogic(divisorsList, total + 1)
   }
 
   /**
-    * Finds the greatest devisor of a number
+    * Finds the greatest divisor of a number.
     */
-  def nthGreatestDevisor(nPosition: Int): Int = {
-    if (nPosition < 0) throw new InputException("\"nthGreatestDevisor\" " + NegativeInput)
-    else Try(firstInt.listDevisors.sortWith(_ > _)(nPosition)) match {
+  def nthGreatestDivisor(nPosition: Int): Int = {
+    if (nPosition < 0) throw new InputException("\"nthGreatestDivisor\" " + NegativeInput)
+    else Try(firstInt.listDivisors.sortWith(_ > _)(nPosition)) match {
       case Success(something) => something
-      case Failure(ex) => throw new InputException("\"nthGreatestDevisor\" got " + ex.toString)
+      case Failure(ex) => throw new InputException("\"nthGreatestDivisor\" got " + ex.toString)
     }
 
   }
 
+  /**
+    * Returns the list of all the binary divisors of a number.
+    */
+  def listBinaryDivisors: List[Int] = Try(listBinaryDivisorsLogic()) match {
+    case Success(something) => something
+    case Failure(ex) => throw new InputException("\"listBinaryDivisors\" got " + ex.toString)
+  }
+
+  /**
+    * Sub-function for listBinaryDivisors(), to provide deep recursion handling.
+    */
+  private def listBinaryDivisorsLogic(divisorsList: List[Int] = List(), total: Int = 2): List[Int] = {
+    if (total == firstInt) divisorsList :+ firstInt
+    else if (total > firstInt) divisorsList
+    else if (firstInt % total == 0) listBinaryDivisorsLogic(divisorsList :+ total, total * 2)
+    else listBinaryDivisorsLogic(divisorsList, total * 2)
+  }
+
+  /**
+    * Returns the list of all the n-multiply divisors of a number.
+    */
+  def listN_MultipleDivisors(n: Int): List[Int] = {
+    if (n != 1)
+    Try(listN_MultipleDivisorsLogic(n, total = n)) match {
+      case Success(something) => something
+      case Failure(ex) => throw new InputException("\"listN_MultipleDivisors\" got " + ex.toString)
+    }
+    else generateArithmeticRegression(firstInt).reverse
+  }
+
+  /**
+    * Sub-function for listN_MultipleDivisors(), to provide deep recursion handling.
+    */
+  private def listN_MultipleDivisorsLogic(n: Int, divisorsList: List[Int] = List(), total: Int): List[Int] = {
+    if (total == firstInt) divisorsList :+ firstInt
+    else if (total > firstInt) divisorsList
+    else if (firstInt % total == 0) listN_MultipleDivisorsLogic(n, divisorsList :+ total, total * n)
+    else listN_MultipleDivisorsLogic(n, divisorsList, total * n)
+  }
 
 }
 

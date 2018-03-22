@@ -15,8 +15,10 @@ Current list of supported algorithms:
 4) .sumOfDigits
 5) .compositionOfDigits
 6) .numOfDigits
-7) .devisors
-8) .nthGreatestDevisor(n)
+7) .divisors
+8) .listBinaryDivisors
+9) .listN_MultipleDivisors(n)
+10) .nthGreatestDivisor(n)
 
 # List/values operations:
 1) Functional getting the Nth element in a List
