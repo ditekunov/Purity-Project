@@ -10,4 +10,7 @@ import scala.concurrent.Future
 
 object Main extends App {
 
+  //print(16.listBinaryDivisors)
+  print(16.listN_MultipleDivisors(1))
+
 }

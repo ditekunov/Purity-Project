@@ -15,7 +15,10 @@ Current list of supported algorithms:
 4) .sumOfDigits
 5) .compositionOfDigits
 6) .numOfDigits
-7) .devisors
+7) .divisors
+8) .listBinaryDivisors
+9) .listN_MultipleDivisors(n)
+10) .nthGreatestDivisor(n)
 
 # List/values operations:
 1) Functional getting the Nth element in a List
@@ -26,7 +29,7 @@ Current list of supported algorithms:
 # Encoders:
 1) RLE 
 
-# Decoders: 
+# Decoders:
 1) RLE
 
 Planned:
