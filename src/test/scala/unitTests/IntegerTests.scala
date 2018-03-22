@@ -3,6 +3,7 @@ package unitTests
 import org.scalatest.FunSuite
 import org.scalatest.Matchers._
 import integerOperations.IntegerProperties._
+import utils.InputException
 
 class IntegerTests extends FunSuite {
 
@@ -44,9 +45,20 @@ class IntegerTests extends FunSuite {
   }
 
   test("Testing of devisors") {
-    0.devisors shouldBe List(0)
-    50.devisors shouldBe List(50, 1, 2, 5, 10, 25)
-    1000000000.devisors should be
+    0.listDevisors shouldBe List(0)
+    50.listDevisors shouldBe List(1, 2, 5, 10, 25, 50)
+    /**
+      * WORKS SLOWLY (2-3 sec) can be activated/deactivated
+      */
+    //1000000000.listDevisors should be
+  }
+
+  test("Testing of nthGreatestDevisor") {
+    100.nthGreatestDevisor(0) shouldBe 1
+    100.nthGreatestDevisor(2) shouldBe 4
+    assertThrows[InputException] {
+      100.nthGreatestDevisor(100)
+    }
   }
 
 }

@@ -2,8 +2,8 @@ package integerOperations
 
 
 import utils.InputException
-
 import scala.util.{Failure, Success, Try}
+import utils.ExceptionMessages.NegativeInput
 
 class IntegerProperties(val firstInt: Int) {
 
@@ -83,22 +83,36 @@ class IntegerProperties(val firstInt: Int) {
   /**
     * Returns the list of all the divisors of a number.
     */
-  def devisors: List[Int] = Try(devisorsLogic()) match {
-    case Success(something) => something
+  def listDevisors: List[Int] = Try(listDevisorsLogic()) match {
+    case Success(something) => something.sorted
     case Failure(ex) => throw new InputException(ex.toString)
   }
 
   /**
     * Sub-function for devisors(), to provide deep recursion handling
     */
-  private def devisorsLogic(devisorsList: List[Int] = List(firstInt), total: Int = 1): List[Int] = {
+  private def listDevisorsLogic(devisorsList: List[Int] = List(firstInt), total: Int = 1): List[Int] = {
       if (total == firstInt / 2) {
         devisorsList :+ total
       }
       else if (total > firstInt / 2) devisorsList
-      else if (firstInt % total == 0) devisorsLogic(devisorsList :+ total, total + 1)
-      else devisorsLogic(devisorsList, total + 1)
+      else if (firstInt % total == 0) listDevisorsLogic(devisorsList :+ total, total + 1)
+      else listDevisorsLogic(devisorsList, total + 1)
   }
+
+  /**
+    * Finds the greatest devisor of a number
+    */
+  def nthGreatestDevisor(nPosition: Int): Int = {
+    if (nPosition < 0) throw new InputException("\"nthGreatestDevisor\" " + NegativeInput)
+    else Try(firstInt.listDevisors(nPosition)) match {
+      case Success(something) => something
+      case Failure(ex) => throw new InputException("\"nthGreatestDevisor\" got " + ex.toString)
+    }
+
+  }
+
+
 }
 
 object IntegerProperties {

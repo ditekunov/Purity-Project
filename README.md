@@ -16,6 +16,7 @@ Current list of supported algorithms:
 5) .compositionOfDigits
 6) .numOfDigits
 7) .devisors
+8) .nthGreatestDevisor(n)
 
 # List/values operations:
 1) Functional getting the Nth element in a List
