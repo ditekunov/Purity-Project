@@ -4,9 +4,9 @@ This project contains some common-used functions and algorithms, written in Scal
 
 Current list of supported algorithms:
 
-# Chars operations:
-1) Check, whether the char is vowel
-2) Check, whether the char is consonant
+# Char operations:
+1) .isVowel
+2) .isConsonant
 
 # Integer operations:
 1) .isOdd
@@ -27,13 +27,14 @@ Current list of supported algorithms:
 4) Counter for the number of letter changes from vowel to consonant in a list of integers
 
 # Encoders:
-1) RLE 
+1) RLE
+2) Huffman
 
 # Decoders:
 1) RLE
 
 Planned:
-1) Huffman encoder/decoder
+1) Huffman decoder
 2) Operations with chars
 3) Operations with integers
 4) Classical data structures
