@@ -19,6 +19,12 @@ Current list of supported algorithms:
 8) .listBinaryDivisors
 9) .listN_MultipleDivisors(n)
 10) .nthGreatestDivisor(n)
+11) .numOfDivisors
+12) .sumOfDivisors
+13) .isPrime O(sqrt(n)) speed
+
+# Double
+1) .inverse
 
 # List/values operations:
 1) Functional getting the Nth element in a List
@@ -37,5 +43,6 @@ Planned:
 1) Huffman decoder
 2) Operations with chars
 3) Operations with integers
-4) Classical data structures
-5) Classical algorithms
+4) Operations with double
+5) Classical data structures
+6) Classical algorithms

@@ -45,9 +45,9 @@ class IntegerTests extends FunSuite {
     999999999.numOfDigits shouldBe 9
   }
 
-  test("Testing of devisors") {
+  test("Testing of listDivisors") {
     0.listDivisors shouldBe List(0)
-    50.listDivisors shouldBe List(1, 2, 5, 10, 25, 50)
+    100.listDivisors shouldBe List(1, 2, 4, 5, 10, 20, 25, 50, 100)
     /**
       * WORKS SLOWLY (2-3 sec) can be activated/deactivated
       */
@@ -72,6 +72,28 @@ class IntegerTests extends FunSuite {
     100.listN_MultipleDivisors(100) shouldBe List(100)
     10.listN_MultipleDivisors(1) shouldBe List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 
+  }
+
+  test("Testing of numOfDivisors") {
+    100.numOfDivisors shouldBe 9
+    0.numOfDivisors shouldBe 1
+  }
+
+  test("Testing of sumOfDivisors") {
+    100.sumOfDivisors shouldBe 217
+    0.sumOfDivisors shouldBe 0
+    assertThrows[InputException] {
+      -1.sumOfDivisors
+    }
+  }
+
+  test("Testing of isPrime") {
+    10.isPrime shouldBe false
+    17.isPrime shouldBe true
+    289.isPrime shouldBe false
+    assertThrows[InputException] {
+      1.isPrime
+    }
   }
 
 

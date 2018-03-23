@@ -3,7 +3,7 @@ package integerOperations
 
 import utils.InputException
 import scala.util.{Failure, Success, Try}
-import utils.ExceptionMessages.NegativeInput
+import utils.ExceptionMessages.{NegativeInput, BorderInput}
 
 class IntegerProperties(val firstInt: Int) {
 
@@ -101,9 +101,10 @@ class IntegerProperties(val firstInt: Int) {
     * Sub-function for listDivisors(), to provide deep recursion handling.
     */
   private def listDivisorsLogic(divisorsList: List[Int] = List(firstInt), total: Int = 1): List[Int] = {
-      if (total == firstInt / 2) divisorsList :+ total
-      else if (total > firstInt / 2) divisorsList
-      else if (firstInt % total == 0) listDivisorsLogic(divisorsList :+ total, total + 1)
+      if (firstInt < 0) throw new InputException("\"listDivisors\" " + NegativeInput)
+        else if (total == firstInt / 2) divisorsList :+ total
+        else if (total > firstInt / 2) divisorsList
+        else if (firstInt % total == 0) listDivisorsLogic(divisorsList :+ total, total + 1)
       else listDivisorsLogic(divisorsList, total + 1)
   }
 
@@ -159,6 +160,34 @@ class IntegerProperties(val firstInt: Int) {
     else listN_MultipleDivisorsLogic(n, divisorsList, total * n)
   }
 
+  /**
+    * Returns the number of total divisors of an Int.
+    */
+  def numOfDivisors: Int = firstInt.listDivisors.length
+
+  /**
+    * Returns the sum of all the divisors of an Int.
+    */
+  def sumOfDivisors:Int = firstInt.listDivisors.sum
+
+  /**
+    * Checks, whether the Int is prime O(sqrt(n)).
+    */
+  def isPrime:Boolean = Try(isPrimeLogic()) match {
+    case Success(something) => something
+    case Failure(ex) => throw new InputException("\"isPrime\" " + ex)
+  }
+
+  /**
+    * Sub-function for isPrime.
+    */
+  def isPrimeLogic(cur: Int = 2):Boolean = {
+    if (firstInt == 2 || firstInt == 3) true
+    else if (firstInt < 2) throw new InputException("\"isPrime\" " + BorderInput)
+    else if (cur.toLong > Math.sqrt(firstInt.toLong)) true
+    else if (firstInt % cur == 0) false
+    else isPrimeLogic(cur + 1)
+  }
 }
 
 object IntegerProperties {
