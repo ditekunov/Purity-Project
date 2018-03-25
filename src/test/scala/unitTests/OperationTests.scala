@@ -11,11 +11,11 @@ class OperationTests extends FunSuite {
 
   test("Testing of countSignChanges") {
 
-    val testingSignChangesList1: List[Int] = List(-1, 2, -1, 2, -1, -21, -10, 20, 20, 20, 35, -11)
-    val testingSignChangesList2: List[Int] = List(1, 1, 1, 1, 1, 1)
+    val intTestingSignChangesList1: List[Int] = List(-1, 2, -1, 2, -1, -21, -10, 20, 20, 20, 35, -11)
+    val intTestingSignChangesList2: List[Int] = List(1, 1, 1, 1, 1, 1)
 
-    countSignChanges(testingSignChangesList1) shouldBe List(3, 3)
-    countSignChanges(testingSignChangesList2) shouldBe List(0, 0)
+    countSignChanges(intTestingSignChangesList1) shouldBe List(3, 3)
+    countSignChanges(intTestingSignChangesList2) shouldBe List(0, 0)
 
     assertThrows[InputException] {
       countSignChanges(emptyList)

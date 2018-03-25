@@ -4,9 +4,7 @@ This project contains some common-used functions and algorithms, written in Scal
 
 Current list of supported algorithms:
 
-# Char operations:
-1) .isVowel
-2) .isConsonant
+
 
 # Integer operations:
 1) .isOdd
@@ -16,8 +14,6 @@ Current list of supported algorithms:
 5) .compositionOfDigits
 6) .numOfDigits
 7) .divisors
-8) .listBinaryDivisors
-9) .listN_MultipleDivisors(n)
 10) .nthGreatestDivisor(n)
 11) .numOfDivisors
 12) .sumOfDivisors
@@ -25,6 +21,22 @@ Current list of supported algorithms:
 14) .isPrimeFermat(n) O(log(n)) speed
 15) .sqr
 16) .gcdWith(secondInt)
+
+# Additional Integers math:
+1) .isFreeOfSquares
+
+# Integer lists generators:
+1) Arithmetic regression
+2) Arithmetic progression
+3) Squares until N
+4) Divisors of N
+5) Binary divisors of N
+6) Divisors, multiple by N
+
+
+# Char operations:
+1) .isVowel
+2) .isConsonant
 
 # Double
 1) .inverse
