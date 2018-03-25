@@ -2,13 +2,15 @@ package integerOperations
 
 import utils.ExceptionMessages.StrictNegativeInput
 import utils.InputException
-import utils.ExceptionMessages.NegativeInput
+import utils.ExceptionMessages.{NegativeInput, StackOverflowInput}
 
 import scala.util.{Failure, Success, Try}
+import IntegerProperties._
+import IntegerMath._
 
-class Generators(val until: Int) {
+class IntegerGenerators(val until: Int) {
 
-  import Generators._
+  import IntegerGenerators._
 
   /**
     * Generates list in range from until to 1
@@ -114,15 +116,55 @@ class Generators(val until: Int) {
     */
   private def generateDivisorsLogic(divisorsList: List[Int] = List(until), total: Int = 1): List[Int] = {
     if (until < 0) throw new InputException("\"listDivisors\" " + NegativeInput)
-    else if (total == until / 2) divisorsList :+ total
+    else if (total == until / 2 + 1) divisorsList
     else if (total > until / 2) divisorsList
     else if (until % total == 0) generateDivisorsLogic(divisorsList :+ total, total + 1)
     else generateDivisorsLogic(divisorsList, total + 1)
   }
+
+  /**
+    * Returns the list of all the divisors of a number.
+    */
+  def generatePrimeDivisors: List[Int] = Try(generatePrimeDivisorsLogic()) match {
+    case Success(something) => something.sorted
+    case Failure(ex) => throw new InputException(ex.toString)
+  }
+
+  /**
+    * Sub-function for generatePrimeDivisors.
+    */
+ private def generatePrimeDivisorsLogic(divisorsList: List[Int] = List()): List[Int] = {
+   if (until < 0) throw new InputException("\"listDivisors\" " + NegativeInput)
+   else until.generateDivisors.filter {cur => cur == 1 || cur.isPrime }.filter {cur => cur != 1}
+ }
+
+
+  /**
+    * Generates Carmichael numbers in a range from 1 to until.
+    *
+    * WARNING: in case of using factorisation, input over 100.000 is hard-code deprecated.
+    */
+  def generateCarmichaelNumbers: List[Int] = Try(generateCarmichaelNumbersLogic()) match {
+    case Success(something) => something.sorted
+    case Failure(ex) => throw new InputException(ex.toString)
+  }
+
+  /**
+    * Sub-function for generateCarmichaelNumbers.
+    */
+  private def generateCarmichaelNumbersLogic(outcomeList: List[Int] = List(), cur: Int = 3): List[Int] = {
+    if (until > 100000) throw new InputException(StackOverflowInput)
+    else if (until <= 1) throw new InputException(StrictNegativeInput)
+    else if (cur > until) outcomeList
+    else if (cur.isCarmichael) generateCarmichaelNumbersLogic(outcomeList :+ cur, cur + 1)
+    else generateCarmichaelNumbersLogic(outcomeList, cur + 1)
+  }
+
+
 }
 
 
 
-object Generators {
-  implicit def intToGenerators(a: Int): Generators = new Generators(a)
+object IntegerGenerators {
+  implicit def intToGenerators(a: Int): IntegerGenerators = new IntegerGenerators(a)
 }

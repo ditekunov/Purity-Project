@@ -3,7 +3,7 @@ package unitTests
 import org.scalatest.FunSuite
 import org.scalatest.Matchers._
 import integerOperations.IntegerProperties._
-import integerOperations.Generators._
+import integerOperations.IntegerGenerators._
 import utils.InputException
 
 class IntegerTests extends FunSuite {
@@ -92,5 +92,11 @@ class IntegerTests extends FunSuite {
     17.isPrimeFermat(100) shouldBe true
     49.isPrimeFermat(200) shouldBe false
     13.isPrimeFermat(200) shouldBe true
+  }
+
+  test("Testing of isCarmichael") {
+    561 shouldBe true
+    8911 shouldBe true
+    17777 shouldBe false
   }
 }

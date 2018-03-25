@@ -24,6 +24,7 @@ Current list of supported algorithms:
 
 # Additional Integers math:
 1) .isFreeOfSquares
+2) .isCarmichael
 
 # Integer lists generators:
 1) Arithmetic regression
@@ -32,6 +33,8 @@ Current list of supported algorithms:
 4) Divisors of N
 5) Binary divisors of N
 6) Divisors, multiple by N
+7) Prime divisors
+8) Carmichael numbers
 
 
 # Char operations:
@@ -70,3 +73,4 @@ Some sources, that were used via development:
 2) Richard Bird's "Pearls of Functional Algorithm Design" (English)
 3) Denis Shevchenko's "About Haskell in a human way": https://www.ohaskell.guide (Russian)
 4) Louis Botterill's mostly software and techy Blog: http://louisbotterill.blogspot.ru (English)
+5) Alvin Alexander's scala blog: https://alvinalexander.com (English)

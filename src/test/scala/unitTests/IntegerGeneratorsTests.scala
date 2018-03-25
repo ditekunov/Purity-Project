@@ -1,11 +1,11 @@
 package unitTests
 
 import org.scalatest.FunSuite
-import integerOperations.Generators._
+import integerOperations.IntegerGenerators._
 import org.scalatest.Matchers._
 
 
-class GeneratorsTests extends FunSuite {
+class IntegerGeneratorsTests extends FunSuite {
 
   final val emptyList = List()
 
@@ -40,6 +40,16 @@ class GeneratorsTests extends FunSuite {
     100.generateN_MultipleDivisors(100) shouldBe List(100)
     10.generateN_MultipleDivisors(1) shouldBe List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 
+  }
+
+  test("Testing of generatePrimeNumbers") {
+    100.generatePrimeDivisors shouldBe List(2, 5)
+    21.generatePrimeDivisors shouldBe List(3, 7)
+  }
+
+  test("Testing of generateCarmichaelNumbers") {
+    100.generateCarmichaelNumbers shouldBe emptyList
+    561.generateCarmichaelNumbers shouldBe List(561)
   }
 
 }

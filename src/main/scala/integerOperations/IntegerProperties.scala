@@ -5,7 +5,7 @@ import utils.InputException
 
 import scala.util.{Failure, Random, Success, Try}
 import utils.ExceptionMessages.{BorderInput, NegativeInput, StrictNegativeInput}
-import integerOperations.Generators._
+import integerOperations.IntegerGenerators._
 
 class IntegerProperties(val firstInt: Int) {
 
