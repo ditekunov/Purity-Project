@@ -3,6 +3,7 @@ package unitTests
 import org.scalatest.FunSuite
 import org.scalatest.Matchers._
 import integerOperations.IntegerProperties._
+import integerOperations.Generators._
 import utils.InputException
 
 class IntegerTests extends FunSuite {
@@ -45,33 +46,12 @@ class IntegerTests extends FunSuite {
     999999999.numOfDigits shouldBe 9
   }
 
-  test("Testing of listDivisors") {
-    0.listDivisors shouldBe List(0)
-    100.listDivisors shouldBe List(1, 2, 4, 5, 10, 20, 25, 50, 100)
-    /**
-      * WORKS SLOWLY (2-3 sec) can be activated/deactivated
-      */
-    //1000000000.listDevisors should be
-  }
-
-  test("Testing of nthGreatestDevisor") {
+  test("Testing of nthGreatestDivisor") {
     100.nthGreatestDivisor(0) shouldBe 100
     100.nthGreatestDivisor(2) shouldBe 25
     assertThrows[InputException] {
       100.nthGreatestDivisor(100)
     }
-  }
-
-  test("Testing of listBinaryDivisors") {
-    100.listBinaryDivisors shouldBe List(2, 4)
-    64.listBinaryDivisors shouldBe List(2, 4, 8, 16, 32, 64)
-    3.listBinaryDivisors shouldBe emptyList
-  }
-
-  test("Testing of listN_MultipleDivisors") {
-    100.listN_MultipleDivisors(100) shouldBe List(100)
-    10.listN_MultipleDivisors(1) shouldBe List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-
   }
 
   test("Testing of numOfDivisors") {

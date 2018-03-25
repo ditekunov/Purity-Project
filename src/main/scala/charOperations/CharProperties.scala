@@ -16,7 +16,7 @@ class CharProperties(val firstChar: Char) {
     */
   def isVowel: Boolean = {
     if (Vowels.contains(firstChar.toLower)) true
-    else if (Consonants.contains(firstChar.toLower)) false
+    else if (Consonants.contains(firstChar.toLower) || firstChar == '\0') false
     else throw new InputException("\"isVowel\" " + DeprecatedSymbolInput)
   }
 
@@ -25,7 +25,7 @@ class CharProperties(val firstChar: Char) {
     */
   def isConsonant: Boolean = {
     if (Consonants.contains(firstChar.toLower)) true
-    else if (Vowels.contains(firstChar.toLower)) false
+    else if (Vowels.contains(firstChar.toLower) || firstChar == '\0') false
     else throw new InputException("\"isConsonant\" " + DeprecatedSymbolInput)
   }
 
