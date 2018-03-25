@@ -93,4 +93,10 @@ class IntegerTests extends FunSuite {
     49.isPrimeFermat(200) shouldBe false
     13.isPrimeFermat(200) shouldBe true
   }
+
+  test("Testing of isCarmichael") {
+    561 shouldBe true
+    8911 shouldBe true
+    17777 shouldBe false
+  }
 }

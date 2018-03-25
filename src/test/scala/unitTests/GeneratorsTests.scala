@@ -42,4 +42,14 @@ class GeneratorsTests extends FunSuite {
 
   }
 
+  test("Testing of generatePrimeNumbers") {
+    100.generatePrimeDivisors shouldBe List(2, 5)
+    21.generatePrimeDivisors shouldBe List(3, 7)
+  }
+
+  test("Testing of generateCarmichaelNumbers") {
+    100.generateCarmichaelNumbers shouldBe emptyList
+    561.generateCarmichaelNumbers shouldBe List(561)
+  }
+
 }

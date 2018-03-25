@@ -3,10 +3,11 @@ package integerOperations
 import utils.InputException
 import utils.ExceptionMessages._
 import Generators._
+import IntegerProperties._
 
 class IntegerMath(val firstInt: Int) {
 
-import IntegerMath._
+  import IntegerMath._
 
   /**
     * Checks, if a number is free of squares
@@ -17,14 +18,18 @@ import IntegerMath._
   }
 
   /**
-    * Generates Carmichael numbers in a range from 1 to firstInt
+    * Checks, if a number is a Carmichael number
     */
-//  final def generateCarmichaelNumbers(outcomeList: List[Int] = List()): List[Int] = {
-//    if (firstInt <= 1) throw new InputException(StrictNegativeInput)
-//    else if (firstInt.isFreeOfSquares && )
-//  }
+  def isCarmichael: Boolean = {
+    if (firstInt <= 1) throw new InputException(StrictNegativeInput)
+    else if (firstInt.isFreeOfSquares && firstInt.isOdd) {
+      val curFactorisation: List[Int] = firstInt.generatePrimeDivisors.filter {cur => cur != firstInt}
 
-
+      (for {cur <- curFactorisation if (firstInt - 1) % (cur - 1) == 0} yield true).length == curFactorisation.length &&
+      curFactorisation.nonEmpty
+    }
+    else false
+  }
 }
 
 object IntegerMath {
