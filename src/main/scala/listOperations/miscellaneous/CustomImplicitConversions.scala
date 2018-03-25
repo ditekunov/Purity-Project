@@ -1,4 +1,4 @@
-package functionalAlgorithms.miscellaneous
+package listOperations.miscellaneous
 
 object CustomImplicitConversions {
 

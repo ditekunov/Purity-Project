@@ -1,10 +1,10 @@
-package functionalAlgorithms
+package listOperations
 
-import functionalAlgorithms.miscellaneous.{CurrentAndPositiveNegativeCounters, CurrentAndVowelConsonantCounters}
-import functionalAlgorithms.miscellaneous.CustomImplicitConversions._
-import utils.InputException
-import utils.ExceptionMessages.EmptyInput
 import charOperations.CharProperties._
+import listOperations.miscellaneous.CustomImplicitConversions._
+import listOperations.miscellaneous.{CurrentAndPositiveNegativeCounters, CurrentAndVowelConsonantCounters}
+import utils.ExceptionMessages.EmptyInput
+import utils.InputException
 
 object Changes {
 
@@ -17,7 +17,6 @@ object Changes {
     * Checks if element changed from vowel to consonant
     */
   private def isVowelToConsonant(a: Char, b: Char): Boolean = a.isVowel &&  b.isConsonant
-
 
   /**
     * Counts, whether there were changes from positive integer to negative integer in a list
