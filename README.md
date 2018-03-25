@@ -38,7 +38,7 @@ Current list of supported algorithms:
 1) .isVowel
 2) .isConsonant
 
-# Double
+# Double operations:
 1) .inverse
 2) .sqrDouble
 
