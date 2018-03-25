@@ -1,4 +1,4 @@
-import listOperations.FunctionalAlgorithms._
+import listOperations.ListProperties._
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import charOperations.CharProperties._
