@@ -112,8 +112,5 @@ class IntegerTests extends FunSuite {
     17.isPrimeFermat(100) shouldBe true
     49.isPrimeFermat(200) shouldBe false
     13.isPrimeFermat(200) shouldBe true
-
   }
-
-
 }
