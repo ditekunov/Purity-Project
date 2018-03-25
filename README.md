@@ -49,8 +49,9 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 2) .sqrDouble
 
 # List/values operations:
-1) Functional getting the Nth element in a List
-2) Checking the List/value, whether it is a palindrome
+1) get(List[A], index)
+2) isPalindrome(List[A])
+3) isPalindrome([A])
 3) Counter for the number of sign changes in a list of integers
 4) Counter for the number of letter changes from vowel to consonant in a list of integers
 

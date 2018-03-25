@@ -8,9 +8,9 @@ object ListProperties {
   /**
     * Returns nth element of a sequence
     */
-  def getElement[A](input: List[A], index: Int): A = (index, input) match {
+  def get[A](input: List[A], index: Int): A = (index, input) match {
     case (0, element :: _) => element
-    case (n,  _  :: tail ) => getElement(tail, n - 1)
+    case (n,  _  :: tail ) => get(tail, n - 1)
     case (_, Nil         ) => throw new InputException("\"getElement\" " + EmptyInput)
   }
 
