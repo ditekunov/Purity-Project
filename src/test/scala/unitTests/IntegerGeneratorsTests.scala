@@ -1,11 +1,11 @@
 package unitTests
 
 import org.scalatest.FunSuite
-import integerOperations.Generators._
+import integerOperations.IntegerGenerators._
 import org.scalatest.Matchers._
 
 
-class GeneratorsTests extends FunSuite {
+class IntegerGeneratorsTests extends FunSuite {
 
   final val emptyList = List()
 

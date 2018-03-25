@@ -3,7 +3,7 @@ package unitTests
 import org.scalatest.FunSuite
 import org.scalatest.Matchers._
 import integerOperations.IntegerProperties._
-import integerOperations.Generators._
+import integerOperations.IntegerGenerators._
 import utils.InputException
 
 class IntegerTests extends FunSuite {

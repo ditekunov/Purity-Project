@@ -2,7 +2,7 @@ package integerOperations
 
 import utils.InputException
 import utils.ExceptionMessages._
-import Generators._
+import IntegerGenerators._
 import IntegerProperties._
 
 class IntegerMath(val firstInt: Int) {

@@ -8,9 +8,9 @@ import scala.util.{Failure, Success, Try}
 import IntegerProperties._
 import IntegerMath._
 
-class Generators(val until: Int) {
+class IntegerGenerators(val until: Int) {
 
-  import Generators._
+  import IntegerGenerators._
 
   /**
     * Generates list in range from until to 1
@@ -165,6 +165,6 @@ class Generators(val until: Int) {
 
 
 
-object Generators {
-  implicit def intToGenerators(a: Int): Generators = new Generators(a)
+object IntegerGenerators {
+  implicit def intToGenerators(a: Int): IntegerGenerators = new IntegerGenerators(a)
 }
