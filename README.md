@@ -1,10 +1,14 @@
 # Purity project
 
-This project contains some common-used functions and algorithms, written in Scala pure-functional style.
+This project contains realisations of common-used math functions and classical algorithms, written in Scala's pure-functional style.
 
-Current list of supported algorithms:
+Some of them are a new sight at Scala's standart library, some are persistent data structures, some are completely new functions.
 
+The main purpose of this library is to spread ideas of a functional programming in Scala and to challenge yourself by creating classical imperative algorithms in a new way.
 
+Would be great, if you'd contribute, in case that presented algorithms are not as effective as they can be, and you know how to fix this, or if you have ideas, that can be added in the future.
+
+# Current list of supported algorithms:
 
 # Integer operations:
 1) .isOdd
@@ -36,7 +40,6 @@ Current list of supported algorithms:
 7) Prime divisors
 8) Carmichael numbers
 
-
 # Char operations:
 1) .isVowel
 2) .isConsonant
@@ -58,7 +61,7 @@ Current list of supported algorithms:
 # Decoders:
 1) RLE
 
-Planned:
+# Planned:
 1) Huffman decoder
 2) Operations with chars
 3) Operations with integers
@@ -67,7 +70,7 @@ Planned:
 6) Classical algorithms
 
 
-Some sources, that were used via development:
+# Some sources, that were used via development:
 
 1) Chris Okasaki's "Purely Functional Data Structures" (English)
 2) Richard Bird's "Pearls of Functional Algorithm Design" (English)
