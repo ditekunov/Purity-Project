@@ -2,7 +2,7 @@ package unitTests
 
 import org.scalatest.Matchers._
 import org.scalatest.FunSuite
-import functionalAlgorithms.Changes._
+import listOperations.Changes._
 import utils.InputException
 
 class OperationTests extends FunSuite {

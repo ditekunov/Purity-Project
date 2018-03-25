@@ -1,4 +1,4 @@
-package functionalAlgorithms.miscellaneous
+package listOperations.miscellaneous
 
 /**
   * Saves values of current element in foldLeft and count of changes of negative to positive and positive to negative
