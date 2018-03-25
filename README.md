@@ -1,4 +1,4 @@
-# pureFunctionalAlgorithms
+# Purity project
 
 This project contains some common-used functions and algorithms, written in Scala pure-functional style.
 
