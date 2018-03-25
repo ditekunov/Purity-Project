@@ -50,3 +50,11 @@ Planned:
 4) Operations with double
 5) Classical data structures
 6) Classical algorithms
+
+
+Some sources, that were used via development:
+
+1) Chris Okasaki's "Purely Functional Data Structures" (English)
+2) Richard Bird's "Pearls of Functional Algorithm Design" (English)
+3) Denis Shevchenko's "About Haskell in a human way": https://www.ohaskell.guide (Russian)
+4) Louis Botterill's mostly software and techy Blog: http://louisbotterill.blogspot.ru (English)
