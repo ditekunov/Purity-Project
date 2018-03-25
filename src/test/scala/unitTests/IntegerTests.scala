@@ -96,5 +96,24 @@ class IntegerTests extends FunSuite {
     }
   }
 
+  test("Testing of gcdWith") {
+    14.gcdWith(7) shouldBe 7
+    21.gcdWith(7) shouldBe 7
+  }
+
+  test("testing of sqr") {
+    0.sqr shouldBe 0
+    7.sqr shouldBe 49
+    -2.sqr shouldBe 4
+  }
+
+  test("Testing of isPrimeFermat") {
+    2.isPrimeFermat() shouldBe true
+    17.isPrimeFermat(100) shouldBe true
+    49.isPrimeFermat(200) shouldBe false
+    13.isPrimeFermat(200) shouldBe true
+
+  }
+
 
 }

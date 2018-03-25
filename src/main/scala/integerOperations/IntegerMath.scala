@@ -1,0 +1,5 @@
+package integerOperations
+
+object IntegerMath {
+
+}

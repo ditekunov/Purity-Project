@@ -22,9 +22,13 @@ Current list of supported algorithms:
 11) .numOfDivisors
 12) .sumOfDivisors
 13) .isPrime O(sqrt(n)) speed
+14) .isPrimeFermat(n) O(log(n)) speed
+15) .sqr
+16) .gcdWith(secondInt)
 
 # Double
 1) .inverse
+2) .sqrDouble
 
 # List/values operations:
 1) Functional getting the Nth element in a List

@@ -11,4 +11,10 @@ class DoubleTests extends FunSuite {
     -1.inverse shouldBe -1
   }
 
+  test("Testing of sqrDouble") {
+    17.0.sqrDouble shouldBe 289.0
+    0.sqrDouble shouldBe 0
+    -1.0.sqrDouble shouldBe 1
+  }
+
 }

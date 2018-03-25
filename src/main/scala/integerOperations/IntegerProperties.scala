@@ -2,8 +2,9 @@ package integerOperations
 
 
 import utils.InputException
-import scala.util.{Failure, Success, Try}
-import utils.ExceptionMessages.{NegativeInput, BorderInput}
+
+import scala.util.{Failure, Random, Success, Try}
+import utils.ExceptionMessages.{BorderInput, NegativeInput, StrictNegativeInput}
 
 class IntegerProperties(val firstInt: Int) {
 
@@ -171,7 +172,7 @@ class IntegerProperties(val firstInt: Int) {
   def sumOfDivisors:Int = firstInt.listDivisors.sum
 
   /**
-    * Checks, whether the Int is prime O(sqrt(n)).
+    * Checks, whether the Int is prime with O(sqrt(n)) speed.
     */
   def isPrime:Boolean = Try(isPrimeLogic()) match {
     case Success(something) => something
@@ -181,13 +182,75 @@ class IntegerProperties(val firstInt: Int) {
   /**
     * Sub-function for isPrime.
     */
-  def isPrimeLogic(cur: Int = 2):Boolean = {
+  private def isPrimeLogic(cur: Int = 2): Boolean = {
     if (firstInt == 2 || firstInt == 3) true
     else if (firstInt < 2) throw new InputException("\"isPrime\" " + BorderInput)
     else if (cur.toLong > Math.sqrt(firstInt.toLong)) true
     else if (firstInt % cur == 0) false
     else isPrimeLogic(cur + 1)
   }
+
+  /**
+    * Returns the greatest common divisor of two Integers
+    */
+  def gcdWith(secondInt: Int): Int = Try(gcdWithLogic(first = firstInt, second = secondInt)) match {
+    case Success(something) => something
+    case Failure(ex) => throw new InputException("\"gcdWith\" " + ex)
+  }
+
+  /**
+    * Sub-function for gcdWith
+    */
+  private def gcdWithLogic(first: Int, second: Int): Int = {
+    if (first < 0 || second < 0) throw new InputException(StrictNegativeInput)
+    else if (second == 0) first
+    else gcdWithLogic(second, first % second)
+  }
+
+  /**
+    * Returns the square of an Integer
+    */
+  def sqr: Int = firstInt * firstInt
+
+  /**
+    * Checks, whether the Int is prime with Fermat method with O(log(n)) speed.
+    */
+  def isPrimeFermat(iterations: Int = 100): Boolean = Try(isPrimeFermatBorders(localIterations = iterations)) match {
+    case Success(something) => something
+    case Failure(ex) => throw new InputException("\"isPrimeFermat\" " + ex)
+  }
+
+  /**
+    * Sub-functions for isPrimeFermat
+    */
+  private def isPrimeFermatBorders(first : Int = firstInt, localIterations : Int) : Boolean = {
+    if (localIterations == 0) true
+    else if (isPrimeFermatLogic(first)) isPrimeFermatBorders(first, localIterations - 1)
+    else false
+  }
+  private def isPrimeFermatLogic(n : Int) : Boolean = {
+    def checkWithRandomize(a : Int) : Boolean = {
+      val res = expmod(a, n, n)
+      res == a % n
+    }
+    checkWithRandomize(random(n - 1) + 1)
+  }
+  private def expmod(base : Int, exp : Int, m : Int) : Int = {
+    if (exp == 0) 1
+    else if (exp.isEven) expmod(base, exp / 2, m).sqr % m
+    else base * expmod(base, exp - 1, m) % m
+  }
+
+  /**
+    * Service function, that returns a random Int between 1 and n
+    */
+  private def random(n : Int) : Int = {
+
+    val random = new Random()
+
+    random.nextInt(n)
+  }
+
 }
 
 object IntegerProperties {

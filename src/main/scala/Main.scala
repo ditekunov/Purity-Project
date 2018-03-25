@@ -11,6 +11,7 @@ import scala.concurrent.Future
 
 object Main extends App {
 
+  val a: BigInt = BigInt(1000000000*1000000000)
 
-  print(17.0.inverse)
+print(7.gcdWith(14))
 }
