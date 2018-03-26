@@ -58,9 +58,11 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 # Encoders:
 1) RLE
 2) Huffman
+3) Gray
 
 # Decoders:
 1) RLE
+2) Gray
 
 # Planned:
 1) Huffman decoder
