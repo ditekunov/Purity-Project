@@ -29,6 +29,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 # Additional Integers math:
 1) .isFreeOfSquares
 2) .isCarmichael
+3) .isLuc_Carmichael
 
 # Integer lists generators:
 1) Arithmetic regression
@@ -39,6 +40,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 6) Divisors, multiple by N
 7) Prime divisors
 8) Carmichael numbers
+9) Luc-Carmichael numbers
 
 # Char operations:
 1) .isVowel

@@ -52,4 +52,9 @@ class IntegerGeneratorsTests extends FunSuite {
     561.generateCarmichaelNumbers shouldBe List(561)
   }
 
+  test("Testing of generateLucCarmichaelNumbers") {
+    100.generateLucCarmichaelNumbers shouldBe emptyList
+    399.generateLucCarmichaelNumbers shouldBe List(399)
+  }
+
 }

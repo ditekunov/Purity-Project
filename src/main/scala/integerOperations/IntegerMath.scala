@@ -10,7 +10,7 @@ class IntegerMath(val firstInt: Int) {
   import IntegerMath._
 
   /**
-    * Checks, if a number is free of squares
+    * Checks, if a number is free of squares.
     */
   def isFreeOfSquares: Boolean = {
     if (firstInt <= 1) throw new InputException(StrictNegativeInput)
@@ -18,7 +18,7 @@ class IntegerMath(val firstInt: Int) {
   }
 
   /**
-    * Checks, if a number is a Carmichael number
+    * Checks, if an Int is a Carmichael number.
     */
   def isCarmichael: Boolean = {
     if (firstInt <= 1) throw new InputException(StrictNegativeInput)
@@ -27,6 +27,20 @@ class IntegerMath(val firstInt: Int) {
 
       (for {cur <- curFactorisation if (firstInt - 1) % (cur - 1) == 0} yield true).length == curFactorisation.length &&
       curFactorisation.nonEmpty
+    }
+    else false
+  }
+
+  /**
+    * Checks, if an Int is a Luc-Carmichael number.
+    */
+  def isLuc_Carmichael: Boolean = {
+    if (firstInt <= 1) throw new InputException(StrictNegativeInput)
+    else if (firstInt.isFreeOfSquares && firstInt.isOdd) {
+      val curFactorisation: List[Int] = firstInt.generatePrimeDivisors.filter {cur => cur != firstInt}
+
+      (for {cur <- curFactorisation if (firstInt + 1) % (cur + 1) == 0} yield true).length == curFactorisation.length &&
+        curFactorisation.nonEmpty
     }
     else false
   }

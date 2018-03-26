@@ -160,6 +160,27 @@ class IntegerGenerators(val until: Int) {
     else generateCarmichaelNumbersLogic(outcomeList, cur + 1)
   }
 
+  /**
+    * Generates Carmichael numbers in a range from 1 to until.
+    *
+    * WARNING: in case of using factorisation, input over 100.000 is hard-code deprecated.
+    */
+  def generateLucCarmichaelNumbers: List[Int] = Try(generateLucCarmichaelNumbersLogic()) match {
+    case Success(something) => something.sorted
+    case Failure(ex) => throw new InputException(ex.toString)
+  }
+
+  /**
+    * Sub-function for generateCarmichaelNumbers.
+    */
+  private def generateLucCarmichaelNumbersLogic(outcomeList: List[Int] = List(), cur: Int = 3): List[Int] = {
+    if (until > 100000) throw new InputException(StackOverflowInput)
+    else if (until <= 1) throw new InputException(StrictNegativeInput)
+    else if (cur > until) outcomeList
+    else if (cur.isLuc_Carmichael) generateLucCarmichaelNumbersLogic(outcomeList :+ cur, cur + 1)
+    else generateLucCarmichaelNumbersLogic(outcomeList, cur + 1)
+  }
+
 
 }
 

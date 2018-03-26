@@ -99,4 +99,10 @@ class IntegerTests extends FunSuite {
     8911 shouldBe true
     17777 shouldBe false
   }
+
+  test("Testing of isLuc_Carmichael") {
+    399 shouldBe true
+    935 shouldBe true
+    17777 shouldBe false
+  }
 }
