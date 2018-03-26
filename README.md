@@ -2,7 +2,7 @@
 
 This project contains realisations of common-used math functions and classical algorithms, written in Scala's pure-functional style.
 
-Some of them are a new sight at Scala's standart library, some are persistent data structures, some are completely new functions.
+Some of them are a new sight at Scala's standard library, some are persistent data structures, some are completely new functions.
 
 The main purpose of this library is to spread ideas of a functional programming in Scala and to challenge yourself by creating classical imperative algorithms in a new way.
 
@@ -62,15 +62,15 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 
 # Decoders:
 1) RLE
-2) Gray
+2) Huffman
+3) Gray
 
 # Planned:
-1) Huffman decoder
-2) Operations with chars
-3) Operations with integers
-4) Operations with double
-5) Classical data structures
-6) Classical algorithms
+1) Operations with chars
+2) Operations with integers
+3) Operations with double
+4) Classical data structures
+5) Classical algorithms
 
 
 # Some sources, that were used via development:

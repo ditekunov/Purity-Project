@@ -4,61 +4,88 @@ import collection.immutable.Queue
 
 /**
   * Contains functional realisation of a Huffman encoding algorithm.
+  *
+  * Usage:
+  *
+  * HuffmanEncoder.encode() - to encode a string
+  *
+  * HuffmanEncoder.createCodeTree - to create a tree for decoder
+  *
   */
 object HuffmanEncoder {
 
+  //TODO: Finalize the doc
   /**
-    * Basic class, that contains:
+    * Basic object, that contains:
     *
-    * frequency - frequency of a given symbol, used to create a unique code.
+    * weight - function, that checks, whether the Node is a list and returns weight
     *
-    * emptyPrefix - adds an "empty string" prefix, when there are no new nodes
+    * chars - Puts a weight to a List
     *
-    * prefix - contains the whole code of a symbol
+    * makeCodeTree - Forks a tree to a binary tree
+    *
+    * times - returns the frequencies of a symbol
     *
     */
-  private abstract sealed class Tree[Char] {
-    val frequency: Int
+  abstract class CodeTree
 
-    def emptyPrefix: List[(Char, String)] = prefix("")
+  case class Fork(left: CodeTree, right: CodeTree, chars: List[Char], weight: Int) extends CodeTree
 
-    def prefix(prefix: String): List[(Char, String)]
+  case class Leaf(char: Char, weight: Int) extends CodeTree
+
+  private def weight(tree: CodeTree): Int = tree match {
+    case Fork(_, _, _, w) => w
+    case Leaf(_, w) => w
   }
 
-  private final case class InternalNode(left: Tree[Char], right: Tree[Char]) extends Tree[Char] {
-
-    val frequency: Int = left.frequency + right.frequency
-
-    def prefix(prefix: String): List[(Char, String)] =
-      left.prefix(prefix + "0") ::: right.prefix(prefix + "1")
-  }
-  private final case class LeafNode(element: Char, frequency: Int) extends Tree[Char] {
-    def prefix(prefix: String): List[(Char, String)] = List((element, prefix))
+  private def chars(tree: CodeTree): List[Char] = tree match {
+    case Fork(_, _, cs, _) => cs
+    case Leaf(c, _) => List(c)
   }
 
-  def encode(input: String): List[(Char, String)] = {
+  private def makeCodeTree(left: CodeTree, right: CodeTree) =
+    Fork(left, right, chars(left) ::: chars(right), weight(left) + weight(right))
 
-
-    val frequencies: List[(Int, Char)] = RLE_Encoder.encode(input.toList.sorted)
-    val frequenciesSort: List[(Char, Int)] = frequencies.map { tup: (Int, Char) => (tup._2, tup._1) }
-
-    def dequeueSmallest(q1: Queue[Tree[Char]], q2: Queue[Tree[Char]]) = {
-      if (q2.isEmpty) (q1.front, q1.dequeue._2, q2)
-      else if (q1.isEmpty || q2.front.frequency < q1.front.frequency) (q2.front, q1, q2.dequeue._2)
-      else (q1.front, q1.dequeue._2, q2)
+  private def times(chars: List[Char]): List[(Char, Int)] = {
+    def incr(acc: Map[Char, Int], c: Char) = {
+      val count = (acc get c).getOrElse(0) + 1
+      acc + ((c, count))
     }
 
-    def mainAlgorithm(q1: Queue[Tree[Char]], q2: Queue[Tree[Char]]): List[(Char, String)] = {
-      if (q1.length + q2.length == 1) (
-        if (q1.isEmpty) q2.front else q1.front
-        ).emptyPrefix
-      else {
-        val (v1, q3, q4) = dequeueSmallest(q1, q2)
-        val (v2, q5, q6) = dequeueSmallest(q3, q4)
-        mainAlgorithm(q5, q6.enqueue(InternalNode(v1, v2)))
-      }
+    (Map[Char, Int]() /: chars) (incr).iterator.toList
+  }
+
+  private def makeOrderedLeafList(freqs: List[(Char, Int)]): List[Leaf] = {
+    freqs.sortWith((f1, f2) => f1._2 < f2._2).map((f) => Leaf(f._1, f._2))
+  }
+
+  private def singleton(trees: List[CodeTree]): Boolean = trees.size == 1
+
+  private def combine(trees: List[CodeTree]): List[CodeTree] = trees match {
+    case left :: right :: cs => (makeCodeTree(left, right) :: cs)
+      .sortWith((t1, t2) => weight(t1) < weight(t2))
+    case _ => trees
+  }
+
+  private def until(p: List[CodeTree] => Boolean, f: List[CodeTree] => List[CodeTree])(trees: List[CodeTree]): List[CodeTree] = {
+    if (p(trees)) trees
+    else until(p, f)(f(trees))
+  }
+
+  def createCodeTree(inputChars: String): CodeTree = {
+    val chars = inputChars.toList
+    until(singleton, combine)(makeOrderedLeafList(times(chars))).head
+  }
+
+  def encode(inputText: String): List[Int] = {
+    val text = inputText.toList
+    val tree = createCodeTree(inputText)
+    def lookup(tree:  CodeTree)(c: Char): List[Int] = tree match {
+      case Leaf(_, _) => List()
+      case Fork(left, right, _, _) if chars(left).contains(c) => 0 :: lookup(left)(c)
+      case Fork(left, right, _, _) => 1 :: lookup(right)(c)
     }
-    mainAlgorithm(Queue.empty.enqueue(frequenciesSort sortWith  { _._2 < _._2 } map { e => LeafNode(e._1, e._2) }),
-      Queue.empty)
+
+    text flatMap lookup(tree)
   }
 }
