@@ -181,6 +181,23 @@ class IntegerGenerators(val until: Int) {
     else generateLucCarmichaelNumbersLogic(outcomeList, cur + 1)
   }
 
+  /**
+    * Generates Fibonacci numbers in a range from 1 to until.
+    */
+  def generateFibonacci: List[Int] = Try(generateFibonacciLogic()) match {
+    case Success(something) => something.sorted
+    case Failure(ex) => throw new InputException(ex.toString)
+  }
+
+  /**
+    * Sub-function for generateFibonacci
+    */
+  private def generateFibonacciLogic(outcomeList: List[Int] = List(0), cur: Int = 1): List[Int] = {
+    if (until < 0) throw new InputException("\"generateFibonacci\" " + NegativeInput)
+    else if (cur > until) outcomeList
+    else generateFibonacciLogic(outcomeList :+ cur, cur + outcomeList.last)
+  }
+
 
 }
 

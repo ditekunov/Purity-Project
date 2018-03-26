@@ -41,6 +41,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 7) Prime divisors
 8) Carmichael numbers
 9) Luc-Carmichael numbers
+10) Fibonacci Numbers
 
 # Char operations:
 1) .isVowel
@@ -77,6 +78,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 
 # Some sources, that were used via development:
 
+0) Martin Odersky's "Functional Programming in Scala Specialization "https://www.coursera.org/specializations/scala"
 1) Chris Okasaki's "Purely Functional Data Structures" (English)
 2) Richard Bird's "Pearls of Functional Algorithm Design" (English)
 3) Denis Shevchenko's "About Haskell in a human way": https://www.ohaskell.guide (Russian)

@@ -14,5 +14,5 @@ import scala.concurrent.Future
 
 object Main extends App {
 
-  print(935.isLuc_Carmichael)
+  print(100.generateFibonacci)
 }
