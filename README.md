@@ -81,3 +81,4 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 4) Louis Botterill's mostly software and techy Blog: http://louisbotterill.blogspot.ru (English)
 5) Alvin Alexander's scala blog: https://alvinalexander.com (English)
 6) Richard G.E. Pinch "The Carmichael numbers up to 10^18" https://arxiv.org/pdf/math/0604376v1.pdf
+7) Site about algorithms http://e-maxx.ru (Russian/English)
