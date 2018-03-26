@@ -1,9 +1,10 @@
 package unitTests
 
 import org.scalatest.Matchers._
-import functionalAlgorithms.encoders.{RLE_Encoder, HuffmanEncoder}
-import functionalAlgorithms.decoders.RLE_Decoder
+import functionalAlgorithms.encoders.{GrayEncoder, HuffmanEncoder, RLE_Encoder}
+import functionalAlgorithms.decoders.{GrayDecoder, RLE_Decoder}
 import org.scalatest.FunSuite
+import utils.InputException
 
 class EncodersDecodersTests extends FunSuite {
 
@@ -30,6 +31,20 @@ class EncodersDecodersTests extends FunSuite {
     val encodeResult: List[(Char, String)] = HuffmanEncoder.encode(testString)
 
     encodeResult shouldBe Huffman_encodedResult
+
+  }
+
+  test("Testing of Gray encoder/decoder") {
+
+    GrayEncoder.encode(4) shouldBe 6
+    assertThrows[InputException] {
+      GrayEncoder.encode(-1)
+    }
+
+    GrayDecoder.decode(6) shouldBe 4
+    assertThrows[InputException] {
+      GrayDecoder.decode(-1)
+    }
 
   }
 }
