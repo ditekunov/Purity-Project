@@ -3,6 +3,7 @@ package unitTests
 import org.scalatest.FunSuite
 import integerOperations.IntegerGenerators._
 import org.scalatest.Matchers._
+import utils.InputException
 
 
 class IntegerGeneratorsTests extends FunSuite {
@@ -55,6 +56,21 @@ class IntegerGeneratorsTests extends FunSuite {
   test("Testing of generateLucCarmichaelNumbers") {
     100.generateLucCarmichaelNumbers shouldBe emptyList
     399.generateLucCarmichaelNumbers shouldBe List(399)
+  }
+
+  test("Testing of generateFinonacci") {
+    100.generateFibonacci shouldBe List(0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89)
+    1.generateFibonacci shouldBe List(0, 1, 1)
+    assertThrows[InputException] {
+      (-1).generateFibonacci
+    }
+  }
+
+  test("Testing of generateRandomInts") {
+    100.generateRandomInts should be
+    assertThrows[InputException] {
+      (-10).generateRandomInts
+    }
   }
 
 }

@@ -178,9 +178,7 @@ class IntegerProperties(val firstInt: Int) {
     * Service function, that returns a random Int between 1 and n
     */
   private def random(n: Int) : Int = {
-
     val random = new Random()
-
     random.nextInt(n)
   }
 
