@@ -66,4 +66,11 @@ class IntegerGeneratorsTests extends FunSuite {
     }
   }
 
+  test("Testing of generateRandomInts") {
+    100.generateRandomInts should be
+    assertThrows[InputException] {
+      (-10).generateRandomInts
+    }
+  }
+
 }

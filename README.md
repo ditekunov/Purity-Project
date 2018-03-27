@@ -10,6 +10,9 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 
 # Current list of supported algorithms:
 
+# Sorting algorithms:
+1) QuickSort
+
 # Integer operations:
 1) .isOdd
 2) .isEven
@@ -41,7 +44,8 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 7) Prime divisors
 8) Carmichael numbers
 9) Luc-Carmichael numbers
-10) Fibonacci Numbers
+10) Fibonacci numbers
+11) Random ints
 
 # Char operations:
 1) .isVowel
@@ -74,6 +78,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 3) Operations with double
 4) Classical data structures
 5) Classical algorithms
+6) isFibonacci
 
 
 # Some sources, that were used via development:

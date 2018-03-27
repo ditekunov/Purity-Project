@@ -8,11 +8,14 @@ import integerOperations.IntegerGenerators._
 import doubleOperations.DoubleProperties._
 import functionalAlgorithms.decoders.{GrayDecoder, HuffmanDecoder}
 import functionalAlgorithms.encoders.{GrayEncoder, HuffmanEncoder, RLE_Encoder}
+import sortingAlgorithms.QuickSort._
 
 import scala.concurrent.Future
 
 
 object Main extends App {
 
-  print(100.generateFibonacci)
+  print(100.generateRandomInts)
+
+  //print(quickSort(List(2,1)))
 }
