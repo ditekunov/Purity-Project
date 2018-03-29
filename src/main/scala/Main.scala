@@ -15,7 +15,5 @@ import scala.concurrent.Future
 
 object Main extends App {
 
-  print(100.generateRandomInts)
-
-  //print(quickSort(List(2,1)))
+  //print(999.isPrimeFermat())
 }

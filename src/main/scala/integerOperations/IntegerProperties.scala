@@ -141,9 +141,24 @@ class IntegerProperties(val firstInt: Int) {
   }
 
   /**
-    * Returns the square of an Integer
+    * Returns the square of an Integer.
     */
   def sqr: Int = firstInt * firstInt
+
+  /**
+    * Returns the N power of an Integer
+    */
+  def powN(n: Int): BigInt = Try(sqrNLogic(localIterations = n)) match {
+    case Success(something) => something
+    case Failure(ex) => throw new InputException("\"sqrN\" " + ex)
+  }
+
+  private def sqrNLogic(localIterations: Int, total: Int = 1): BigInt = localIterations match {
+    case 0 => total
+    case _ =>
+      if (localIterations > 0 && firstInt >= 0) sqrNLogic(localIterations - 1, total * firstInt)
+      else throw new InputException(NegativeInput)
+  }
 
   /**
     * Checks, whether the Int is prime with Fermat method with O(log(n)) speed.
