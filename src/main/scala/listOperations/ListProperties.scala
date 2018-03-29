@@ -6,7 +6,7 @@ import utils.InputException
 object ListProperties {
 
   /**
-    * Returns nth element of a sequence
+    * Returns nth element of a list.
     */
   def get[A](input: List[A], index: Int): A = (index, input) match {
     case (0, element :: _) => element
@@ -15,7 +15,7 @@ object ListProperties {
   }
 
   /**
-    * Checks, whether a list is a palindrome
+    * Checks, whether a list is a palindrome.
     */
   def isPalindrome[A](input: List[A]): Boolean = {
     if (input.isEmpty) throw new InputException("\"isPalindrome\" " + EmptyInput)
@@ -23,7 +23,7 @@ object ListProperties {
   }
 
   /**
-    * Checks, whether a value is a palindrome
+    * Checks, whether a value is a palindrome.
     */
   def isPalindrome[A](input: A): Boolean = input match {
     case None => throw new InputException("\"isPalindrome\" " + NoneInput)
@@ -31,12 +31,16 @@ object ListProperties {
     case Some(element) => element.toString == element.toString.reverse
   }
 
-
-
-
-
-
-
+  /**
+    * Checks whether the list is sorted.
+    */
+  def isSorted(input: List[Int])(implicit ord: Ordering[Int]): Boolean = input match {
+    case List() => true
+    case List(element) => true
+    case _ => input.sliding(2).forall {
+      case List(firstElement, secondElement) => ord.lteq(firstElement, secondElement)
+    }
+  }
 
 
 }

@@ -7,7 +7,7 @@ import integerOperations.IntegerMath._
 import integerOperations.IntegerGenerators._
 import doubleOperations.DoubleProperties._
 import functionalAlgorithms.decoders.{GrayDecoder, HuffmanDecoder}
-import functionalAlgorithms.encoders.{GrayEncoder, HuffmanEncoder, RLE_Encoder}
+import functionalAlgorithms.encoders.{GrayEncoder, HuffmanEncoder, RLE_Encoder, MorseEncoder}
 import sortingAlgorithms.QuickSort._
 
 import scala.concurrent.Future
@@ -15,5 +15,4 @@ import scala.concurrent.Future
 
 object Main extends App {
 
-  //print(999.isPrimeFermat())
 }

@@ -218,8 +218,6 @@ class IntegerGenerators(val until: Int) {
     if (until < 0) throw new InputException("\"generateRandomInts\" " + NegativeInput)
     else if (cur > until) outcomeList
     else generateFibonacciLogic(outcomeList :+ random(until), cur + 1)
-
-
   }
 }
 
