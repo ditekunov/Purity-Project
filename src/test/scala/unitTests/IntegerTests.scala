@@ -5,6 +5,7 @@ import org.scalatest.Matchers._
 import integerOperations.IntegerProperties._
 import integerOperations.IntegerGenerators._
 import utils.InputException
+import integerOperations.IntegerMath._
 
 class IntegerTests extends FunSuite {
 
@@ -81,10 +82,18 @@ class IntegerTests extends FunSuite {
     21.gcdWith(7) shouldBe 7
   }
 
-  test("testing of sqr") {
+  test("Testing of sqr") {
     0.sqr shouldBe 0
     7.sqr shouldBe 49
     -2.sqr shouldBe 4
+  }
+
+  test("Testing of powN") {
+    0.powN(3) shouldBe 0
+    10.powN(2) shouldBe 100
+    assertThrows[InputException] {
+      -2.powN(5)
+    }
   }
 
   test("Testing of isPrimeFermat") {
@@ -95,14 +104,14 @@ class IntegerTests extends FunSuite {
   }
 
   test("Testing of isCarmichael") {
-    561 shouldBe true
-    8911 shouldBe true
-    17777 shouldBe false
+    561.isCarmichael shouldBe true
+    8911.isCarmichael shouldBe true
+    17777.isCarmichael shouldBe false
   }
 
   test("Testing of isLuc_Carmichael") {
-    399 shouldBe true
-    935 shouldBe true
-    17777 shouldBe false
+    399.isLuc_Carmichael shouldBe true
+    935.isLuc_Carmichael shouldBe true
+    17777.isLuc_Carmichael shouldBe false
   }
 }

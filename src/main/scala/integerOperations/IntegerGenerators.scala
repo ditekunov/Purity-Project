@@ -135,7 +135,7 @@ class IntegerGenerators(val until: Int) {
     */
  private def generatePrimeDivisorsLogic(divisorsList: List[Int] = List()): List[Int] = {
    if (until < 0) throw new InputException("\"listDivisors\" " + NegativeInput)
-   else until.generateDivisors.filter {cur => cur == 1 || cur.isPrime }.filter {cur => cur != 1}
+   else until.generateDivisors.filter {cur =>( cur == 1 || cur.isPrime) && cur != 1 }
  }
 
 

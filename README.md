@@ -27,7 +27,8 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 13) .isPrime O(sqrt(n)) speed
 14) .isPrimeFermat(n) O(log(n)) speed
 15) .sqr
-16) .gcdWith(secondInt)
+16) .powN(N)
+17) .gcdWith(secondInt)
 
 # Additional Integers math:
 1) .isFreeOfSquares
