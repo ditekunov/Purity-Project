@@ -67,6 +67,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 1) RLE
 2) Huffman
 3) Gray
+4) Morse
 
 # Decoders:
 1) RLE
