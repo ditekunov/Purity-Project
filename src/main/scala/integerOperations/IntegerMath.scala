@@ -44,6 +44,14 @@ class IntegerMath(val firstInt: Int) {
     }
     else false
   }
+
+  /**
+    * Checks, if an Int is a Fibonacci number.
+    */
+  def isFibonacci: Boolean = {
+    if (firstInt < 0) throw new InputException(StrictNegativeInput)
+    else firstInt.generateFibonacci.contains(firstInt)
+  }
 }
 
 object IntegerMath {

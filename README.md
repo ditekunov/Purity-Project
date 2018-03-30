@@ -34,6 +34,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 1) .isFreeOfSquares
 2) .isCarmichael
 3) .isLuc_Carmichael
+4) .isFibonacci
 
 # Integer lists generators:
 1) Arithmetic regression
@@ -80,7 +81,6 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 3) Operations with double
 4) Classical data structures
 5) Classical algorithms
-6) isFibonacci
 
 
 # Some sources, that were used via development:

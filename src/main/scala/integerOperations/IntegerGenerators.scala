@@ -31,6 +31,8 @@ class IntegerGenerators(val until: Int) {
 
   /**
     * Generates list in range from 1 to until
+    *
+    * https://en.wikipedia.org/wiki/Arithmetic_progression
     */
   def generateArithmeticProgression: List[Int] = Try(generateArithmeticProgressionLogic()) match {
     case Success(something) => something
@@ -48,6 +50,8 @@ class IntegerGenerators(val until: Int) {
 
   /**
     * Generates squares in range from 2 to firstInt
+    *
+    * https://en.wikipedia.org/wiki/Square_number
     */
   def generateSquares: List[Int] = Try(generateSquaresLogic()) match {
     case Success(something) => something
@@ -65,6 +69,8 @@ class IntegerGenerators(val until: Int) {
 
   /**
     * Returns the list of all the binary divisors of a number.
+    *
+    * https://en.wikipedia.org/wiki/Divisor
     */
   def generateBinaryDivisors: List[Int] = Try(generateBinaryDivisorsLogic()) match {
     case Success(something) => something
@@ -83,6 +89,8 @@ class IntegerGenerators(val until: Int) {
 
   /**
     * Returns the list of all the n-multiply divisors of a number.
+    *
+    * https://en.wikipedia.org/wiki/Divisor
     */
   def generateN_MultipleDivisors(n: Int): List[Int] = {
     if (n != 1)
@@ -105,6 +113,8 @@ class IntegerGenerators(val until: Int) {
 
   /**
     * Returns the list of all the divisors of a number.
+    *
+    * https://en.wikipedia.org/wiki/Divisor
     */
   def generateDivisors: List[Int] = Try(generateDivisorsLogic()) match {
     case Success(something) => something.sorted
@@ -124,6 +134,8 @@ class IntegerGenerators(val until: Int) {
 
   /**
     * Returns the list of all the divisors of a number.
+    *
+    * https://en.wikipedia.org/wiki/Prime_number
     */
   def generatePrimeDivisors: List[Int] = Try(generatePrimeDivisorsLogic()) match {
     case Success(something) => something.sorted
@@ -143,6 +155,8 @@ class IntegerGenerators(val until: Int) {
     * Generates Carmichael numbers in a range from 1 to until.
     *
     * WARNING: in case of using factorisation, input over 100.000 is hard-code deprecated.
+    *
+    * https://en.wikipedia.org/wiki/Carmichael_number
     */
   def generateCarmichaelNumbers: List[Int] = Try(generateCarmichaelNumbersLogic()) match {
     case Success(something) => something.sorted
@@ -161,28 +175,32 @@ class IntegerGenerators(val until: Int) {
   }
 
   /**
-    * Generates Carmichael numbers in a range from 1 to until.
+    * Generates Lucas-Carmichael numbers in a range from 1 to until.
     *
     * WARNING: in case of using factorisation, input over 100.000 is hard-code deprecated.
+    *
+    * https://en.wikipedia.org/wiki/Lucas–Carmichael_number
     */
-  def generateLucCarmichaelNumbers: List[Int] = Try(generateLucCarmichaelNumbersLogic()) match {
+  def generateLucasCarmichaelNumbers: List[Int] = Try(generateLucasCarmichaelNumbersLogic()) match {
     case Success(something) => something.sorted
     case Failure(ex) => throw new InputException(ex.toString)
   }
 
   /**
-    * Sub-function for generateCarmichaelNumbers.
+    * Sub-function for generateLucasCarmichaelNumbers.
     */
-  private def generateLucCarmichaelNumbersLogic(outcomeList: List[Int] = List(), cur: Int = 3): List[Int] = {
+  private def generateLucasCarmichaelNumbersLogic(outcomeList: List[Int] = List(), cur: Int = 3): List[Int] = {
     if (until > 100000) throw new InputException(StackOverflowInput)
     else if (until <= 1) throw new InputException(StrictNegativeInput)
     else if (cur > until) outcomeList
-    else if (cur.isLuc_Carmichael) generateLucCarmichaelNumbersLogic(outcomeList :+ cur, cur + 1)
-    else generateLucCarmichaelNumbersLogic(outcomeList, cur + 1)
+    else if (cur.isLuc_Carmichael) generateLucasCarmichaelNumbersLogic(outcomeList :+ cur, cur + 1)
+    else generateLucasCarmichaelNumbersLogic(outcomeList, cur + 1)
   }
 
   /**
     * Generates Fibonacci numbers in a range from 1 to until.
+    *
+    * https://en.wikipedia.org/wiki/Fibonacci_number
     */
   def generateFibonacci: List[Int] = Try(generateFibonacciLogic()) match {
     case Success(something) => something.sorted
@@ -190,7 +208,7 @@ class IntegerGenerators(val until: Int) {
   }
 
   /**
-    * Sub-function for generateFibonacci
+    * Sub-function for generateFibonacci.
     */
   private def generateFibonacciLogic(outcomeList: List[Int] = List(0), cur: Int = 1): List[Int] = {
     if (until < 0) throw new InputException("\"generateFibonacci\" " + NegativeInput)
@@ -200,6 +218,8 @@ class IntegerGenerators(val until: Int) {
 
   /**
     * Generates random numbers in a range from 1 to until.
+    *
+    * https://en.wikipedia.org/wiki/Pseudorandom_number_generator
     */
   def generateRandomInts: List[Int] = Try(generateRandomIntsLogic()) match {
     case Success(something) => something.sorted
@@ -219,6 +239,27 @@ class IntegerGenerators(val until: Int) {
     else if (cur > until) outcomeList
     else generateFibonacciLogic(outcomeList :+ random(until), cur + 1)
   }
+
+  /**
+    * Generates Catalan numbers in a range from 1 to until.
+    *
+    * https://en.wikipedia.org/wiki/Catalan_number
+    */
+//  def generateCatalanNumbers: List[Int] = Try(generateCatalanNumbersLogic()) match {
+//    case Success(something) => something
+//    case Failure(ex) => throw new InputException(ex.toString)
+//  }
+
+  /**
+    * Sub-function for generateCatalanNumbers.
+    */
+//  private def generateCatalanNumbersLogic(outcomeList: List[Int] = List(1), cur: Int = until ): List[Int] = {
+//    if (cur < 0) throw new InputException("\"generateCatalanNumbers\" " + StrictNegativeInput)
+//    else if (cur <= 1)
+//    else if (cur > until) outcomeList
+//    else generateCatalanNumbersLogic(outcomeList :+ cur, cur * ( (2*(2*(outcomeList.last)+1))/(outcomeList.last+2)))
+//  }
+
 }
 
 
