@@ -3,6 +3,7 @@ package unitTests
 import org.scalatest.FunSuite
 import org.scalatest.Matchers._
 import sortingAlgorithms._
+import sortingAlgorithms.unseriousAlgorithms.Bogosort
 
 class SortingAlgorithmsTests extends FunSuite {
   final lazy val unsortedList = List(8,4,6,1,7,3,8,4,7,9,2,7)
@@ -14,5 +15,9 @@ test("Testing of the quickSort") {
   QuickSort.quickSort(sortedList) shouldBe sortedList
   QuickSort.quickSort(emptyList) shouldBe emptyList
 }
+
+  Bogosort.bogosort(sortedList) shouldBe sortedList
+  Bogosort.bogosort(List(3,2,1)) shouldBe List(1,2,3)
+  Bogosort.bogosort(emptyList) shouldBe emptyList
 
 }

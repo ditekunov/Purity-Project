@@ -66,10 +66,10 @@ class IntegerMath(val firstInt: Int) {
   /**
     * Sub-function for nthCatalan
     */
-  private def nthCatalanLogic(input: Int): Int =
-    if (input <= 0) throw new InputException("\"nthCatalan\" " + NegativeOrZeroInput)
-    else if (input == 1) 1
+  private def nthCatalanLogic(input: Int): Int = {
+    if (input <= 1) 1
     else (0 until input).map(i => nthCatalanLogic(i) * nthCatalanLogic(input - i - 1)).sum
+  }
 
 }
 
