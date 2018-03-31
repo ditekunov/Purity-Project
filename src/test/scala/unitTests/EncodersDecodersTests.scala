@@ -1,8 +1,8 @@
 package unitTests
 
 import org.scalatest.Matchers._
-import functionalAlgorithms.encoders.{GrayEncoder, HuffmanEncoder, RLE_Encoder}
-import functionalAlgorithms.decoders.{GrayDecoder, RLE_Decoder}
+import functionalAlgorithms.encoders.{GrayEncoder, HuffmanEncoder, MorseEncoder, RLE_Encoder}
+import functionalAlgorithms.decoders.{GrayDecoder, MorseDecoder, RLE_Decoder}
 import org.scalatest.FunSuite
 import utils.InputException
 
@@ -34,9 +34,6 @@ class EncodersDecodersTests extends FunSuite {
       0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0,
       0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0)
 
-
-
-
     HuffmanEncoder.encode(testString) shouldBe encodedHuffmanString
 
   }
@@ -53,5 +50,13 @@ class EncodersDecodersTests extends FunSuite {
       GrayDecoder.decode(-1)
     }
 
+  }
+
+  test("Testing of Morse encoder/decoder") {
+    MorseDecoder.decode(MorseEncoder.encode("sos")) shouldBe "sos"
+
+    assertThrows[InputException] {
+      MorseEncoder.encode(";;;;;;")
+    }
   }
 }

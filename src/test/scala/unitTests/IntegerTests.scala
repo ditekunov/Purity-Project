@@ -114,4 +114,15 @@ class IntegerTests extends FunSuite {
     935.isLuc_Carmichael shouldBe true
     17777.isLuc_Carmichael shouldBe false
   }
+
+  test("Testing of isFibonacci") {
+    0.isFibonacci shouldBe true
+    1.isFibonacci shouldBe true
+    4.isFibonacci shouldBe false
+    assertThrows[InputException] {
+      (-1).isFibonacci
+    }
+  }
+
+  test("Testing of isCatalan")
 }

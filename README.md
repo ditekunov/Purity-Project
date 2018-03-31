@@ -34,6 +34,8 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 1) .isFreeOfSquares
 2) .isCarmichael
 3) .isLuc_Carmichael
+4) .isFibonacci
+5) .nthCatalan
 
 # Integer lists generators:
 1) Arithmetic regression
@@ -62,6 +64,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 3) isPalindrome([A])
 3) Counter for the number of sign changes in a list of integers
 4) Counter for the number of letter changes from vowel to consonant in a list of integers
+5) .isSorted
 
 # Encoders:
 1) RLE
@@ -73,6 +76,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 1) RLE
 2) Huffman
 3) Gray
+4) Morse
 
 # Planned:
 1) Operations with chars
@@ -80,7 +84,6 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 3) Operations with double
 4) Classical data structures
 5) Classical algorithms
-6) isFibonacci
 
 
 # Some sources, that were used via development:
