@@ -56,7 +56,7 @@ class EncodersDecodersTests extends FunSuite {
     MorseDecoder.decode(MorseEncoder.encode("sos")) shouldBe "sos"
 
     assertThrows[InputException] {
-      MorseEncoder.encode("ЭЭЭЭЭ")
+      MorseEncoder.encode(";;;;;;")
     }
   }
 }

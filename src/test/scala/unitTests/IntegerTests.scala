@@ -123,4 +123,6 @@ class IntegerTests extends FunSuite {
       (-1).isFibonacci
     }
   }
+
+  test("Testing of isCatalan")
 }

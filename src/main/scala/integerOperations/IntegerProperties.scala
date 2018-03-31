@@ -4,7 +4,7 @@ package integerOperations
 import utils.InputException
 
 import scala.util.{Failure, Random, Success, Try}
-import utils.ExceptionMessages.{BorderInput, NegativeInput, StrictNegativeInput}
+import utils.ExceptionMessages.{BorderInput, NegativeOrZeroInput, NegativeInput}
 import integerOperations.IntegerGenerators._
 
 class IntegerProperties(val firstInt: Int) {
@@ -86,7 +86,7 @@ class IntegerProperties(val firstInt: Int) {
     * Finds the greatest divisor of a number.
     */
   def nthGreatestDivisor(nPosition: Int): Int = {
-    if (nPosition < 0) throw new InputException("\"nthGreatestDivisor\" " + NegativeInput)
+    if (nPosition < 0) throw new InputException("\"nthGreatestDivisor\" " + NegativeOrZeroInput)
     else Try(firstInt.generateDivisors.sortWith(_ > _)(nPosition)) match {
       case Success(something) => something
       case Failure(ex) => throw new InputException("\"nthGreatestDivisor\" got " + ex.toString)
@@ -135,7 +135,7 @@ class IntegerProperties(val firstInt: Int) {
     * Sub-function for gcdWith
     */
   private def gcdWithLogic(first: Int, second: Int): Int = {
-    if (first < 0 || second < 0) throw new InputException(StrictNegativeInput)
+    if (first < 0 || second < 0) throw new InputException(NegativeInput)
     else if (second == 0) first
     else gcdWithLogic(second, first % second)
   }
@@ -157,7 +157,7 @@ class IntegerProperties(val firstInt: Int) {
     case 0 => total
     case _ =>
       if (localIterations > 0 && firstInt >= 0) sqrNLogic(localIterations - 1, total * firstInt)
-      else throw new InputException(NegativeInput)
+      else throw new InputException(NegativeOrZeroInput)
   }
 
   /**

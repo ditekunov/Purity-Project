@@ -1,14 +1,14 @@
 package integerOperations
 
-import utils.ExceptionMessages.StrictNegativeInput
+import utils.ExceptionMessages.NegativeInput
 import utils.InputException
-import utils.ExceptionMessages.{NegativeInput, StackOverflowInput}
+import utils.ExceptionMessages.{NegativeOrZeroInput, StackOverflowInput}
 
 import scala.util.{Failure, Random, Success, Try}
 import IntegerProperties._
 import IntegerMath._
 
-class IntegerGenerators(val until: Int) {
+class IntegerGenerators(val til: Int) {
 
   import IntegerGenerators._
 
@@ -23,8 +23,8 @@ class IntegerGenerators(val until: Int) {
   /**
     * Sub-function for generateArithmeticRegression
     */
-  private def generateArithmeticRegressionLogic(cur: Int = until, regressionList: List[Int] = List()): List[Int] = {
-    if (until < 0) throw new InputException("\"generateArithmeticRegression\" " + NegativeInput)
+  private def generateArithmeticRegressionLogic(cur: Int = til, regressionList: List[Int] = List()): List[Int] = {
+    if (til < 0) throw new InputException("\"generateArithmeticRegression\" " + NegativeOrZeroInput)
       if (cur == 0) regressionList
       else generateArithmeticRegressionLogic(cur - 1, regressionList :+ cur)
     }
@@ -43,8 +43,8 @@ class IntegerGenerators(val until: Int) {
     * Sub-function for generateArithmeticProgression
     */
   private def generateArithmeticProgressionLogic(cur: Int = 1, regressionList: List[Int] = List()): List[Int] = {
-    if (until < 0) throw new InputException("\"generateArithmeticProgression\" " + NegativeInput)
-    if (cur == until) regressionList :+ cur
+    if (til < 0) throw new InputException("\"generateArithmeticProgression\" " + NegativeOrZeroInput)
+    if (cur == til) regressionList :+ cur
     else generateArithmeticProgressionLogic(cur + 1, regressionList :+ cur)
   }
 
@@ -62,8 +62,8 @@ class IntegerGenerators(val until: Int) {
     * Sub-function for generateSquares
     */
   private def generateSquaresLogic(squaresList: List[Int] = List(), cur: Int = 2): List[Int] = {
-    if (until <= 0) throw new InputException(StrictNegativeInput)
-    else if (cur * cur > until) squaresList
+    if (til <= 0) throw new InputException(NegativeInput)
+    else if (cur * cur > til) squaresList
     else generateSquaresLogic(squaresList :+ cur * cur, cur + 1)
   }
 
@@ -81,9 +81,9 @@ class IntegerGenerators(val until: Int) {
     * Sub-function for listBinaryDivisors(), to provide deep recursion handling.
     */
   private def generateBinaryDivisorsLogic(divisorsList: List[Int] = List(), total: Int = 2): List[Int] = {
-    if (total == until) divisorsList :+ until
-    else if (total > until) divisorsList
-    else if (until % total == 0) generateBinaryDivisorsLogic(divisorsList :+ total, total * 2)
+    if (total == til) divisorsList :+ til
+    else if (total > til) divisorsList
+    else if (til % total == 0) generateBinaryDivisorsLogic(divisorsList :+ total, total * 2)
     else generateBinaryDivisorsLogic(divisorsList, total * 2)
   }
 
@@ -98,16 +98,16 @@ class IntegerGenerators(val until: Int) {
         case Success(something) => something
         case Failure(ex) => throw new InputException("\"listN_MultipleDivisors\" got " + ex.toString)
       }
-    else generateArithmeticRegressionLogic(until).reverse
+    else generateArithmeticRegressionLogic(til).reverse
   }
 
   /**
     * Sub-function for listN_MultipleDivisors(), to provide deep recursion handling.
     */
   private def generateN_MultipleDivisorsLogic(n: Int, divisorsList: List[Int] = List(), total: Int): List[Int] = {
-    if (total == until) divisorsList :+ until
-    else if (total > until) divisorsList
-    else if (until % total == 0) generateN_MultipleDivisorsLogic(n, divisorsList :+ total, total * n)
+    if (total == til) divisorsList :+ til
+    else if (total > til) divisorsList
+    else if (til % total == 0) generateN_MultipleDivisorsLogic(n, divisorsList :+ total, total * n)
     else generateN_MultipleDivisorsLogic(n, divisorsList, total * n)
   }
 
@@ -124,11 +124,11 @@ class IntegerGenerators(val until: Int) {
   /**
     * Sub-function for listDivisors(), to provide deep recursion handling.
     */
-  private def generateDivisorsLogic(divisorsList: List[Int] = List(until), total: Int = 1): List[Int] = {
-    if (until < 0) throw new InputException("\"listDivisors\" " + NegativeInput)
-    else if (total == until / 2 + 1) divisorsList
-    else if (total > until / 2) divisorsList
-    else if (until % total == 0) generateDivisorsLogic(divisorsList :+ total, total + 1)
+  private def generateDivisorsLogic(divisorsList: List[Int] = List(til), total: Int = 1): List[Int] = {
+    if (til < 0) throw new InputException("\"listDivisors\" " + NegativeOrZeroInput)
+    else if (total == til / 2 + 1) divisorsList
+    else if (total > til / 2) divisorsList
+    else if (til % total == 0) generateDivisorsLogic(divisorsList :+ total, total + 1)
     else generateDivisorsLogic(divisorsList, total + 1)
   }
 
@@ -146,8 +146,8 @@ class IntegerGenerators(val until: Int) {
     * Sub-function for generatePrimeDivisors.
     */
  private def generatePrimeDivisorsLogic(divisorsList: List[Int] = List()): List[Int] = {
-   if (until < 0) throw new InputException("\"listDivisors\" " + NegativeInput)
-   else until.generateDivisors.filter {cur =>( cur == 1 || cur.isPrime) && cur != 1 }
+   if (til < 0) throw new InputException("\"listDivisors\" " + NegativeOrZeroInput)
+   else til.generateDivisors.filter { cur =>( cur == 1 || cur.isPrime) && cur != 1 }
  }
 
 
@@ -167,9 +167,9 @@ class IntegerGenerators(val until: Int) {
     * Sub-function for generateCarmichaelNumbers.
     */
   private def generateCarmichaelNumbersLogic(outcomeList: List[Int] = List(), cur: Int = 3): List[Int] = {
-    if (until > 100000) throw new InputException(StackOverflowInput)
-    else if (until <= 1) throw new InputException(StrictNegativeInput)
-    else if (cur > until) outcomeList
+    if (til > 100000) throw new InputException(StackOverflowInput)
+    else if (til <= 1) throw new InputException(NegativeInput)
+    else if (cur > til) outcomeList
     else if (cur.isCarmichael) generateCarmichaelNumbersLogic(outcomeList :+ cur, cur + 1)
     else generateCarmichaelNumbersLogic(outcomeList, cur + 1)
   }
@@ -190,9 +190,9 @@ class IntegerGenerators(val until: Int) {
     * Sub-function for generateLucasCarmichaelNumbers.
     */
   private def generateLucasCarmichaelNumbersLogic(outcomeList: List[Int] = List(), cur: Int = 3): List[Int] = {
-    if (until > 100000) throw new InputException(StackOverflowInput)
-    else if (until <= 1) throw new InputException(StrictNegativeInput)
-    else if (cur > until) outcomeList
+    if (til > 100000) throw new InputException(StackOverflowInput)
+    else if (til <= 1) throw new InputException(NegativeInput)
+    else if (cur > til) outcomeList
     else if (cur.isLuc_Carmichael) generateLucasCarmichaelNumbersLogic(outcomeList :+ cur, cur + 1)
     else generateLucasCarmichaelNumbersLogic(outcomeList, cur + 1)
   }
@@ -211,8 +211,8 @@ class IntegerGenerators(val until: Int) {
     * Sub-function for generateFibonacci.
     */
   private def generateFibonacciLogic(outcomeList: List[Int] = List(0), cur: Int = 1): List[Int] = {
-    if (until < 0) throw new InputException("\"generateFibonacci\" " + NegativeInput)
-    else if (cur > until) outcomeList
+    if (til < 0) throw new InputException("\"generateFibonacci\" " + NegativeOrZeroInput)
+    else if (cur > til) outcomeList
     else generateFibonacciLogic(outcomeList :+ cur, cur + outcomeList.last)
   }
 
@@ -235,9 +235,9 @@ class IntegerGenerators(val until: Int) {
       random.nextInt(n)
     }
 
-    if (until < 0) throw new InputException("\"generateRandomInts\" " + NegativeInput)
-    else if (cur > until) outcomeList
-    else generateFibonacciLogic(outcomeList :+ random(until), cur + 1)
+    if (til < 0) throw new InputException("\"generateRandomInts\" " + NegativeOrZeroInput)
+    else if (cur > til) outcomeList
+    else generateFibonacciLogic(outcomeList :+ random(til), cur + 1)
   }
 
   /**
@@ -259,6 +259,8 @@ class IntegerGenerators(val until: Int) {
 //    else if (cur > until) outcomeList
 //    else generateCatalanNumbersLogic(outcomeList :+ cur, cur * ( (2*(2*(outcomeList.last)+1))/(outcomeList.last+2)))
 //  }
+
+
 
 }
 

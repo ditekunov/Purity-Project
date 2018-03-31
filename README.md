@@ -35,6 +35,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 2) .isCarmichael
 3) .isLuc_Carmichael
 4) .isFibonacci
+5) .nthCatalan
 
 # Integer lists generators:
 1) Arithmetic regression
@@ -69,11 +70,13 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 1) RLE
 2) Huffman
 3) Gray
+4) Morse
 
 # Decoders:
 1) RLE
 2) Huffman
 3) Gray
+4) Morse
 
 # Planned:
 1) Operations with chars

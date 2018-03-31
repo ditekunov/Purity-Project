@@ -16,7 +16,9 @@ import scala.concurrent.Future
 object Main extends App {
 
   //print(MorseEncoder.encode("sos").split('|'))
-  print(MorseDecoder.decode(MorseEncoder.encode("sos")))
+  //print(MorseDecoder.decode(MorseEncoder.encode("sos")))
+
+
 
 
 }
