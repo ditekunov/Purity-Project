@@ -23,7 +23,7 @@ class CharTests extends FunSuite {
     Vowels.foreach { cur: Char => cur.isVowel shouldBe true }
     Vowels.foreach { cur: Char => cur.isConsonant shouldBe false }
     assertThrows[InputException] {
-      'я'.isVowel
+      ','.isVowel
     }
   }
 
@@ -32,7 +32,7 @@ class CharTests extends FunSuite {
     Consonants.foreach { cur: Char => cur.toUpper.isConsonant shouldBe true  }
     Consonants.foreach { cur: Char => cur.isVowel shouldBe false }
     assertThrows[InputException] {
-      'я'.isConsonant
+      ','.isConsonant
     }
   }
 }
