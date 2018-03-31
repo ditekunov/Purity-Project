@@ -74,6 +74,6 @@ class IntegerMath(val firstInt: Int) {
 }
 
 object IntegerMath {
-  implicit def intToIntegerMath(a: Int): IntegerMath = new IntegerMath(a)
+  implicit def intToMathImplicit(a: Int): IntegerMath = new IntegerMath(a)
 }
 
