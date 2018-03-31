@@ -199,5 +199,5 @@ class IntegerProperties(val firstInt: Int) {
 }
 
 object IntegerProperties {
-  implicit def intToIntegerProperties(a: Int): IntegerProperties = new IntegerProperties(a)
+  implicit def intToPropsImplicit(a: Int): IntegerProperties = new IntegerProperties(a)
 }

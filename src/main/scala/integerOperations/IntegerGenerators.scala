@@ -267,5 +267,5 @@ class IntegerGenerators(val til: Int) {
 
 
 object IntegerGenerators {
-  implicit def intToGenerators(a: Int): IntegerGenerators = new IntegerGenerators(a)
+  implicit def intToLocalImplicit(a: Int): IntegerGenerators = new IntegerGenerators(a)
 }
