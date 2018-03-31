@@ -10,11 +10,12 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 
 # Current list of supported algorithms:
 
-# Sorting algorithms:
-1) QuickSort
+### Sorting algorithms:
+1) QuickSort [`sortingAlgorithms.QuickSort`](src/main/scala/sortingAlgorithms/QuickSort.scala)
 
-# Integer operations:
-1) .isOdd
+### Integer operations:
+[`integerOperations.IntegerProperties`](src/main/scala/integerOperations/IntegerProperties.scala)
+1) .isOdd 
 2) .isEven
 3) .isSquared
 4) .sumOfDigits
@@ -30,14 +31,16 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 16) .powN(N)
 17) .gcdWith(secondInt)
 
-# Additional Integers math:
+### Additional Integers math:
+[`integerOperations.IntegerMath`](src/main/scala/integerOperations/IntegerMath.scala)
 1) .isFreeOfSquares
 2) .isCarmichael
 3) .isLuc_Carmichael
 4) .isFibonacci
 5) .nthCatalan
 
-# Integer lists generators:
+### Integer lists generators:
+[`integerOperations.IntegerGenerators`](src/main/scala/integerOperations/IntegerGenerators.scala)
 1) Arithmetic regression
 2) Arithmetic progression
 3) Squares until N
@@ -50,15 +53,18 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 10) Fibonacci numbers
 11) Random ints
 
-# Char operations:
+### Char operations:
+[`charOperations.CharProperties`](src/main/scala/charOperations/CharProperties.scala)
 1) .isVowel
 2) .isConsonant
 
-# Double operations:
+### Double operations:
+[`doubleOperations.DoubleProperties`](src/main/scala/doubleOperations/DoubleProperties.scala)
 1) .inverse
 2) .sqrDouble
 
-# List/values operations:
+### List/values operations:
+[`listOperations`](src/main/scala/listOperations)
 1) get(List[A], index)
 2) isPalindrome(List[A])
 3) isPalindrome([A])
@@ -66,19 +72,19 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 4) Counter for the number of letter changes from vowel to consonant in a list of integers
 5) .isSorted
 
-# Encoders:
-1) RLE
-2) Huffman
-3) Gray
-4) Morse
+### Encoders:
+1) RLE [`functionalAlgorithms.encoders.RLE_Encoder`](src/main/scala/functionalAlgorithms/encoders/RLE_Encoder.scala)
+2) Huffman [`functionalAlgorithms.encoders.HuffmanEncoder`](src/main/scala/functionalAlgorithms/encoders/HuffmanEncoder.scala)
+3) Gray [`functionalAlgorithms.encoders.GrayEncoder`](src/main/scala/functionalAlgorithms/encoders/GrayEncoder.scala)
+4) Morse [`functionalAlgorithms.encoders.MorseEncoder`](src/main/scala/functionalAlgorithms/encoders/MorseEncoder.scala)
 
-# Decoders:
-1) RLE
-2) Huffman
-3) Gray
-4) Morse
+### Decoders:
+1) RLE [`functionalAlgorithms.decoders.RLE_Decoder`](src/main/scala/functionalAlgorithms/decoders/RLE_Decoder.scala)
+2) Huffman [`functionalAlgorithms.decoders.HuffmanDecoder`](src/main/scala/functionalAlgorithms/decoders/HuffmanDecoder.scala)
+3) Gray [`functionalAlgorithms.decoders.GrayDecoder`](src/main/scala/functionalAlgorithms/decoders/GrayDecoder.scala)
+4) Morse [`functionalAlgorithms.decoders.MorseDecoder`](src/main/scala/functionalAlgorithms/decoders/MorseDecoder.scala)
 
-# Planned:
+##### Planned:
 1) Operations with chars
 2) Operations with integers
 3) Operations with double
