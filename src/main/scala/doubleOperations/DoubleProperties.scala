@@ -1,5 +1,8 @@
 package doubleOperations
 
+import utils.InputException
+import utils.ExceptionMessages.ZeroInput
+
 class DoubleProperties(val firstDouble: Double) {
 
   import DoubleProperties._
@@ -7,7 +10,10 @@ class DoubleProperties(val firstDouble: Double) {
   /**
     * Returns the number, inversed via 1
     */
-  def inverse: Double = 1 / firstDouble
+  def inverse: Double = firstDouble match {
+    case 0 => throw new InputException("\"inverse\" " + ZeroInput)
+    case _ => 1 / firstDouble
+  }
 
   /**
     * Returns square of a Double

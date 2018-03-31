@@ -124,5 +124,7 @@ class IntegerTests extends FunSuite {
     }
   }
 
-  test("Testing of isCatalan")
+  test("Testing of nthCatalan") {
+    7.nthCatalan shouldBe 429
+  }
 }
