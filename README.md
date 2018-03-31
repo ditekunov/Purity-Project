@@ -12,6 +12,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 
 ### Sorting algorithms:
 1) QuickSort [`sortingAlgorithms.QuickSort`](src/main/scala/sortingAlgorithms/QuickSort.scala)
+2) Bogosort (oh yes) [`src/main/scala/sortingAlgorithms/unseriousAlgorithms/Bogosort`](src/main/scala/sortingAlgorithms/unseriousAlgorithms/Bogosort.scala)
 
 ### Integer operations:
 [`integerOperations.IntegerProperties`](src/main/scala/integerOperations/IntegerProperties.scala)
