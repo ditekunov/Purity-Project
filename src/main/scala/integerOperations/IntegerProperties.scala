@@ -30,8 +30,7 @@ class IntegerProperties(val firstInt: Int) {
       case 0 => false
       case _ => isSquared(secondInt - multiplier, multiplier + 2)
     }
-    else if (firstInt == 0) true
-    else false
+    else firstInt == 0
   }
 
   /**
