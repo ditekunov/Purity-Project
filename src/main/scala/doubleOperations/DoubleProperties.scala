@@ -17,5 +17,5 @@ class DoubleProperties(val firstDouble: Double) {
 }
 
 object DoubleProperties {
-  implicit def doubleToDoubleProperties(a: Double): DoubleProperties = new DoubleProperties(a)
+  implicit def doubleToLocalProps(a: Double): DoubleProperties = new DoubleProperties(a)
 }

@@ -32,5 +32,5 @@ class CharProperties(val firstChar: Char) {
 }
 
 object CharProperties {
-  implicit def charToCharProperties(a: Char): CharProperties = new CharProperties(a)
+  implicit def charToImplicitProps(a: Char): CharProperties = new CharProperties(a)
 }
