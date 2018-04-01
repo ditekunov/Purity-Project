@@ -203,7 +203,7 @@ class IntegerGenerators(val til: Int) {
     if (til > 100000) throw new InputException(StackOverflowInput)
     else if (til <= 1) throw new InputException(NegativeInput)
     else if (cur > til) outcomeList
-    else if (cur.isLuc_Carmichael) generateLucasCarmichaelNumbersLogic(outcomeList :+ cur, cur + 1)
+    else if (cur.isLucas_Carmichael) generateLucasCarmichaelNumbersLogic(outcomeList :+ cur, cur + 1)
     else generateLucasCarmichaelNumbersLogic(outcomeList, cur + 1)
   }
 
