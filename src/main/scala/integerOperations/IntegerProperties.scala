@@ -4,8 +4,10 @@ package integerOperations
 import utils.InputException
 
 import scala.util.{Failure, Random, Success, Try}
-import utils.ExceptionMessages.{BorderInput, NegativeOrZeroInput, NegativeInput}
+import utils.ExceptionMessages.{BorderInput, NegativeInput, NegativeOrZeroInput}
 import integerOperations.IntegerGenerators._
+
+import scala.annotation.tailrec
 
 class IntegerProperties(val firstInt: Int) {
 
@@ -44,6 +46,7 @@ class IntegerProperties(val firstInt: Int) {
   /**
     * Sub-function for sumOfDigits(), to provide errors handling.
     */
+  @tailrec
   private def sumOfDigitsLogic(cur: Int = firstInt, sum: Int = 0): Int = cur match {
     case 0 => sum
     case _ => sumOfDigitsLogic(cur / 10, sum + (cur % 10))
@@ -60,6 +63,7 @@ class IntegerProperties(val firstInt: Int) {
   /**
     * Sub-function for compositionOfDigits(), to provide errors handling.
     */
+  @tailrec
   private def compositionOfDigitsLogic(cur: Int = firstInt, comp: Int = 1): Int = cur match {
     case 0 => if (firstInt == 0) 0 else comp
     case _ => compositionOfDigitsLogic(cur / 10, comp * (cur % 10))
@@ -76,6 +80,7 @@ class IntegerProperties(val firstInt: Int) {
   /**
     * Sub-function for numOfDigits(), to provide errors handling.
     */
+  @tailrec
   private def numOfDigitsLogic(cur: Int = firstInt, comp: Int = 0): Int = cur match {
     case 0 => if (firstInt == 0) 1 else comp
     case _ => numOfDigitsLogic(cur / 10, comp + 1)
@@ -114,6 +119,7 @@ class IntegerProperties(val firstInt: Int) {
   /**
     * Sub-function for isPrime.
     */
+  @tailrec
   private def isPrimeLogic(cur: Int = 2): Boolean = {
     if (firstInt == 2 || firstInt == 3) true
     else if (firstInt < 2) throw new InputException("\"isPrime\" " + BorderInput)
@@ -133,6 +139,7 @@ class IntegerProperties(val firstInt: Int) {
   /**
     * Sub-function for gcdWith
     */
+  @tailrec
   private def gcdWithLogic(first: Int, second: Int): Int = {
     if (first < 0 || second < 0) throw new InputException(NegativeInput)
     else if (second == 0) first
@@ -152,6 +159,10 @@ class IntegerProperties(val firstInt: Int) {
     case Failure(ex) => throw new InputException("\"sqrN\" " + ex)
   }
 
+  /**
+    * Sub-function for powN
+    */
+  @tailrec
   private def sqrNLogic(localIterations: Int, total: Int = 1): BigInt = localIterations match {
     case 0 => total
     case _ =>
@@ -170,6 +181,7 @@ class IntegerProperties(val firstInt: Int) {
   /**
     * Sub-functions for isPrimeFermat
     */
+  @tailrec
   private def isPrimeFermatBorders(first : Int = firstInt, localIterations : Int) : Boolean = {
     if (localIterations == 0) true
     else if (isPrimeFermatLogic(first)) isPrimeFermatBorders(first, localIterations - 1)

@@ -1,6 +1,8 @@
 package sortingAlgorithms.unseriousAlgorithms
 
 import listOperations.ListProperties.isSorted
+
+import scala.annotation.tailrec
 import scala.util.Random.shuffle
 
 
@@ -18,6 +20,7 @@ import scala.util.Random.shuffle
   */
 object Bogosort {
 
+  @tailrec
   def bogosort(input: List[Int]): List[Int] =
     if (isSorted(input)) input
     else bogosort(shuffle(input))

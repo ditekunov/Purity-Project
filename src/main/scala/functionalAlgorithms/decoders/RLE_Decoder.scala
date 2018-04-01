@@ -3,10 +3,14 @@ package functionalAlgorithms.decoders
 import utils.ExceptionMessages.EmptyInput
 import utils.InputException
 
+import scala.annotation.tailrec
+
 object RLE_Decoder {
+
   /**
     * Decoder itself, returns outcome List.
     */
+  @tailrec
   private def makeList[A](countOfElements: Int, element: A, customList: List[A] = List()): List[A] =
     countOfElements match {
       case 0 => customList

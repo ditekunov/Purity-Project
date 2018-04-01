@@ -8,6 +8,8 @@ import scala.util.{Failure, Random, Success, Try}
 import IntegerProperties._
 import IntegerMath._
 
+import scala.annotation.tailrec
+
 class IntegerGenerators(val til: Int) {
 
   import IntegerGenerators._
@@ -23,6 +25,7 @@ class IntegerGenerators(val til: Int) {
   /**
     * Sub-function for generateArithmeticRegression
     */
+  @tailrec
   private def generateArithmeticRegressionLogic(cur: Int = til, regressionList: List[Int] = List()): List[Int] = {
     if (til < 0) throw new InputException("\"generateArithmeticRegression\" " + NegativeOrZeroInput)
       if (cur == 0) regressionList
@@ -42,6 +45,7 @@ class IntegerGenerators(val til: Int) {
   /**
     * Sub-function for generateArithmeticProgression
     */
+  @tailrec
   private def generateArithmeticProgressionLogic(cur: Int = 1, regressionList: List[Int] = List()): List[Int] = {
     if (til < 0) throw new InputException("\"generateArithmeticProgression\" " + NegativeOrZeroInput)
     if (cur == til) regressionList :+ cur
@@ -61,6 +65,7 @@ class IntegerGenerators(val til: Int) {
   /**
     * Sub-function for generateSquares
     */
+  @tailrec
   private def generateSquaresLogic(squaresList: List[Int] = List(), cur: Int = 2): List[Int] = {
     if (til <= 0) throw new InputException(NegativeInput)
     else if (cur * cur > til) squaresList
@@ -80,6 +85,7 @@ class IntegerGenerators(val til: Int) {
   /**
     * Sub-function for listBinaryDivisors(), to provide deep recursion handling.
     */
+  @tailrec
   private def generateBinaryDivisorsLogic(divisorsList: List[Int] = List(), total: Int = 2): List[Int] = {
     if (total == til) divisorsList :+ til
     else if (total > til) divisorsList
@@ -104,6 +110,7 @@ class IntegerGenerators(val til: Int) {
   /**
     * Sub-function for listN_MultipleDivisors(), to provide deep recursion handling.
     */
+  @tailrec
   private def generateN_MultipleDivisorsLogic(n: Int, divisorsList: List[Int] = List(), total: Int): List[Int] = {
     if (total == til) divisorsList :+ til
     else if (total > til) divisorsList
@@ -124,6 +131,7 @@ class IntegerGenerators(val til: Int) {
   /**
     * Sub-function for listDivisors(), to provide deep recursion handling.
     */
+  @tailrec
   private def generateDivisorsLogic(divisorsList: List[Int] = List(til), total: Int = 1): List[Int] = {
     if (til < 0) throw new InputException("\"listDivisors\" " + NegativeOrZeroInput)
     else if (total == til / 2 + 1) divisorsList
@@ -166,6 +174,7 @@ class IntegerGenerators(val til: Int) {
   /**
     * Sub-function for generateCarmichaelNumbers.
     */
+  @tailrec
   private def generateCarmichaelNumbersLogic(outcomeList: List[Int] = List(), cur: Int = 3): List[Int] = {
     if (til > 100000) throw new InputException(StackOverflowInput)
     else if (til <= 1) throw new InputException(NegativeInput)
@@ -189,6 +198,7 @@ class IntegerGenerators(val til: Int) {
   /**
     * Sub-function for generateLucasCarmichaelNumbers.
     */
+  @tailrec
   private def generateLucasCarmichaelNumbersLogic(outcomeList: List[Int] = List(), cur: Int = 3): List[Int] = {
     if (til > 100000) throw new InputException(StackOverflowInput)
     else if (til <= 1) throw new InputException(NegativeInput)
@@ -210,6 +220,7 @@ class IntegerGenerators(val til: Int) {
   /**
     * Sub-function for generateFibonacci.
     */
+  @tailrec
   private def generateFibonacciLogic(outcomeList: List[Int] = List(0), cur: Int = 1): List[Int] = {
     if (til < 0) throw new InputException("\"generateFibonacci\" " + NegativeOrZeroInput)
     else if (cur > til) outcomeList
