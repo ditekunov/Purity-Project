@@ -15,5 +15,5 @@ import scala.concurrent.Future
 
 
 object Main extends App {
-sleepSort(List(5,4,2,1,7,3))
+
 }
