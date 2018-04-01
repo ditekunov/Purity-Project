@@ -13,6 +13,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 ### Sorting algorithms:
 1) QuickSort [`sortingAlgorithms.QuickSort`](src/main/scala/sortingAlgorithms/QuickSort.scala)
 2) Bogosort  [`sortingAlgorithms/unseriousAlgorithms/Bogosort`](src/main/scala/sortingAlgorithms/unseriousAlgorithms/Bogosort.scala)
+3) Sleep sort [`sortingAlgorithms/unseriousAlgorithms/SleepSort`](src/main/scala/sortingAlgorithms/unseriousAlgorithms/SleepSort.scala)
 
 ### Integer operations:
 [`integerOperations.IntegerProperties`](src/main/scala/integerOperations/IntegerProperties.scala)
@@ -103,3 +104,4 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 5) Alvin Alexander's scala blog: https://alvinalexander.com (English)
 6) Richard G.E. Pinch "The Carmichael numbers up to 10^18" https://arxiv.org/pdf/math/0604376v1.pdf
 7) Site about algorithms http://e-maxx.ru (Russian/English)
+8) "Rosetta code" website about algorithms: https://rosettacode.org/wiki/Rosetta_Code (English)
