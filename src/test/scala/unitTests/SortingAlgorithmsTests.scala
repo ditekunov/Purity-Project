@@ -7,8 +7,8 @@ import sortingAlgorithms.unseriousAlgorithms.Bogosort
 import sortingAlgorithms.unseriousAlgorithms.SleepSort
 
 class SortingAlgorithmsTests extends FunSuite {
-  final lazy val unsortedList = List(8,4,6,1,7,3,8,4,7,9,2,7)
-  final lazy val sortedList = List(1,2,3,4,5,6,7,8)
+  final lazy val unsortedList = List(8, 4, 6, 1, 7, 3, 8, 4, 7, 9, 2, 7)
+  final lazy val sortedList = List(1, 2, 3, 4, 5, 6, 7, 8)
   final lazy val emptyList = List()
 
   test("Testing of the quickSort") {
@@ -29,4 +29,10 @@ class SortingAlgorithmsTests extends FunSuite {
     SleepSort.sleepSort(emptyList) should be
   }
 
+  test("Testing of the bubbleSort") {
+    BubbleSort.bubbleSort(sortedList) shouldBe sortedList
+    BubbleSort.bubbleSort(unsortedList) shouldBe List(1, 2, 3, 4, 4, 6, 7, 7, 7, 8, 8, 9)
+    BubbleSort.bubbleSort(emptyList) shouldBe emptyList
+
+  }
 }
