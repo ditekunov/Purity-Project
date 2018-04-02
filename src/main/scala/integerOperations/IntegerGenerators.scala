@@ -256,25 +256,21 @@ class IntegerGenerators(val til: Int) {
     *
     * https://en.wikipedia.org/wiki/Catalan_number
     */
-//  def generateCatalanNumbers: List[Int] = Try(generateCatalanNumbersLogic()) match {
-//    case Success(something) => something
-//    case Failure(ex) => throw new InputException(ex.toString)
-//  }
+  def generateCatalanNumbers: List[Int] = Try(generateCatalanNumbersLogic()) match {
+    case Success(something) => something
+    case Failure(ex) => throw new InputException(ex.toString)
+  }
 
   /**
     * Sub-function for generateCatalanNumbers.
     */
-//  private def generateCatalanNumbersLogic(outcomeList: List[Int] = List(1), cur: Int = until ): List[Int] = {
-//    if (cur < 0) throw new InputException("\"generateCatalanNumbers\" " + StrictNegativeInput)
-//    else if (cur <= 1)
-//    else if (cur > until) outcomeList
-//    else generateCatalanNumbersLogic(outcomeList :+ cur, cur * ( (2*(2*(outcomeList.last)+1))/(outcomeList.last+2)))
-//  }
-
-
-
+  @tailrec
+  private def generateCatalanNumbersLogic(outcomeList: List[Int] = List(1), cur: Int = 1 ): List[Int] = {
+    if (til < 0) throw new InputException("\"generateCatalanNumbers\" " + NegativeInput)
+    if ( outcomeList.last > til) outcomeList.init
+    else generateCatalanNumbersLogic(outcomeList :+ cur.nthCatalan, cur + 1)
+  }
 }
-
 
 
 object IntegerGenerators {

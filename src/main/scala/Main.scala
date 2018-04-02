@@ -15,5 +15,6 @@ import scala.concurrent.Future
 
 
 object Main extends App {
+  print(14.generateCatalanNumbers)
 
 }
