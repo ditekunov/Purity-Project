@@ -73,4 +73,12 @@ class IntegerGeneratorsTests extends FunSuite {
     }
   }
 
+  test("Testing of generateCatalanNumbers") {
+    14.generateCatalanNumbers shouldBe List(1, 1, 2, 5, 14)
+    assertThrows[InputException] {
+      (-10).generateCatalanNumbers
+    }
+    1.generateCatalanNumbers shouldBe List(1, 1)
+  }
+
 }

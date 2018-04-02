@@ -27,8 +27,8 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 10) .nthGreatestDivisor(n)
 11) .numOfDivisors
 12) .sumOfDivisors
-13) .isPrime O(sqrt(n)) speed
-14) .isPrimeFermat(n) O(log(n)) speed
+13) .isPrime, works with O(sqrt(n)) speed
+14) .isPrimeFermat(n). works with O(log(n)) speed
 15) .sqr
 16) .powN(N)
 17) .gcdWith(secondInt)
@@ -40,6 +40,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 3) .isLuc_Carmichael
 4) .isFibonacci
 5) .nthCatalan
+6) .binaryPower(n), works with O(log(n)) speed
 
 ### Integer lists generators:
 [`integerOperations.IntegerGenerators`](src/main/scala/integerOperations/IntegerGenerators.scala)
@@ -54,6 +55,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 9) Luc-Carmichael numbers
 10) Fibonacci numbers
 11) Random ints
+12) Catalan numbers
 
 ### Char operations:
 [`charOperations.CharProperties`](src/main/scala/charOperations/CharProperties.scala)

@@ -14,12 +14,16 @@ class IntegerProperties(val firstInt: Int) {
   import IntegerProperties._
 
   /**
-    * Checks, whether the number is even
+    * Checks, whether the number is even.
+    *
+    * https://en.wikipedia.org/wiki/Parity_(mathematics)
     */
   def isEven: Boolean = firstInt % 2 == 0
 
   /**
     * Checks, whether the number is odd
+    *
+    * https://en.wikipedia.org/wiki/Parity_(mathematics)
     */
   def isOdd: Boolean = firstInt % 2 != 0
 
@@ -105,11 +109,15 @@ class IntegerProperties(val firstInt: Int) {
 
   /**
     * Returns the sum of all the divisors of an Int.
+    *
+    * https://en.wikipedia.org/wiki/Divisor_function
     */
   def sumOfDivisors:Int = firstInt.generateDivisors.sum
 
   /**
     * Checks, whether the Int is prime with O(sqrt(n)) speed.
+    *
+    * https://en.wikipedia.org/wiki/Prime_number
     */
   def isPrime:Boolean = Try(isPrimeLogic()) match {
     case Success(something) => something
@@ -130,6 +138,8 @@ class IntegerProperties(val firstInt: Int) {
 
   /**
     * Returns the greatest common divisor of two Integers
+    *
+    * https://en.wikipedia.org/wiki/Greatest_common_divisor
     */
   def gcdWith(secondInt: Int): Int = Try(gcdWithLogic(first = firstInt, second = secondInt)) match {
     case Success(something) => something
@@ -148,11 +158,15 @@ class IntegerProperties(val firstInt: Int) {
 
   /**
     * Returns the square of an Integer.
+    *
+    * https://en.wikipedia.org/wiki/Square_number
     */
   def sqr: Int = firstInt * firstInt
 
   /**
     * Returns the N power of an Integer
+    *
+    * https://en.wikipedia.org/wiki/Exponentiation
     */
   def powN(n: Int): BigInt = Try(sqrNLogic(localIterations = n)) match {
     case Success(something) => something
@@ -172,6 +186,8 @@ class IntegerProperties(val firstInt: Int) {
 
   /**
     * Checks, whether the Int is prime with Fermat method with O(log(n)) speed.
+    *
+    * https://en.wikipedia.org/wiki/Fermat_primality_test
     */
   def isPrimeFermat(iterations: Int = 100): Boolean = Try(isPrimeFermatBorders(localIterations = iterations)) match {
     case Success(something) => something
@@ -201,12 +217,19 @@ class IntegerProperties(val firstInt: Int) {
   }
 
   /**
-    * Service function, that returns a random Int between 1 and n
+    * Service function, that returns a random Int between 1 and n.
     */
   private def random(n: Int) : Int = {
     val random = new Random()
     random.nextInt(n)
   }
+
+  /**
+    * Checks, whether to numbers are co-prime.
+    *
+    * https://en.wikipedia.org/wiki/Coprime_integers
+    */
+  def isCoPrime(secondInt: Int) = firstInt.gcdWith(secondInt) == 1
 
 }
 

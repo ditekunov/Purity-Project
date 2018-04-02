@@ -110,9 +110,9 @@ class IntegerTests extends FunSuite {
   }
 
   test("Testing of isLuc_Carmichael") {
-    399.isLuc_Carmichael shouldBe true
-    935.isLuc_Carmichael shouldBe true
-    17777.isLuc_Carmichael shouldBe false
+    399.isLucas_Carmichael shouldBe true
+    935.isLucas_Carmichael shouldBe true
+    17777.isLucas_Carmichael shouldBe false
   }
 
   test("Testing of isFibonacci") {
@@ -126,5 +126,12 @@ class IntegerTests extends FunSuite {
 
   test("Testing of nthCatalan") {
     7.nthCatalan shouldBe 429
+  }
+
+  test("Testing of binaryPower") {
+    10.binaryPower(2) shouldBe 100
+    -10.binaryPower(2) shouldBe 100
+    -10.binaryPower(3) shouldBe (-1000)
+    0.binaryPower(5) shouldBe 0
   }
 }
