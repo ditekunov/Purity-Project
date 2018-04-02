@@ -1,9 +1,7 @@
 package integerOperations
 
-import utils.ExceptionMessages.NegativeInput
 import utils.InputException
-import utils.ExceptionMessages.{NegativeOrZeroInput, StackOverflowInput}
-
+import utils.ExceptionMessages.{NegativeOrZeroInput, StackOverflowInput, NegativeInput}
 import scala.util.{Failure, Random, Success, Try}
 import IntegerProperties._
 import IntegerMath._
