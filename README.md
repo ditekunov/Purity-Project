@@ -2,6 +2,8 @@
 
 # Purity project [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9df3878b42164c8b85ecbb61f803137f)](https://www.codacy.com/app/ditekunov/Purity-Project?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ditekunov/Purity-Project&amp;utm_campaign=Badge_Grade)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7b1a99f92fb34e7487bdaa1a145e3bc8)](https://app.codacy.com/app/ditekunov/Purity-Project?utm_source=github.com&utm_medium=referral&utm_content=ditekunov/Purity-Project&utm_campaign=badger)
+
 This project contains realisations of common-used math functions and classical algorithms, written in Scala's pure-functional style.
 
 Some of them are a new sight at Scala's standard library, some are persistent data structures, some are completely new functions.
