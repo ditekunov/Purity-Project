@@ -33,6 +33,11 @@ class SortingAlgorithmsTests extends FunSuite {
     BubbleSort.bubbleSort(sortedList) shouldBe sortedList
     BubbleSort.bubbleSort(unsortedList) shouldBe List(1, 2, 3, 4, 4, 6, 7, 7, 7, 8, 8, 9)
     BubbleSort.bubbleSort(emptyList) shouldBe emptyList
+  }
 
+  test("Testing of the mergeSort") {
+    MergeSort.mergeSort(sortedList) shouldBe sortedList
+    MergeSort.mergeSort(unsortedList) shouldBe List(1, 2, 3, 4, 4, 6, 7, 7, 7, 8, 8, 9)
+    MergeSort.mergeSort(emptyList) shouldBe emptyList
   }
 }
