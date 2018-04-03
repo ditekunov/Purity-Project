@@ -17,7 +17,7 @@ class SortingAlgorithmsTests extends FunSuite {
     QuickSort.quickSort(emptyList) shouldBe emptyList
   }
 
-  test("Testinng of the bogosort") {
+  test("Testing of the bogosort") {
     Bogosort.bogosort(sortedList) shouldBe sortedList
     Bogosort.bogosort(List(3, 2, 1)) shouldBe List(1, 2, 3)
     Bogosort.bogosort(emptyList) shouldBe emptyList
@@ -39,5 +39,11 @@ class SortingAlgorithmsTests extends FunSuite {
     MergeSort.mergeSort(sortedList) shouldBe sortedList
     MergeSort.mergeSort(unsortedList) shouldBe List(1, 2, 3, 4, 4, 6, 7, 7, 7, 8, 8, 9)
     MergeSort.mergeSort(emptyList) shouldBe emptyList
+  }
+
+  test("Testing of the insertionSort") {
+    InsertionSort.insertionSort(sortedList) shouldBe sortedList
+    InsertionSort.insertionSort(unsortedList) shouldBe List(1, 2, 3, 4, 4, 6, 7, 7, 7, 8, 8, 9)
+    InsertionSort.insertionSort(emptyList) shouldBe emptyList
   }
 }

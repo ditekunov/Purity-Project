@@ -17,7 +17,7 @@ object SleepSort {
   def sleepSort(input: List[Int]): Unit =
     input.foreach(i => new Thread {
       override def run() {
-        Thread.sleep(i * 10)
+        Thread.sleep(i * 30)
         print(i)
       }
     }.start())

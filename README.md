@@ -16,6 +16,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 3) Sleep sort [`sortingAlgorithms/unseriousAlgorithms/SleepSort`](src/main/scala/sortingAlgorithms/unseriousAlgorithms/SleepSort.scala)
 4) Bubble sort [`sortingAlgorithms.BubbleSort`](src/main/scala/sortingAlgorithms/BubbleSort.scala)
 5) Merge sort [`sortingAlgorithms.MergeSort`](src/main/scala/sortingAlgorithms/MergeSort.scala)
+6) Insertion sort [`sortingAlgorithms.InsertionSort`](src/main/scala/sortingAlgorithms/InsertionSort.scala)
 
 ### Integer operations:
 [`integerOperations.IntegerProperties`](src/main/scala/integerOperations/IntegerProperties.scala)
