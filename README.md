@@ -97,7 +97,8 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 2) Operations with integers
 3) Operations with double
 4) Classical data structures
-5) Classical algorithms
+5) Heap sort
+6) Selection sort
 
 
 # Some sources, that were used via development:
