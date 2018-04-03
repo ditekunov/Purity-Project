@@ -57,6 +57,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 10) Fibonacci numbers
 11) Random ints
 12) Catalan numbers
+13) Fermat numbers
 
 ### Char operations:
 [`charOperations.CharProperties`](src/main/scala/charOperations/CharProperties.scala)

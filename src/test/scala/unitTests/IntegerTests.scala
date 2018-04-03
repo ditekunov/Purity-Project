@@ -134,4 +134,13 @@ class IntegerTests extends FunSuite {
     -10.binaryPower(3) shouldBe (-1000)
     0.binaryPower(5) shouldBe 0
   }
+
+  test("Testing of generateFermatNumbers") {
+    258.generateFermatNumbers shouldBe List(3, 5, 17, 257)
+    assertThrows[InputException] {
+      (-1).generateFermatNumbers
+    }
+    3.generateFermatNumbers shouldBe List(3)
+
+  }
 }
