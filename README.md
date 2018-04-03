@@ -18,7 +18,8 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 1) Quick sort [`sortingAlgorithms.QuickSort`](src/main/scala/sortingAlgorithms/QuickSort.scala)
 2) Bogosort  [`sortingAlgorithms/unseriousAlgorithms/Bogosort`](src/main/scala/sortingAlgorithms/unseriousAlgorithms/Bogosort.scala)
 3) Sleep sort [`sortingAlgorithms/unseriousAlgorithms/SleepSort`](src/main/scala/sortingAlgorithms/unseriousAlgorithms/SleepSort.scala)
-4) Bubble sort [`sortingAlgorithms.Bubble`](src/main/scala/sortingAlgorithms/BubbleSort.scala)
+4) Bubble sort [`sortingAlgorithms.BubbleSort`](src/main/scala/sortingAlgorithms/BubbleSort.scala)
+5) Merge sort [`sortingAlgorithms.MergeSort`](src/main/scala/sortingAlgorithms/MergeSort.scala)
 
 ### Integer operations:
 [`integerOperations.IntegerProperties`](src/main/scala/integerOperations/IntegerProperties.scala)
@@ -61,6 +62,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 10) Fibonacci numbers
 11) Random ints
 12) Catalan numbers
+13) Fermat numbers
 
 ### Char operations:
 [`charOperations.CharProperties`](src/main/scala/charOperations/CharProperties.scala)
