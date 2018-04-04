@@ -83,6 +83,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 3) Counter for the number of sign changes in a list of integers
 4) Counter for the number of letter changes from vowel to consonant in a list of integers
 5) .isSorted
+6) binary search in a list
 
 ### Encoders:
 1) RLE [`functionalAlgorithms.encoders.RLE_Encoder`](src/main/scala/functionalAlgorithms/encoders/RLE_Encoder.scala)

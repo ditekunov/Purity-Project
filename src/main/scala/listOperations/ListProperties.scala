@@ -3,6 +3,9 @@ package listOperations
 import utils.ExceptionMessages.{EmptyInput, NoneInput}
 import utils.InputException
 
+import scala.annotation.tailrec
+import scala.util.{Failure, Success, Try}
+
 object ListProperties {
 
   /**
@@ -42,5 +45,36 @@ object ListProperties {
     }
   }
 
+  /**
+    * Realisation of a standard binary search.
+    *
+    * https://en.wikipedia.org/wiki/Binary_search_algorithm
+    *
+    * Worst speed: O(log(n))
+    *
+    * Average speed: O(log(n))
+    *
+    * Best speed: O(1)
+    *
+    */
+  @tailrec
+  def binarySearch(input: List[Int], element: Int): Int = {
+    @tailrec
+    def binarySearchLogic(enter: Int = 0, exit: Int = input.length - 1): Option[Int] =
+      enter + (exit - enter) / 2 match {
+        case between if input(between) > element => binarySearchLogic(enter, exit - between)
+        case between if input(between) < element => binarySearchLogic(enter + between)
+        case between if input(between) == element => Some(between)
+        case _ if enter < exit => None
+    }
+
+    if (input.isEmpty) throw new InputException(EmptyInput)
+    else if (!isSorted(input)) binarySearch(input.sorted, element)
+    else if (input.last == element) input.length - 1
+    else Try(binarySearchLogic()) match {
+      case Success(something) => something.get
+      case Failure(_) => throw new InputException(NoneInput)
+    }
+  }
 
 }

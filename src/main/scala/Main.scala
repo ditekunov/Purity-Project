@@ -15,6 +15,6 @@ import scala.concurrent.Future
 
 
 object Main extends App {
-  print(655.generateFermatNumbers)
+print(binarySearch(List(1, 2, 3, 4, 5), 5))
 
 }

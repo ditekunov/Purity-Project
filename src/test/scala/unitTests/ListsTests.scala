@@ -31,4 +31,9 @@ class ListsTests extends FunSuite {
     isSorted(emptyList) shouldBe true
 
   }
+
+  test("Testing of binarySearch") {
+    binarySearch(sortedTestListOfIntegers, 3) shouldBe 2
+    binarySearch(sortedTestListOfIntegers, 5) shouldBe 4
+  }
 }
