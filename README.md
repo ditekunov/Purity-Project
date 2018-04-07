@@ -113,6 +113,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 6) Selection sort
 
 
+
 # Some sources, that were used via development:
 
 0) Martin Odersky's "Functional Programming in Scala Specialization "https://www.coursera.org/specializations/scala"
