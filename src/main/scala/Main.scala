@@ -15,6 +15,7 @@ import scala.concurrent.Future
 
 
 object Main extends App {
-print(binarySearch(List(1, 2, 3, 4, 5), 5))
+
+  print( 17.isPrimeFermatStrict() )
 
 }

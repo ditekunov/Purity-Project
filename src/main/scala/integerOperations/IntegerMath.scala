@@ -102,6 +102,21 @@ class IntegerMath(val firstInt: Int) {
     else binaryPowerLogic(cur, n / 2) * binaryPowerLogic(cur, n / 2)
   }
 
+  /**
+    * Checks, whether the number is a Zuckerman number
+    *
+    * http://www.numbersaplenty.com/set/Zuckerman_number/
+    */
+  def isZuckerman: Boolean =
+    (firstInt.compositionOfDigits > 0) && (firstInt % firstInt.compositionOfDigits == 0) && (firstInt > 0)
+
+  /**
+    * Checks, whether the number is a Harshad number
+    *
+    * https://en.wikipedia.org/wiki/Harshad_number
+    */
+  def isHarshad: Boolean = (firstInt == 0) || (firstInt % firstInt.sumOfDigits == 0) && (firstInt > 0)
+
 }
 
 object IntegerMath {
