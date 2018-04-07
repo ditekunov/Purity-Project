@@ -229,7 +229,7 @@ class IntegerProperties(val firstInt: Int) {
     *
     * https://en.wikipedia.org/wiki/Coprime_integers
     */
-  def isCoPrime(secondInt: Int) = firstInt.gcdWith(secondInt) == 1
+  def isCoPrimeWith(secondInt: Int) = firstInt.gcdWith(secondInt) == 1
 
 }
 
