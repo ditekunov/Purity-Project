@@ -244,9 +244,7 @@ class IntegerProperties(val firstInt: Int) {
     */
   def isPrimeFermatStrict(iterations: Int = 100): Boolean =
     Try(isPrimeFermatBorders(localIterations = iterations)) match {
-    case Success(something) =>
-      if (something && !firstInt.generateCarmichaelNumbers.contains(firstInt)) true
-      else false
+    case Success(something) => something && !firstInt.generateCarmichaelNumbers.contains(firstInt)
     case Failure(ex) => throw new InputException("\"isPrimeFermat\" " + ex)
   }
 
@@ -263,9 +261,7 @@ class IntegerProperties(val firstInt: Int) {
 
   def isPrimeFermatFast(iterations: Int = 100): Boolean =
     Try(isPrimeFermatBorders(localIterations = iterations)) match {
-      case Success(something) =>
-        if (something && !CarmichaelsTilBigInt.contains(firstInt)) true
-        else false
+      case Success(something) => something && !CarmichaelsTilBigInt.contains(firstInt)
       case Failure(ex) => throw new InputException("\"isPrimeFermat\" " + ex)
     }
 
