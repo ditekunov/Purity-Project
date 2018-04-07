@@ -141,6 +141,27 @@ class IntegerTests extends FunSuite {
       (-1).generateFermatNumbers
     }
     3.generateFermatNumbers shouldBe List(3)
+  }
 
+  test("Testing of isPrimeFermatStrict") {
+    2.isPrimeFermatStrict() shouldBe true
+    561.isPrimeFermatStrict() shouldBe false
+  }
+
+  test("Testing of isPrimeFermatFast") {
+    2.isPrimeFermatFast() shouldBe true
+    561.isPrimeFermatFast() shouldBe false
+  }
+
+  test("Testing of isZuckerman") {
+    3.isZuckerman shouldBe true
+    212.isZuckerman shouldBe true
+    10.isZuckerman shouldBe false
+  }
+
+  test("Testing of isHarshad") {
+    3.isHarshad shouldBe true
+    21.isHarshad shouldBe true
+    11.isHarshad shouldBe false
   }
 }
