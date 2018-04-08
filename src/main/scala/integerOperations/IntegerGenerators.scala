@@ -8,6 +8,11 @@ import IntegerMath._
 
 import scala.annotation.tailrec
 
+/**
+  * Contains functions, that generate different lists of Integers.
+  *
+  * Purity project by Daniil Tekunov.
+  */
 class IntegerGenerators(val til: Int) {
 
   import IntegerGenerators._

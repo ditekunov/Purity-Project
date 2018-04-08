@@ -7,6 +7,11 @@ import IntegerProperties._
 
 import scala.util.{Failure, Success, Try}
 
+/**
+  * Contains functions, that use more specific math or algorithms.
+  *
+  * Purity project by Daniil Tekunov.
+  */
 class IntegerMath(val firstInt: Int) {
 
   import IntegerMath._

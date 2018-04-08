@@ -9,6 +9,7 @@ import persistentDataStructures.miscellaneous.DataStructureException
   *
   * https://en.wikipedia.org/wiki/Linked_list
   *
+  * Purity project by Daniil Tekunov.
   */
 abstract sealed class LinkedList[+A] {
 

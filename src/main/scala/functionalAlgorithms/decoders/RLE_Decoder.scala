@@ -5,6 +5,11 @@ import utils.InputException
 
 import scala.annotation.tailrec
 
+/**
+  * Contains realisation of RLE decoder: https://en.wikipedia.org/wiki/Run-length_encoding
+  *
+  * Purity project by Daniil Tekunov.
+  */
 object RLE_Decoder {
 
   /**

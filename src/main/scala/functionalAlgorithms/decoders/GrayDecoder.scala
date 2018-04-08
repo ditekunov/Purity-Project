@@ -5,6 +5,11 @@ import utils.ExceptionMessages.NegativeOrZeroInput
 
 import scala.annotation.tailrec
 
+/**
+  * Contains realisation of a Gray decoder: https://en.wikipedia.org/wiki/Gray_code
+  *
+  * Purity project by Daniil Tekunov.
+  */
 object GrayDecoder {
   def decode(input: Int) = {
     if (input > -1) decodeLogic(input)

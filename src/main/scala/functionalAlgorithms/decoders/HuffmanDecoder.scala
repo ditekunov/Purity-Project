@@ -10,6 +10,8 @@ object HuffmanDecoder {
     * Usage:
     *
     * HuffmanDecoder.decode(HuffmanEncoder.createCodeTree(String), String)
+    *
+    * Purity project by Daniil Tekunov.
     */
   def decode(tree: CodeTree, bits: List[Int]): String = {
     def traverse(remaining: CodeTree, bits: List[Int]): List[Char] = remaining match {

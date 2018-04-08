@@ -17,6 +17,7 @@ import scala.util.Random.shuffle
   *
   * Best speed: O(n)
   *
+  * Purity project by Daniil Tekunov.
   */
 object Bogosort {
 

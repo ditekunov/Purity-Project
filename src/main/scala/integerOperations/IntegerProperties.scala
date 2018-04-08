@@ -9,6 +9,11 @@ import integerOperations.IntegerGenerators._
 
 import scala.annotation.tailrec
 
+/**
+  * Contains functions, affecting Integer properties.
+  *
+  * Purity project by Daniil Tekunov.
+  */
 class IntegerProperties(val firstInt: Int) {
 
   import IntegerProperties._
