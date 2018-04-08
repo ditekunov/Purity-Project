@@ -6,6 +6,9 @@ import listOperations.miscellaneous.{CurrentAndPositiveNegativeCounters, Current
 import utils.ExceptionMessages.EmptyInput
 import utils.InputException
 
+/**
+  * Purity project by Daniil Tekunov.
+  */
 object Changes {
 
   /**

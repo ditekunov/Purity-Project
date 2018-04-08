@@ -6,6 +6,11 @@ import utils.InputException
 import scala.annotation.tailrec
 import scala.util.{Failure, Success, Try}
 
+/**
+  * Contains different functions, that affect lists.
+  *
+  * Purity project by Daniil Tekunov.
+  */
 object ListProperties {
 
   /**

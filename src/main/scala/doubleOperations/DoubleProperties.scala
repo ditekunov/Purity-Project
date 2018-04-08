@@ -3,6 +3,11 @@ package doubleOperations
 import utils.InputException
 import utils.ExceptionMessages.ZeroInput
 
+/**
+  * Contains functions, affecting double properties.
+  *
+  * Purity project by Daniil Tekunov.
+  */
 class DoubleProperties(val firstDouble: Double) {
 
   import DoubleProperties._

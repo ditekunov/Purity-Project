@@ -7,6 +7,11 @@ import integerOperations.IntegerProperties._
 import scala.annotation.tailrec
 import scala.util.{Failure, Success, Try}
 
+/**
+  * Contains generators, that use more specific math or algorithms.
+  *
+  * Purity project by Daniil Tekunov.
+  */
 class IntegerGeneratorsMath(val til: Int) {
 
   import IntegerGeneratorsMath._

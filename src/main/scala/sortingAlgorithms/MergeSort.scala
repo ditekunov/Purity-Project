@@ -11,6 +11,7 @@ package sortingAlgorithms
   *
   * Best speed: O(n*log(n))
   *
+  * Purity project by Daniil Tekunov.
   */
 object MergeSort {
 

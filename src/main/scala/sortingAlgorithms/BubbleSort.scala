@@ -11,6 +11,8 @@ import scala.annotation.tailrec
   * Average speed: O(pow(n))
   *
   * Best speed: O(n)
+  *
+  * Purity project by Daniil Tekunov.
   */
 object BubbleSort {
 

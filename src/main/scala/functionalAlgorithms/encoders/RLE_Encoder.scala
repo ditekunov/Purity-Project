@@ -3,6 +3,11 @@ package functionalAlgorithms.encoders
 import utils.InputException
 import utils.ExceptionMessages.EmptyInput
 
+/**
+  * Contains realisation of RLE encoder: https://en.wikipedia.org/wiki/Run-length_encoding
+  *
+  * Purity project by Daniil Tekunov.
+  */
 object RLE_Encoder {
 
   /**

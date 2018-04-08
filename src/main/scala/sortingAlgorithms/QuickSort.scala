@@ -13,6 +13,7 @@ package sortingAlgorithms
   *
   * In case that we take first element as pivot, algorithm works worse with sorted lists.
   *
+  * Purity project by Daniil Tekunov.
   */
 object QuickSort {
 
