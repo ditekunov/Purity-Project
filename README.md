@@ -22,6 +22,9 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 5) Merge sort [`sortingAlgorithms.MergeSort`](src/main/scala/sortingAlgorithms/MergeSort.scala)
 6) Insertion sort [`sortingAlgorithms.InsertionSort`](src/main/scala/sortingAlgorithms/InsertionSort.scala)
 
+### Persistent data structures:
+1) LinkedList [`persistentDataStructures/LinkedList`](src/main/scala/persistentDataStructures/LinkedList.scala)
+
 ### Integer operations:
 [`integerOperations.IntegerProperties`](src/main/scala/integerOperations/IntegerProperties.scala)
 1) .isOdd 
@@ -40,7 +43,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 16) .powN(N)
 17) .gcdWith(secondInt)
 18) .isPrimeFermatStrict (does not fail on Carmichael numbers, works slowly)
-19) .isPrimeFermatStrict (does not fail on Carmichael numbers, works fast, only with Ints)
+19) .isPrimeFermatFast (does not fail on Carmichael numbers, works fast, only with Ints)
 
 ### Additional Integers math:
 [`integerOperations.IntegerMath`](src/main/scala/integerOperations/IntegerMath.scala)
@@ -108,6 +111,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 4) Classical data structures
 5) Heap sort
 6) Selection sort
+
 
 
 # Some sources, that were used via development:
