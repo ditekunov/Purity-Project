@@ -264,8 +264,6 @@ class IntegerProperties(val firstInt: Int) {
       case Success(something) => something && !CarmichaelsTilBigInt.contains(firstInt)
       case Failure(ex) => throw new InputException("\"isPrimeFermat\" " + ex)
     }
-
-
 }
 
 object IntegerProperties {

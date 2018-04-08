@@ -2,9 +2,10 @@ package unitTests
 
 import org.scalatest.FunSuite
 import org.scalatest.Matchers._
-import persistentDataStructures.{ListStructure, NilType}
+import persistentDataStructures.{ListStructure, NilType, Queue}
 import persistentDataStructures.LinkedList._
 import persistentDataStructures.miscellaneous.DataStructureException
+import persistentDataStructures.Queue._
 
 
 class DataStructuresTests extends FunSuite {
@@ -20,6 +21,24 @@ class DataStructuresTests extends FunSuite {
 
     val c = b.remove(2)
     c shouldBe NilType
+  }
+
+  test("Additional testing of a LinkedList") {
+
+  }
+
+  test("CRUD testing of a Queue") {
+    val a: Queue[Nothing] = createEmptyQueue
+
+    a.isEmpty shouldBe true
+
+    val b = a.enqueue("Element1")
+
+    val (c, d): (String, Queue[String]) = b.dequeue
+
+    //d shouldBe a
+
+    c shouldBe "Element1"
   }
 
 }
