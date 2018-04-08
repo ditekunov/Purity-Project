@@ -156,4 +156,9 @@ class IntegerTests extends FunSuite {
     21.isHarshad shouldBe true
     11.isHarshad shouldBe false
   }
+
+  test("Testing of the gcdExtended") {
+    17.gcdExtendedWith(4) shouldBe (1, -4)
+    (-5).gcdExtendedWith(4) shouldBe (2, 3)
+  }
 }

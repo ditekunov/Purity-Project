@@ -17,6 +17,4 @@ import scala.concurrent.Future
 
 object Main extends App {
 
-  print( 17.generateEratosthenesPrimes )
-
 }

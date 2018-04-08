@@ -39,9 +39,9 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 11) .numOfDivisors
 12) .sumOfDivisors
 13) .isPrime, works with O(sqrt(n)) speed
-14) .isPrimeFermat(n). works with O(log(n)) speed
+14) .isPrimeFermat(). works with O(log(n)) speed
 15) .sqr
-16) .powN(N)
+16) .powN()
 17) .gcdWith(secondInt)
 18) .isPrimeFermatStrict (does not fail on Carmichael numbers, works slowly)
 19) .isPrimeFermatFast (does not fail on Carmichael numbers, works fast, only with Ints)
@@ -53,9 +53,10 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 3) .isLuc_Carmichael
 4) .isFibonacci
 5) .nthCatalan
-6) .binaryPower(n), works with O(log(n)) speed
+6) .binaryPower(), works with O(log(n)) speed
 7) .isZuckerman
 8) .isHarshad
+9) .gcdExtendedWith()
 
 ### Integer lists generators:
 [`integerOperations.IntegerGenerators`](src/main/scala/integerOperations/IntegerGenerators.scala)
