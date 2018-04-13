@@ -142,6 +142,10 @@ class IntegerMath(val firstInt: Int) {
       (d, y, x - y * (first / second))
   }
 
+
+
+
+
 }
 
 object IntegerMath {
