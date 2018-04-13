@@ -42,5 +42,14 @@ object ListProperties {
     }
   }
 
+  def linearSearch[A](input: List[A], element: A, iter: Int = 0): AnyVal = input match {
+    case elem :: tail =>
+      if (elem == element) iter
+      else linearSearch(tail, element, iter + 1)
+    case elem :: Nil =>
+      if (elem == element) iter
+      else throw new InputException()
+  }
+
 
 }

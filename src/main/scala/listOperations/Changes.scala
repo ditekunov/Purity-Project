@@ -58,4 +58,6 @@ object Changes {
       List(outcomeTuple.counterOfVowelToConsonant, outcomeTuple.counterOfConsonantToVowel)
   }
 
+
+
 }
