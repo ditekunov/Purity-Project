@@ -9,6 +9,11 @@ import integerOperations.IntegerGenerators._
 
 import scala.annotation.tailrec
 
+/**
+  * Contains functions, affecting Integer properties.
+  *
+  * Purity project by Daniil Tekunov.
+  */
 class IntegerProperties(val firstInt: Int) {
 
   import IntegerProperties._
@@ -203,6 +208,7 @@ class IntegerProperties(val firstInt: Int) {
     else if (isPrimeFermatLogic(first)) isPrimeFermatBorders(first, localIterations - 1)
     else false
   }
+
   private def isPrimeFermatLogic(n : Int) : Boolean = {
     def checkWithRandomize(a : Int) : Boolean = {
       val res = expmod(a, n, n)
@@ -210,6 +216,7 @@ class IntegerProperties(val firstInt: Int) {
     }
     checkWithRandomize(random(n - 1) + 1)
   }
+
   private def expmod(base : Int, exp : Int, m : Int) : Int = {
     if (exp == 0) 1
     else if (exp.isEven) expmod(base, exp / 2, m).sqr % m
@@ -229,8 +236,39 @@ class IntegerProperties(val firstInt: Int) {
     *
     * https://en.wikipedia.org/wiki/Coprime_integers
     */
-  def isCoPrime(secondInt: Int) = firstInt.gcdWith(secondInt) == 1
+  def isCoPrimeWith(secondInt: Int) = firstInt.gcdWith(secondInt) == 1
 
+  /**
+    * Checks, whether Int is prime with Fermat method.
+    *
+    * Additionally, checks, whether Int is a Carmichael number to ensure this.
+    *
+    * https://en.wikipedia.org/wiki/Fermat_primality_test
+    *
+    * https://en.wikipedia.org/wiki/Carmichael_number
+    */
+  def isPrimeFermatStrict(iterations: Int = 100): Boolean =
+    Try(isPrimeFermatBorders(localIterations = iterations)) match {
+    case Success(something) => something && !firstInt.generateCarmichaelNumbers.contains(firstInt)
+    case Failure(ex) => throw new InputException("\"isPrimeFermat\" " + ex)
+  }
+
+  /**
+    * Checks, whether Int is prime with Fermat method with O(log(n)) speed.
+    *
+    * Does not generate Carmichaels, so it works only with Ints up to BigInt.
+    *
+    * https://en.wikipedia.org/wiki/Fermat_primality_test
+    *
+    * https://en.wikipedia.org/wiki/Carmichael_number
+    */
+  private final lazy val CarmichaelsTilBigInt: Set[Int] = Set(561, 41041, 825265, 321197185)
+
+  def isPrimeFermatFast(iterations: Int = 100): Boolean =
+    Try(isPrimeFermatBorders(localIterations = iterations)) match {
+      case Success(something) => something && !CarmichaelsTilBigInt.contains(firstInt)
+      case Failure(ex) => throw new InputException("\"isPrimeFermat\" " + ex)
+    }
 }
 
 object IntegerProperties {

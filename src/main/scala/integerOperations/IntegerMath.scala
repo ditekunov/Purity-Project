@@ -7,6 +7,11 @@ import IntegerProperties._
 
 import scala.util.{Failure, Success, Try}
 
+/**
+  * Contains functions, that use more specific math or algorithms.
+  *
+  * Purity project by Daniil Tekunov.
+  */
 class IntegerMath(val firstInt: Int) {
 
   import IntegerMath._
@@ -101,6 +106,45 @@ class IntegerMath(val firstInt: Int) {
     else if (n % 2 == 1) binaryPowerLogic(cur, n - 1) * cur
     else binaryPowerLogic(cur, n / 2) * binaryPowerLogic(cur, n / 2)
   }
+
+  /**
+    * Checks, whether the number is a Zuckerman number
+    *
+    * http://www.numbersaplenty.com/set/Zuckerman_number/
+    */
+  def isZuckerman: Boolean =
+    (firstInt.compositionOfDigits > 0) && (firstInt % firstInt.compositionOfDigits == 0) && (firstInt > 0)
+
+  /**
+    * Checks, whether the number is a Harshad number
+    *
+    * https://en.wikipedia.org/wiki/Harshad_number
+    */
+  def isHarshad: Boolean = (firstInt == 0) || (firstInt % firstInt.sumOfDigits == 0) && (firstInt > 0)
+
+  /**
+    * Extended version of the Euclid's algorithm for gcd
+    *
+    * https://e-maxx.ru/algo/extended_euclid_algorithm
+    */
+  def gcdExtendedWith(secondInt: Int): (Int, Int) = Try(gcdExtendedLogic(firstInt, secondInt)) match {
+    case Success(something) => (something._2, something._3)
+    case Failure(ex) => throw new InputException(ex.toString)
+  }
+
+  /**
+    * Sub-function for gcdExtended.
+    */
+  private def gcdExtendedLogic(first: Int, second: Int): (Int, Int, Int) = second match {
+    case 0 => (firstInt, 1, 0)
+    case _ =>
+      val (d, x, y) = gcdExtendedLogic(second, first % second)
+      (d, y, x - y * (first / second))
+  }
+
+
+
+
 
 }
 

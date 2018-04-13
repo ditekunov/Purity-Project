@@ -11,6 +11,7 @@ package sortingAlgorithms.unseriousAlgorithms
   *
   * Best speed: O(max(input) + n)
   *
+  * Purity project by Daniil Tekunov.
   */
 object SleepSort {
 
@@ -18,7 +19,7 @@ object SleepSort {
     input.foreach(i => new Thread {
       override def run() {
         Thread.sleep(i * 30)
-        print(i)
+        print(i + "|")
       }
     }.start())
 

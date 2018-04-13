@@ -8,6 +8,11 @@ import IntegerMath._
 
 import scala.annotation.tailrec
 
+/**
+  * Contains functions, that generate different lists of Integers.
+  *
+  * Purity project by Daniil Tekunov.
+  */
 class IntegerGenerators(val til: Int) {
 
   import IntegerGenerators._
@@ -269,27 +274,6 @@ class IntegerGenerators(val til: Int) {
     else generateCatalanNumbersLogic(outcomeList :+ cur.nthCatalan, cur + 1)
   }
 
-  /**
-    * Generates Fermat numbers in range from 1 to until.
-    */
-  def generateFermatNumbers: List[Int] = Try(generateFermatNumbersLogic()) match {
-    case Success(something) =>
-      if (something == List(3)) something
-      else something.tail
-
-    case Failure(ex) => throw new InputException(ex.toString)
-  }
-
-  /**
-    * Sub-function for generateFermatNumbers
-    */
-  @tailrec
-  private def generateFermatNumbersLogic(outcomeList: List[Int] = List(3), cur: Int = 3): List[Int] = {
-    if (til < 3) throw new InputException("\"generateCatalanNumbers\" " + NegativeInput)
-    else if (til < 5) List(3)
-    else if (outcomeList.last > til) outcomeList.init
-    else generateFermatNumbersLogic(outcomeList :+ cur, (cur - 1).sqr + 1)
-  }
 }
 
 

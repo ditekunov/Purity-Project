@@ -5,6 +5,8 @@ import utils.ExceptionMessages.NegativeOrZeroInput
 
 /**
   * Contains realisation of a Gray encoding: https://en.wikipedia.org/wiki/Gray_code
+  *
+  * Purity project by Daniil Tekunov.
   */
 object GrayEncoder {
   def encode(input: Int): Int = {

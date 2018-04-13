@@ -12,6 +12,7 @@ import scala.annotation.tailrec
   *
   * HuffmanEncoder.createCodeTree - to create a tree for decoder
   *
+  * Purity project by Daniil Tekunov.
   */
 object HuffmanEncoder {
 

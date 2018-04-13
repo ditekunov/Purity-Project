@@ -1,4 +1,8 @@
-# Purity project
+
+
+# Purity project 
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7b1a99f92fb34e7487bdaa1a145e3bc8)](https://app.codacy.com/app/ditekunov/Purity-Project?utm_source=github.com&utm_medium=referral&utm_content=ditekunov/Purity-Project&utm_campaign=badger)
 
 This project contains realisations of common-used math functions and classical algorithms, written in Scala's pure-functional style.
 
@@ -18,6 +22,10 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 5) Merge sort [`sortingAlgorithms.MergeSort`](src/main/scala/sortingAlgorithms/MergeSort.scala)
 6) Insertion sort [`sortingAlgorithms.InsertionSort`](src/main/scala/sortingAlgorithms/InsertionSort.scala)
 
+### Persistent data structures:
+1) LinkedList [`persistentDataStructures/LinkedList`](src/main/scala/persistentDataStructures/LinkedList.scala)
+2) Queue [`persistentDataStructures/Queue`](src/main/scala/persistentDataStructures/Queue.scala)
+
 ### Integer operations:
 [`integerOperations.IntegerProperties`](src/main/scala/integerOperations/IntegerProperties.scala)
 1) .isOdd 
@@ -31,10 +39,12 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 11) .numOfDivisors
 12) .sumOfDivisors
 13) .isPrime, works with O(sqrt(n)) speed
-14) .isPrimeFermat(n). works with O(log(n)) speed
+14) .isPrimeFermat(). works with O(log(n)) speed
 15) .sqr
-16) .powN(N)
+16) .powN()
 17) .gcdWith(secondInt)
+18) .isPrimeFermatStrict (does not fail on Carmichael numbers, works slowly)
+19) .isPrimeFermatFast (does not fail on Carmichael numbers, works fast, only with Ints)
 
 ### Additional Integers math:
 [`integerOperations.IntegerMath`](src/main/scala/integerOperations/IntegerMath.scala)
@@ -43,7 +53,10 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 3) .isLuc_Carmichael
 4) .isFibonacci
 5) .nthCatalan
-6) .binaryPower(n), works with O(log(n)) speed
+6) .binaryPower(), works with O(log(n)) speed
+7) .isZuckerman
+8) .isHarshad
+9) .gcdExtendedWith()
 
 ### Integer lists generators:
 [`integerOperations.IntegerGenerators`](src/main/scala/integerOperations/IntegerGenerators.scala)
@@ -59,7 +72,11 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 10) Fibonacci numbers
 11) Random ints
 12) Catalan numbers
-13) Fermat numbers
+
+### Additional math generators:
+[`integerOperations.IntegerGeneratorsMath`](src/main/scala/integerOperations/IntegerGeneratorsMath.scala)
+1) Fermat numbers
+2) Eratosthenes primes sieve O(log(log(n)))
 
 ### Char operations:
 [`charOperations.CharProperties`](src/main/scala/charOperations/CharProperties.scala)
@@ -79,6 +96,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 3) Counter for the number of sign changes in a list of integers
 4) Counter for the number of letter changes from vowel to consonant in a list of integers
 5) .isSorted
+6) binary search in a list
 
 ### Encoders:
 1) RLE [`functionalAlgorithms.encoders.RLE_Encoder`](src/main/scala/functionalAlgorithms/encoders/RLE_Encoder.scala)
@@ -99,6 +117,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 4) Classical data structures
 5) Heap sort
 6) Selection sort
+
 
 
 # Some sources, that were used via development:

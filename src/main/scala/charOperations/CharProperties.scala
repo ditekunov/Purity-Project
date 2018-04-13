@@ -6,7 +6,9 @@ import utils.ExceptionMessages.DeprecatedSymbolInput
 
 
 /**
-  * Contains functions, affecting char properties
+  * Contains functions, affecting char properties.
+  *
+  * Purity project by Daniil Tekunov.
   */
 class CharProperties(val firstChar: Char) {
   import CharProperties._

@@ -12,6 +12,7 @@ import scala.util.{Failure, Success, Try}
   *
   * / is a separator between words in a sentence (equivalent to seven units in official Morse)
   *
+  * Purity project by Daniil Tekunov.
   */
 object MorseDecoder {
 
