@@ -1,8 +1,8 @@
-package persistentDataStructures
+package dataStructures
 
 import utils.ExceptionMessages.NegativeInput
-import persistentDataStructures.miscellaneous.DataStructuresExceptionMessages.{EmptyHeadException, EmptyListException, EmptyTailException}
-import persistentDataStructures.miscellaneous.DataStructureException
+import dataStructures.miscellaneous.DataStructuresExceptionMessages.{EmptyHeadException, EmptyListException, EmptyTailException}
+import dataStructures.miscellaneous.DataStructureException
 
 /**
   * Contains functional realisation of a standard linked list.

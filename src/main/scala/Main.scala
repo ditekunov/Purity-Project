@@ -13,9 +13,9 @@ import cryptographyOperations.encoders.{GrayEncoder, HuffmanEncoder, MorseEncode
 import sortingAlgorithms.QuickSort._
 import sortingAlgorithms.unseriousAlgorithms.SleepSort
 import sortingAlgorithms.unseriousAlgorithms.SleepSort.sleepSort
-import persistentDataStructures.Stack._
-import persistentDataStructures.Set._
-import persistentDataStructures.Set
+import dataStructures.Stack._
+import dataStructures.Set._
+import dataStructures.Set
 
 
 import scala.concurrent.Future
@@ -24,8 +24,8 @@ import complexOperations.ArithmeticComplex.Complex._
 
 object Main extends App {
 
-  val a: Set[Int] = basicSet(14)
+  val a = 14
 
-  print(convertToString(filter(a, basicSet(14)), 1000))
+
 
 }

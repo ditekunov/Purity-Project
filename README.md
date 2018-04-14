@@ -23,9 +23,9 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 6) Insertion sort [`sortingAlgorithms.InsertionSort`](src/main/scala/sortingAlgorithms/InsertionSort.scala)
 
 ### Persistent data structures:
-1) LinkedList [`persistentDataStructures/LinkedList`](src/main/scala/persistentDataStructures/LinkedList.scala)
-2) Queue [`persistentDataStructures/Queue`](src/main/scala/persistentDataStructures/Queue.scala)
-3) Stack [`persistentDataStructures/Stack`](src/main/scala/persistentDataStructures/Stack.scala)
+1) LinkedList [`persistentDataStructures/LinkedList`](src/main/scala/dataStructures/LinkedList.scala)
+2) Queue [`persistentDataStructures/Queue`](src/main/scala/dataStructures/Queue.scala)
+3) Stack [`persistentDataStructures/Stack`](src/main/scala/dataStructures/Stack.scala)
 
 ### Integer operations:
 [`integerOperations.IntegerProperties`](src/main/scala/integerOperations/IntegerProperties.scala)
@@ -46,6 +46,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 17) .gcdWith(secondInt)
 18) .isPrimeFermatStrict (does not fail on Carmichael numbers, works slowly)
 19) .isPrimeFermatFast (does not fail on Carmichael numbers, works fast, only with Ints)
+20) .lcmWith(secondInt)
 
 ### Additional Integers math:
 [`integerOperations.IntegerMath`](src/main/scala/integerOperations/IntegerMath.scala)

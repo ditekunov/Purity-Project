@@ -1,4 +1,4 @@
-package persistentDataStructures.miscellaneous
+package dataStructures.miscellaneous
 
 /**
   * Basic class for handling data structures exceptions.

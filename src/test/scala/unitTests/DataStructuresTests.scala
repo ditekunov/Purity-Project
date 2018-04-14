@@ -2,11 +2,11 @@ package unitTests
 
 import org.scalatest.FunSuite
 import org.scalatest.Matchers._
-import persistentDataStructures.{ListStructure, NilType, Queue, Stack}
-import persistentDataStructures.LinkedList._
-import persistentDataStructures.miscellaneous.DataStructureException
-import persistentDataStructures.Queue._
-import persistentDataStructures.Stack._
+import dataStructures.{ListStructure, NilType, Queue, Stack}
+import dataStructures.LinkedList._
+import dataStructures.miscellaneous.DataStructureException
+import dataStructures.Queue._
+import dataStructures.Stack._
 
 
 class DataStructuresTests extends FunSuite {

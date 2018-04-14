@@ -1,4 +1,4 @@
-package persistentDataStructures
+package dataStructures
 
 import scala.annotation.tailrec
 
