@@ -23,9 +23,10 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 6) Insertion sort [`sortingAlgorithms.InsertionSort`](src/main/scala/sortingAlgorithms/InsertionSort.scala)
 
 ### Persistent data structures:
-1) LinkedList [`persistentDataStructures/LinkedList`](src/main/scala/dataStructures/LinkedList.scala)
-2) Queue [`persistentDataStructures/Queue`](src/main/scala/dataStructures/Queue.scala)
-3) Stack [`persistentDataStructures/Stack`](src/main/scala/dataStructures/Stack.scala)
+1) LinkedList [`persistentDataStructures/LinkedList`](src/main/scala/persistentDataStructures/LinkedList.scala)
+2) Queue [`persistentDataStructures/Queue`](src/main/scala/persistentDataStructures/Queue.scala)
+3) Stack [`persistentDataStructures/Stack`](src/main/scala/persistentDataStructures/Stack.scala)
+4) Set [`persistentDataStructures/Set`](src/main/scala/persistentDataStructures/Set.scala)
 
 ### Integer operations:
 [`integerOperations.IntegerProperties`](src/main/scala/integerOperations/IntegerProperties.scala)
@@ -102,10 +103,10 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 7) linear search in a list
 
 ### Encoders:
-1) RLE [`functionalAlgorithms.encoders.RLE_Encoder`](src/main/scala/cryptographyOperations/encoders/RLE_Encoder.scala)
-2) Huffman [`functionalAlgorithms.encoders.HuffmanEncoder`](src/main/scala/cryptographyOperations/encoders/HuffmanEncoder.scala)
-3) Gray [`functionalAlgorithms.encoders.GrayEncoder`](src/main/scala/cryptographyOperations/encoders/GrayEncoder.scala)
-4) Morse [`functionalAlgorithms.encoders.MorseEncoder`](src/main/scala/cryptographyOperations/encoders/MorseEncoder.scala)
+1) RLE [`cryptographyOperations.encoders.RLE_Encoder`](src/main/scala/cryptographyOperations/encoders/RLE_Encoder.scala)
+2) Huffman [`cryptographyOperations.encoders.HuffmanEncoder`](src/main/scala/cryptographyOperations/encoders/HuffmanEncoder.scala)
+3) Gray [`cryptographyOperations.encoders.GrayEncoder`](src/main/scala/cryptographyOperations/encoders/GrayEncoder.scala)
+4) Morse [`cryptographyOperations.encoders.MorseEncoder`](src/main/scala/cryptographyOperations/encoders/MorseEncoder.scala)
 
 ### Decoders:
 1) RLE [`functionalAlgorithms.decoders.RLE_Decoder`](src/main/scala/cryptographyOperations/decoders/RLE_Decoder.scala)
