@@ -13,12 +13,17 @@ import functionalAlgorithms.encoders.{GrayEncoder, HuffmanEncoder, MorseEncoder,
 import sortingAlgorithms.QuickSort._
 import sortingAlgorithms.unseriousAlgorithms.SleepSort
 import sortingAlgorithms.unseriousAlgorithms.SleepSort.sleepSort
+import persistentDataStructures.Stack._
 
 import scala.concurrent.Future
 import complexOperations.ArithmeticComplex.Complex._
 
 
 object Main extends App {
+  val a = createEmptyStack
+
+  print(a.isEmpty)
+
 
 
 }

@@ -25,6 +25,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 ### Persistent data structures:
 1) LinkedList [`persistentDataStructures/LinkedList`](src/main/scala/persistentDataStructures/LinkedList.scala)
 2) Queue [`persistentDataStructures/Queue`](src/main/scala/persistentDataStructures/Queue.scala)
+3) Stack [`persistentDataStructures/Stack`](src/main/scala/persistentDataStructures/Stack.scala)
 
 ### Integer operations:
 [`integerOperations.IntegerProperties`](src/main/scala/integerOperations/IntegerProperties.scala)
@@ -97,6 +98,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 4) Counter for the number of letter changes from vowel to consonant in a list of integers
 5) .isSorted
 6) binary search in a list
+7) linear search in a list
 
 ### Encoders:
 1) RLE [`functionalAlgorithms.encoders.RLE_Encoder`](src/main/scala/functionalAlgorithms/encoders/RLE_Encoder.scala)

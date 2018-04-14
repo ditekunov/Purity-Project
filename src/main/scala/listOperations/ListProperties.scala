@@ -44,7 +44,7 @@ object ListProperties {
     */
   def isSorted(input: List[Int])(implicit ord: Ordering[Int]): Boolean = input match {
     case List() => true
-    case List(element) => true
+    case List(_) => true
     case _ => input.sliding(2).forall {
       case List(firstElement, secondElement) => ord.lteq(firstElement, secondElement)
     }
@@ -80,15 +80,32 @@ object ListProperties {
       case Success(something) => something.get
       case Failure(_) => throw new InputException(NoneInput)
     }
+  }
 
-    def linearSearch[A](input: List[A], element: A, iter: Int = 0): AnyVal = input match {
+  /**
+    * Realisation of a standard linear search.
+    *
+    * https://en.wikipedia.org/wiki/Linear_search
+    *
+    * Worst speed: O(n)
+    *
+    * Average speed: O(n/2)
+    *
+    * Best speed: O(1)
+    *
+    */
+  def linearSearch[A](input: List[A], element: A): Int = {
+
+    @tailrec
+    def linearSearchLogic[B](input: List[B], element: B, iter: Int = 0): Int = input match {
       case elem :: tail =>
         if (elem == element) iter
-        else linearSearch(tail, element, iter + 1)
-      case elem :: Nil =>
-        if (elem == element) iter
-        else throw new InputException()
+        else linearSearchLogic(tail, element, iter + 1)
+      case Nil => throw new InputException()
     }
+
+    if (input.nonEmpty) linearSearchLogic(input, element)
+    else throw new InputException(NoneInput)
   }
 
 }
