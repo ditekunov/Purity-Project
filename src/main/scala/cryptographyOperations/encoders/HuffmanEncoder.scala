@@ -1,4 +1,4 @@
-package functionalAlgorithms.encoders
+package cryptographyOperations.encoders
 
 import collection.immutable.Queue
 import scala.annotation.tailrec

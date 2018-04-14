@@ -1,6 +1,6 @@
-package functionalAlgorithms.decoders
+package cryptographyOperations.decoders
 
-import functionalAlgorithms.encoders.HuffmanEncoder.{CodeTree, Fork, Leaf}
+import cryptographyOperations.encoders.HuffmanEncoder.{CodeTree, Fork, Leaf}
 
 object HuffmanDecoder {
 

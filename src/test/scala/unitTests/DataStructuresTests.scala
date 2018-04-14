@@ -56,4 +56,8 @@ class DataStructuresTests extends FunSuite {
     c shouldBe "Element1"
   }
 
+  test("Testing of a Set") {
+
+  }
+
 }

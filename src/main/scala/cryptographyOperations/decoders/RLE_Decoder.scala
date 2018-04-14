@@ -1,4 +1,4 @@
-package functionalAlgorithms.decoders
+package cryptographyOperations.decoders
 
 import utils.ExceptionMessages.EmptyInput
 import utils.InputException

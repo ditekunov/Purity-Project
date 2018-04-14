@@ -1,9 +1,16 @@
 package persistentDataStructures
 
 import persistentDataStructures.miscellaneous.DataStructuresExceptionMessages.EmptyStackException
-
 import persistentDataStructures.miscellaneous.DataStructureException
 
+
+/**
+  * Contains functional realisation of a standard stack.
+  *
+  * https://en.wikipedia.org/wiki/Stack_(abstract_data_type)
+  *
+  * Purity project by Daniil Tekunov.
+  */
 class Stack[+A](inPart: List[A] = Nil) {
 
   /**
