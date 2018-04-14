@@ -1,7 +1,7 @@
-package persistentDataStructures
+package dataStructures
 
-import persistentDataStructures.miscellaneous.DataStructuresExceptionMessages.EmptyStackException
-import persistentDataStructures.miscellaneous.DataStructureException
+import dataStructures.miscellaneous.DataStructuresExceptionMessages.EmptyStackException
+import dataStructures.miscellaneous.DataStructureException
 
 
 /**

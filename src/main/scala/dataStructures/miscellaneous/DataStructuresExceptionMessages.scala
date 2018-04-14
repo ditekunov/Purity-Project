@@ -1,4 +1,4 @@
-package persistentDataStructures.miscellaneous
+package dataStructures.miscellaneous
 
 /**
   * Utility messages to handle data structure exceptions.
@@ -9,5 +9,7 @@ object DataStructuresExceptionMessages {
   lazy val EmptyListException: String = " list is empty"
   lazy val EmptyQueueException: String = " queue is empty"
   lazy val EmptyStackException: String = " stack is empty"
+  lazy val EmptyTreeException: String = " tree is empty"
+  lazy val EmptyLeafException: String = " leaf is empty"
 
 }

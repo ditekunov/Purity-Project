@@ -1,4 +1,4 @@
-package persistentDataStructures
+package dataStructures
 import miscellaneous.DataStructureException
 import miscellaneous.DataStructuresExceptionMessages.EmptyQueueException
 

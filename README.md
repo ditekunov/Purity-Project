@@ -47,6 +47,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 17) .gcdWith(secondInt)
 18) .isPrimeFermatStrict (does not fail on Carmichael numbers, works slowly)
 19) .isPrimeFermatFast (does not fail on Carmichael numbers, works fast, only with Ints)
+20) .lcmWith(secondInt)
 
 ### Additional Integers math:
 [`integerOperations.IntegerMath`](src/main/scala/integerOperations/IntegerMath.scala)
