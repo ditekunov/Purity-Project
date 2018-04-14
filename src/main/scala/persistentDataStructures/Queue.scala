@@ -5,7 +5,7 @@ import miscellaneous.DataStructuresExceptionMessages.EmptyQueueException
 /**
   * Contains functional realisation of a standard queue.
   *
-  * https://en.wikipedia.org/wiki/Queue
+  * https://en.wikipedia.org/wiki/Queue_(abstract_data_type)
   *
   * Purity project by Daniil Tekunov.
   */

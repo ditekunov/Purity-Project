@@ -1,8 +1,8 @@
 package unitTests
 
 import org.scalatest.Matchers._
-import functionalAlgorithms.encoders.{GrayEncoder, HuffmanEncoder, MorseEncoder, RLE_Encoder}
-import functionalAlgorithms.decoders.{GrayDecoder, MorseDecoder, RLE_Decoder}
+import cryptographyOperations.encoders.{GrayEncoder, HuffmanEncoder, MorseEncoder, RLE_Encoder}
+import cryptographyOperations.decoders.{GrayDecoder, MorseDecoder, RLE_Decoder}
 import org.scalatest.FunSuite
 import utils.InputException
 

@@ -1,4 +1,4 @@
-package functionalAlgorithms.decoders
+package cryptographyOperations.decoders
 
 import utils.InputException
 import utils.ExceptionMessages.NegativeOrZeroInput

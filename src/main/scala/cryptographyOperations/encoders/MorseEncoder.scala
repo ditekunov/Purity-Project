@@ -1,4 +1,4 @@
-package functionalAlgorithms.encoders
+package cryptographyOperations.encoders
 
 import utils.InputException
 import utils.ExceptionMessages.DeprecatedSymbolInput
