@@ -21,6 +21,7 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 4) Bubble sort [`sortingAlgorithms.BubbleSort`](src/main/scala/sortingAlgorithms/BubbleSort.scala)
 5) Merge sort [`sortingAlgorithms.MergeSort`](src/main/scala/sortingAlgorithms/MergeSort.scala)
 6) Insertion sort [`sortingAlgorithms.InsertionSort`](src/main/scala/sortingAlgorithms/InsertionSort.scala)
+7) Selection sort [`sortingAlgorithms.SelectionSort`](src/main/scala/sortingAlgorithms/SelectionSort.scala)
 
 ### Persistent data structures:
 1) LinkedList [`persistentDataStructures/LinkedList`](src/main/scala/persistentDataStructures/LinkedList.scala)
@@ -120,7 +121,6 @@ Would be great, if you'd contribute, in case that presented algorithms are not a
 3) Operations with double
 4) Classical data structures
 5) Heap sort
-6) Selection sort
 
 
 
