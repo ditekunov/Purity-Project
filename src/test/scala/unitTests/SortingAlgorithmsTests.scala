@@ -3,8 +3,7 @@ package unitTests
 import org.scalatest.FunSuite
 import org.scalatest.Matchers._
 import sortingAlgorithms._
-import sortingAlgorithms.unseriousAlgorithms.Bogosort
-import sortingAlgorithms.unseriousAlgorithms.SleepSort
+import sortingAlgorithms.unseriousAlgorithms._
 
 class SortingAlgorithmsTests extends FunSuite {
   final lazy val unsortedList = List(8, 4, 6, 1, 7, 3, 8, 4, 7, 9, 2, 7)
@@ -45,5 +44,11 @@ class SortingAlgorithmsTests extends FunSuite {
     InsertionSort.insertionSort(sortedList) shouldBe sortedList
     InsertionSort.insertionSort(unsortedList) shouldBe List(1, 2, 3, 4, 4, 6, 7, 7, 7, 8, 8, 9)
     InsertionSort.insertionSort(emptyList) shouldBe emptyList
+  }
+  
+  test("Testing of the selectionSort") {
+    SelectionSort.selectionSort(sortedList) shouldBe sortedList
+    SelectionSort.selectionSort(unsortedList) shouldBe List(1, 2, 3, 4, 4, 6, 7, 7, 7, 8, 8, 9)
+    SelectionSort.selectionSort(emptyList) shouldBe emptyList
   }
 }
