@@ -119,6 +119,17 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 1) Rational numbers [`rationalOperations/Rational`](src/main/scala/rationalOperations/Rational.scala)
 2) Complex numbers [`complexOperations/Complex`](src/main/scala/complexOperations/Complex.scala)
 
+## Math constants: 
+[`MathConstants`](src/main/scala/utils/MathConstants.scala)
+1) Pi
+2) Tau
+3) E
+4) Pythagoras constant
+5) Theodorus constant
+6) Gamma
+7) Phi
+8) Plastic number
+
 ##### Planned:
 1) Operations with chars
 2) Operations with integers
