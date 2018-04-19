@@ -1,9 +1,6 @@
-import complexOperations.ArithmeticComplex.Complex
-
 package object complexOperations {
-  val i: Complex = Complex(0.0, 1.0)
+    val i: Complex = Complex(0, 1)
 
-  implicit def intToComplex(input: Int): Complex = Complex(input.toDouble)
-  implicit def doubleToComplex(input: Int): Complex = Complex(input)
-
-}
+    implicit def fromDouble(d: Double): Complex = Complex(d)
+    implicit def fromInt(i: Int): Complex = Complex(i.toDouble)
+  }
