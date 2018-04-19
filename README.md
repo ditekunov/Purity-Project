@@ -115,6 +115,10 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 3) Gray [`functionalAlgorithms.decoders.GrayDecoder`](src/main/scala/cryptographyOperations/decoders/GrayDecoder.scala)
 4) Morse [`functionalAlgorithms.decoders.MorseDecoder`](src/main/scala/cryptographyOperations/decoders/MorseDecoder.scala)
 
+### Additional arithmetics:
+1) Rational numbers [`rationalOperations/Rational`](src/main/scala/rationalOperations/Rational.scala)
+2) Complex numbers [`complexOperations/Complex`](src/main/scala/complexOperations/Complex.scala)
+
 ##### Planned:
 1) Operations with chars
 2) Operations with integers
