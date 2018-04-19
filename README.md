@@ -22,12 +22,14 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 5) Merge sort [`sortingAlgorithms.MergeSort`](src/main/scala/sortingAlgorithms/MergeSort.scala)
 6) Insertion sort [`sortingAlgorithms.InsertionSort`](src/main/scala/sortingAlgorithms/InsertionSort.scala)
 7) Selection sort [`sortingAlgorithms.SelectionSort`](src/main/scala/sortingAlgorithms/SelectionSort.scala)
+8) Heap sort [`sortingAlgorithms.HeapSort`](src/main/scala/sortingAlgorithms/HeapSort.scala)
 
 ### Persistent data structures:
 1) LinkedList [`persistentDataStructures/LinkedList`](src/main/scala/persistentDataStructures/LinkedList.scala)
 2) Queue [`persistentDataStructures/Queue`](src/main/scala/persistentDataStructures/Queue.scala)
 3) Stack [`persistentDataStructures/Stack`](src/main/scala/persistentDataStructures/Stack.scala)
 4) Set [`persistentDataStructures/Set`](src/main/scala/persistentDataStructures/Set.scala)
+5) Binary tree [`persistentDataStructures/BinaryTree`](src/main/scala/persistentDataStructures/BinaryTree.scala)
 
 ### Integer operations:
 [`integerOperations.IntegerProperties`](src/main/scala/integerOperations/IntegerProperties.scala)
@@ -131,12 +133,8 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 8) Plastic number
 
 ##### Planned:
-1) Operations with chars
-2) Operations with integers
-3) Operations with double
-4) Classical data structures
-5) Heap sort
-
+1) Operations with double
+2) Classical data structures
 
 
 # Some sources, that were used via development:
