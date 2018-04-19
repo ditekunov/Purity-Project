@@ -10,7 +10,7 @@ Some of them are a new sight at Scala's standard library, some are persistent da
 
 The main purpose of this library is to spread ideas of a functional programming in Scala and to challenge yourself by creating classical imperative algorithms in a new way.
 
-Would be great, if you'd contribute, in case that presented algorithms are not as effective as they can be, and you know how to fix this, or if you have ideas, that can be added in the future.
+Would be great, if you contribute, in case that presented algorithms are not as effective as they can be, and you know how to fix this, or if you have ideas, that can be added in the future.
 
 # Current list of supported algorithms:
 
