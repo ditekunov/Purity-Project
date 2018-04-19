@@ -51,4 +51,10 @@ class SortingAlgorithmsTests extends FunSuite {
     SelectionSort.selectionSort(unsortedList) shouldBe List(1, 2, 3, 4, 4, 6, 7, 7, 7, 8, 8, 9)
     SelectionSort.selectionSort(emptyList) shouldBe emptyList
   }
+  
+  test("Testing of the heapSort") {
+    HeapSort.heapSort(sortedList) shouldBe sortedList
+    HeapSort.heapSort(unsortedList) shouldBe List(1, 2, 3, 4, 4, 6, 7, 7, 7, 8, 8, 9)
+    HeapSort.heapSort(emptyList) shouldBe emptyList
+  }
 }
