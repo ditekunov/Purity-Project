@@ -40,7 +40,7 @@ object MathConstants {
   /**
     * https://en.wikipedia.org/wiki/Golden_ratio
     */
-  final val phi:      Double = 1.618033988749894
+  final val phi:             Double = 1.618033988749894
 
   /**
     * https://en.wikipedia.org/wiki/Plastic_number
