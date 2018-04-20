@@ -3,7 +3,7 @@ package sortingAlgorithms
 import scala.annotation.tailrec
 
 sealed abstract class HeapSort[+A] { def rank: Int }
-case object EmptyHeapSort extends HeapSort[Nothing] { def rank = 0}
+case object EmptyHeapSort extends HeapSort[Nothing] { def rank = 0 }
 case class NonEmptyHeapSort(rank: Int, element: Int, left: HeapSort[Int], right: HeapSort[Int]) extends HeapSort[Int]
 
 object HeapSort {

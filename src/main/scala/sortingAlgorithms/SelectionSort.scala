@@ -16,7 +16,7 @@ import scala.annotation.tailrec
   */
 object SelectionSort {
 
-  def sort(list: List[Int]): List[Int] = {
+  def selectionSort(list: List[Int]): List[Int] = {
 
     def reWrite(firstPart: List[Int], secondPart: List[Int]): List[Int] = firstPart match {
       case element :: next => select(element, next, Nil, secondPart)
