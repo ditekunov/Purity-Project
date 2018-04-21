@@ -17,7 +17,7 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 ### Sorting algorithms:
 1) Quick sort [`sortingAlgorithms.QuickSort`](src/main/scala/sortingAlgorithms/QuickSort.scala)
 
-2) Bogosort [`sortingAlgorithms/unseriousAlgorithms/Bogosort` (src/main/scala/sortingAlgorithms/unseriousAlgorithms/Bogosort.scala)
+2) Bogosort [`sortingAlgorithms/unseriousAlgorithms/Bogosort`] (src/main/scala/sortingAlgorithms/unseriousAlgorithms/Bogosort.scala)
 
 3) Sleep sort [`sortingAlgorithms/unseriousAlgorithms/SleepSort`](src/main/scala/sortingAlgorithms/unseriousAlgorithms/SleepSort.scala)
 
