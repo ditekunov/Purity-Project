@@ -32,15 +32,15 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 8) Heap sort [`sortingAlgorithms.HeapSort`](src/main/scala/sortingAlgorithms/HeapSort.scala)
 
 ### Persistent data structures:
-1) LinkedList [`persistentDataStructures/LinkedList`](src/main/scala/persistentDataStructures/LinkedList.scala)
+1) LinkedList [`dataStructures/LinkedList`](src/main/scala/dataStructures/LinkedList.scala)
 
-2) Queue [`persistentDataStructures/Queue`](src/main/scala/persistentDataStructures/Queue.scala)
+2) Queue [`dataStructures/Queue`](src/main/scala/dataStructures/Queue.scala)
 
-3) Stack [`persistentDataStructures/Stack`](src/main/scala/persistentDataStructures/Stack.scala)
+3) Stack [`dataStructures/Stack`](src/main/scala/dataStructures/Stack.scala)
 
-4) Set [`persistentDataStructures/Set`](src/main/scala/persistentDataStructures/Set.scala)
+4) Set [`dataStructures/Set`](src/main/scala/dataStructures/Set.scala)
 
-5) Binary tree [`persistentDataStructures/BinaryTree`](src/main/scala/persistentDataStructures/BinaryTree.scala)
+5) Binary tree [`dataStructures/BinaryTree`](src/main/scala/dataStructures/BinaryTree.scala)
 
 ### Integer operations:
 [`integerOperations.IntegerProperties`](src/main/scala/integerOperations/IntegerProperties.scala)
