@@ -1,0 +1,5 @@
+package unitTests
+
+class RationalArithmeticTest {
+
+}
