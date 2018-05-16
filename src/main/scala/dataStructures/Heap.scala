@@ -1,11 +1,7 @@
 package dataStructures
 
 import integerOperations.IntegerProperties._
-
-package dataStructures
-
 import dataStructures.miscellaneous.DataStructureException
-import integerOperations.IntegerProperties._
 import dataStructures.miscellaneous.DataStructuresExceptionMessages.EmptyHeapException
 
 case class HeapBranch(min: Int, left: Heap[Int], right: Heap[Int], size: Int, height: Int) extends Heap {
