@@ -42,6 +42,8 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 
 5) Binary tree [`dataStructures/BinaryTree`](src/main/scala/dataStructures/BinaryTree.scala)
 
+6) Heap [[`dataStructures/Heap`]](src/main/scala/dataStructures/Heap.scala)
+
 ### Integer operations:
 [`integerOperations.IntegerProperties`](src/main/scala/integerOperations/IntegerProperties.scala)
 1) .isOdd 
@@ -206,9 +208,6 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 
 ##### Planned:
 1) Operations with double
-
-2) Classical data structures
-
 
 # Some sources, that were used via development:
 
