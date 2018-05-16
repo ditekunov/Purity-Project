@@ -1,5 +1,9 @@
 package unitTests
 
-class RationalArithmeticTest {
+import org.scalatest.Matchers._
+import org.scalatest.FunSuite
+import utils.InputException
+
+class RationalOperationsTests {
 
 }
