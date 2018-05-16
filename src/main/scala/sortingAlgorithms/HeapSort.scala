@@ -2,6 +2,19 @@ package sortingAlgorithms
 
 import scala.annotation.tailrec
 
+/**
+  * This object contains Heap sort
+  *
+  * https://en.wikipedia.org/wiki/Heapsort
+  *
+  * Worst speed: O(n*log(n))
+  *
+  * Average speed: O(n*log(n))
+  *
+  * Best speed: O(n*log(n)
+  *
+  * Purity project by Daniil Tekunov.
+  */
 sealed abstract class HeapSort[+A] { def rank: Int }
 case object EmptyHeapSort extends HeapSort[Nothing] { def rank = 0 }
 case class NonEmptyHeapSort(rank: Int, element: Int, left: HeapSort[Int], right: HeapSort[Int]) extends HeapSort[Int]
