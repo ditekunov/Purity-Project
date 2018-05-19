@@ -16,5 +16,10 @@ class DoubleTests extends FunSuite {
     0.sqrDouble shouldBe 0
     -1.0.sqrDouble shouldBe 1
   }
+  
+  test("Testing of the abs") {
+    (17.0).abs shouldBe 17.0
+    (-17.0).abs shouldBe 17.0
+  }
 
 }
