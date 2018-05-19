@@ -21,5 +21,18 @@ class DoubleTests extends FunSuite {
     (17.0).abs shouldBe 17.0
     (-17.0).abs shouldBe 17.0
   }
+  
+  test("Testing of the toDegrees") {
+    (17.0).toDegrees should be 
+    (-17.0).toDegrees should be
+  }
+  
+  test("Testing of the incDouble") {
+    (17.0).incDouble shouldBe 18.0
+    (-17.0).incDouble shouldBe (-16.0)
+  }
+  
+  
+  
 
 }
