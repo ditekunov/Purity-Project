@@ -147,6 +147,12 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 
 2) .sqrDouble
 
+3) .abs
+
+4) .toDegrees
+
+5) .incDouble
+
 ### List/values operations:
 [`listOperations`](src/main/scala/listOperations)
 1) get(List[A], index)
