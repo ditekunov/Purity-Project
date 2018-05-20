@@ -42,7 +42,7 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 
 5) Binary tree [`dataStructures/BinaryTree`](src/main/scala/dataStructures/BinaryTree.scala)
 
-6) Heap [[`dataStructures/Heap`]](src/main/scala/dataStructures/Heap.scala)
+6) Heap [`dataStructures/Heap`](src/main/scala/dataStructures/Heap.scala)
 
 ### Integer operations:
 [`integerOperations.IntegerProperties`](src/main/scala/integerOperations/IntegerProperties.scala)
