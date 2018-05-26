@@ -15,36 +15,36 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 # Current list of supported algorithms:
 
 ### Sorting algorithms:
-1) Quick sort [`sortingAlgorithms.QuickSort`](src/main/scala/sortingAlgorithms/QuickSort.scala)
+1) Quick sort [`sortingAlgorithms/QuickSort`](src/main/scala/sortingAlgorithms/QuickSort.scala)
 
 2) Bogosort [`sortingAlgorithms/unseriousAlgorithms/Bogosort`](src/main/scala/sortingAlgorithms/unseriousAlgorithms/Bogosort.scala)
 
 3) Sleep sort [`sortingAlgorithms/unseriousAlgorithms/SleepSort`](src/main/scala/sortingAlgorithms/unseriousAlgorithms/SleepSort.scala)
 
-4) Bubble sort [`sortingAlgorithms.BubbleSort`](src/main/scala/sortingAlgorithms/BubbleSort.scala)
+4) Bubble sort [`sortingAlgorithms/BubbleSort`](src/main/scala/sortingAlgorithms/BubbleSort.scala)
 
-5) Merge sort [`sortingAlgorithms.MergeSort`](src/main/scala/sortingAlgorithms/MergeSort.scala)
+5) Merge sort [`sortingAlgorithms/MergeSort`](src/main/scala/sortingAlgorithms/MergeSort.scala)
 
-6) Insertion sort [`sortingAlgorithms.InsertionSort`](src/main/scala/sortingAlgorithms/InsertionSort.scala)
+6) Insertion sort [`sortingAlgorithms/InsertionSort`](src/main/scala/sortingAlgorithms/InsertionSort.scala)
 
 7) Selection sort [`sortingAlgorithms.SelectionSort`](src/main/scala/sortingAlgorithms/SelectionSort.scala)
 
 8) Heap sort [`sortingAlgorithms.HeapSort`](src/main/scala/sortingAlgorithms/HeapSort.scala)
 
 ### Persistent data structures:
-1) LinkedList [`dataStructures/LinkedList`](src/main/scala/dataStructures/LinkedList.scala)
+1) LinkedList [`dataStructures.LinkedList`](src/main/scala/dataStructures/LinkedList.scala)
 
-2) Queue [`dataStructures/Queue`](src/main/scala/dataStructures/Queue.scala)
+2) Queue [`dataStructures.Queue`](src/main/scala/dataStructures/Queue.scala)
 
-3) Stack [`dataStructures/Stack`](src/main/scala/dataStructures/Stack.scala)
+3) Stack [`dataStructures.Stack`](src/main/scala/dataStructures/Stack.scala)
 
-4) Set [`dataStructures/Set`](src/main/scala/dataStructures/Set.scala)
+4) Set [`dataStructures.Set`](src/main/scala/dataStructures/Set.scala)
 
-5) Binary tree [`dataStructures/BinaryTree`](src/main/scala/dataStructures/BinaryTree.scala)
+5) Binary tree [`dataStructures.BinaryTree`](src/main/scala/dataStructures/BinaryTree.scala)
 
-6) Heap [`dataStructures/Heap`](src/main/scala/dataStructures/Heap.scala)
+6) Heap [`dataStructures.Heap`](src/main/scala/dataStructures/Heap.scala)
 
-7) Red-Black Tree [`dataStructures/RedBlackTree`](src/main/scala/dataStructures/RedBlackTree.scala)
+7) Red-Black Tree [`dataStructures.RedBlackTree`](src/main/scala/dataStructures/RedBlackTree.scala)
 
 ### Integer operations:
 [`integerOperations.IntegerProperties`](src/main/scala/integerOperations/IntegerProperties.scala)
@@ -192,9 +192,9 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 4) Morse [`functionalAlgorithms.decoders.MorseDecoder`](src/main/scala/cryptographyOperations/decoders/MorseDecoder.scala)
 
 ### Additional arithmetics:
-1) Rational numbers [`rationalOperations/Rational`](src/main/scala/rationalOperations/Rational.scala)
+1) Rational numbers [`rationalOperations.Rational`](src/main/scala/rationalOperations/Rational.scala)
 
-2) Complex numbers [`complexOperations/Complex`](src/main/scala/complexOperations/Complex.scala)
+2) Complex numbers [`complexOperations.Complex`](src/main/scala/complexOperations/Complex.scala)
 
 ### Math constants: 
 [`MathConstants`](src/main/scala/utils/MathConstants.scala)
@@ -232,7 +232,10 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 5) Alvin Alexander's scala blog: https://alvinalexander.com (English)
 
 6) Richard G.E. Pinch "The Carmichael numbers up to 10^18" https://arxiv.org/pdf/math/0604376v1.pdf
+
 7) Site about algorithms http://e-maxx.ru (Russian/English)
 
 8) "Rosetta code" website about algorithms: https://rosettacode.org/wiki/Rosetta_Code (English)
+
+9) Vladimir Kostykov's scala algorithms library: https://github.com/vkostyukov/scalacaster
 
