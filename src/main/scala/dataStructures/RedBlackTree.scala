@@ -35,5 +35,37 @@ abstract sealed class RedBlackTree[+Int] {
     * Checks whether this tree is empty or not
     */
   def isEmpty: Boolean
+ 
+ /**
+    * Adds an element into a tree
+    */
+  def add(x: Int): RedBlackTree[Int] = {
+    def balancedAdd(t: RedBlackTree[Int]): RedBlackTree[Int] =
+      if (t.isEmpty) RedBlackTree.make(Red, x)
+      else if (x < t.value) balanceLeft(t.color, t.value, balancedAdd(t.left), t.right)
+      else if (x > t.value) balanceRight(t.color, t.value, t.left, balancedAdd(t.right))
+      else t
+
+    def balanceLeft(c: Color, x: Int, l: RedBlackTree[Int], r: RedBlackTree[Int]) = (c, l, r) match {
+      case (Black, RBBranch(Red, y, RBBranch(Red, z, a, b), c), d) =>
+        RedBlackTree.make(Red, y, RedBlackTree.make(Black, z, a, b), RedBlackTree.make(Black, x, c, d))
+      case (Black, RBBranch(Red, z, a, RBBranch(Red, y, b, c)), d) =>
+        RedBlackTree.make(Red, y, RedBlackTree.make(Black, z, a, b), RedBlackTree.make(Black, x, c, d))
+      case _ => RedBlackTree.make(c, x, l, r)
+    }
+
+    def balanceRight(c: Color, x: Int, l: RedBlackTree[Int], r: RedBlackTree[Int]) = (c, l, r) match {
+      case (Black, a, RBBranch(Red, y, b, RBBranch(Red, z, c, d))) =>
+        RedBlackTree.make(Red, y, RedBlackTree.make(Black, x, a, b), RedBlackTree.make(Black, z, c, d))
+      case (Black, a, RBBranch(Red, z, RBBranch(Red, y, b, c), d)) =>
+        RedBlackTree.make(Red, y, RedBlackTree.make(Black, x, a, b), RedBlackTree.make(Black, z, c, d))
+      case _ => RedBlackTree.make(c, x, l, r)
+    }
+
+    def blacken(t: RedBlackTree[Int]) = RedBlackTree.make(Black, t.value, t.left, t.right)
+
+    blacken(balancedAdd(this))
+  }
+
 
 }
