@@ -67,5 +67,41 @@ abstract sealed class RedBlackTree[+Int] {
     blacken(balancedAdd(this))
   }
 
+  def height: Int =
+    if (isEmpty) 0
+    else math.max(left.height, right.height) + 1
+}
+
+case class RBBranch[Int](color: Color,
+                         value: Int,
+                         left: RedBlackTree[Int],
+                         right: RedBlackTree[Int]) extends RedBlackTree[Int] {
+  def isEmpty = false
+}
+
+case object Leaf extends RedBlackTree[Nothing] {
+  def color: Color = Black
+  def value: Nothing = EmptyRBTreeException()
+  def left: RedBlackTree[Nothing] = EmptyRBTreeException()
+  def right: RedBlackTree[Nothing] = EmptyRBTreeException()
+  def isEmpty = true
+}
+
+object RedBlackTree {
+
+  /**
+    * Returns an empty red-black tree
+    */
+  def empty[Int]: RedBlackTree[Int] = Leaf
+
+  /**
+    * Creates a branch
+    */
+  def make(c: Color, x: Int, l: RedBlackTree[Int] = Leaf, r: RedBlackTree[Int] = Leaf): RedBlackTree[Int] =
+    RBBranch(c, x, l, r)
+
+}
+  }
+
 
 }
