@@ -237,5 +237,5 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 
 8) "Rosetta code" website about algorithms: https://rosettacode.org/wiki/Rosetta_Code (English)
 
-9) Vladimir Kostykov's scala algorithms library: https://github.com/vkostyukov/scalacaster
+9) Vladimir Kostykov's Scala algorithms library: https://github.com/vkostyukov/scalacaster
 
