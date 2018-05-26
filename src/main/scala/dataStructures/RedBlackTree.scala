@@ -9,7 +9,7 @@ abstract sealed class Color
 case object Red extends Color
 case object Black extends Color
 
-abstract sealed class RedBlackTree[+Int] {
+abstract sealed class RedBlackTree[+A] {
 
   /**
     * Color of a tree
