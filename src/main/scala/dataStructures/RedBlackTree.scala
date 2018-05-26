@@ -10,8 +10,8 @@ case object Red extends Color
 case object Black extends Color
 
 abstract sealed class RedBlackTree[+Int] {
- 
- /**
+
+  /**
     * Color of a tree
     */
   def color: Color
@@ -35,8 +35,8 @@ abstract sealed class RedBlackTree[+Int] {
     * Checks whether this tree is empty or not
     */
   def isEmpty: Boolean
- 
- /**
+
+  /**
     * Adds an element into a tree
     */
   def add(x: Int): RedBlackTree[Int] = {
@@ -99,9 +99,5 @@ object RedBlackTree {
     */
   def make(c: Color, x: Int, l: RedBlackTree[Int] = Leaf, r: RedBlackTree[Int] = Leaf): RedBlackTree[Int] =
     RBBranch(c, x, l, r)
-
-}
-  }
-
 
 }
