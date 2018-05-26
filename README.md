@@ -44,6 +44,8 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 
 6) Heap [`dataStructures/Heap`](src/main/scala/dataStructures/Heap.scala)
 
+7) Red-Black Tree [`dataStructures/RedBlackTree`](src/main/scala/dataStructures/RedBlackTree.scala)
+
 ### Integer operations:
 [`integerOperations.IntegerProperties`](src/main/scala/integerOperations/IntegerProperties.scala)
 1) .isOdd 
