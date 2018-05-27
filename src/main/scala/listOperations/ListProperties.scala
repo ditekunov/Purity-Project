@@ -107,5 +107,10 @@ object ListProperties {
     if (input.nonEmpty) linearSearchLogic(input, element)
     else throw new InputException(NoneInput)
   }
+ 
+ def generatePermutations[A](s: List[A], k: Int): List[List[A]] = 
+    if (k > s.size) throw new InputException()
+    else if (k == 1) s.map(List(_))
+    else generatePermutations(s.tail, k - 1).map(_ + s.head) ++ combinations(s.tail, k)
 
 }
