@@ -185,6 +185,10 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 
 3) combinations
 
+4) accomodations with repeats
+
+5) combinations with repeats
+
 ### Encoders:
 1) RLE [`cryptographyOperations.encoders.RLE_Encoder`](src/main/scala/cryptographyOperations/encoders/RLE_Encoder.scala)
 
