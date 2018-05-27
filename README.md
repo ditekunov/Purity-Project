@@ -173,6 +173,8 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 
 7) linear search in a list
 
+8) permutations(List[A], len)
+
 ### Encoders:
 1) RLE [`cryptographyOperations.encoders.RLE_Encoder`](src/main/scala/cryptographyOperations/encoders/RLE_Encoder.scala)
 
