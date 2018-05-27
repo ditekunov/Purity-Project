@@ -177,6 +177,14 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 
 8) permutations(List[A], len)
 
+### Basic combinatorics:
+[`combinatorics`](src/main/scala/combinatorics)
+1) permutationsCount
+
+2) accomodations
+
+3) combinations
+
 ### Encoders:
 1) RLE [`cryptographyOperations.encoders.RLE_Encoder`](src/main/scala/cryptographyOperations/encoders/RLE_Encoder.scala)
 
