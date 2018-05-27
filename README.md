@@ -84,6 +84,8 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 
 20) .lcmWith(secondInt)
 
+21) factorial (!)
+
 ### Additional Integers math:
 [`integerOperations.IntegerMath`](src/main/scala/integerOperations/IntegerMath.scala)
 1) .isFreeOfSquares
