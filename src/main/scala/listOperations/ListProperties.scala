@@ -1,6 +1,6 @@
 package listOperations
 
-import utils.ExceptionMessages.{EmptyInput, NoneInput}
+import utils.ExceptionMessages.{EmptyInput, NoneInput, BorderInput}
 import utils.InputException
 
 import scala.annotation.tailrec
@@ -108,9 +108,12 @@ object ListProperties {
     else throw new InputException(NoneInput)
   }
  
- def generatePermutations[A](s: List[A], k: Int): List[List[A]] = 
-    if (k > s.size) throw new InputException()
-    else if (k == 1) s.map(List(_))
-    else generatePermutations(s.tail, k - 1).map(_ + s.head) ++ combinations(s.tail, k)
+ /**
+   * Generates all possible combiantions of a given list.
+   */
+ def generatePermutations[A](input: List[A], listLen: Int): List[List[A]] = 
+    if (listLen > input.size) throw new InputException(BorderInput)
+    else if (listLen == 1) input.map(List(_))
+    else generatePermutations(input.tail, listLen - 1).map(_ + input.head) ++ combinations(input.tail, listLen)
 
 }
