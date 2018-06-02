@@ -22,6 +22,4 @@ object SleepSort {
         print(i + "|")
       }
     }.start())
-
-
 }
