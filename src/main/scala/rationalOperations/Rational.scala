@@ -2,6 +2,12 @@ package rationalOperations
 
 import integerOperations.IntegerProperties._
 
+
+/**
+  * Contains operations in a field of rational numbers.
+  *
+  * Purity project by Daniil Tekunov.
+  */
 class Rational(numerator: Int, denominator: Int) {
   require(denominator != 0)
 
