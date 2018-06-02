@@ -208,7 +208,7 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 4) Morse [`functionalAlgorithms.decoders.MorseDecoder`](src/main/scala/cryptographyOperations/decoders/MorseDecoder.scala)
 
 ### Additional arithmetics:
-1) Rational numbers [`rationalOperations.Rational`](src/main/scala/rationalOperations/Rational.scala)
+1) Rational numbers [`additionalArithmetics.Rational`](src/main/scala/additionalArithmetics/Rational.scala)
 
 2) Complex numbers [`complexOperations.Complex`](src/main/scala/complexOperations/Complex.scala)
 
