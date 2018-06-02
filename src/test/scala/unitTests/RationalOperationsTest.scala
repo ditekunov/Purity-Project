@@ -14,5 +14,10 @@ class RationalOperationsTests extends FunSuite {
     (firstRational * secondRational).toString shouldBe "48/1"
     (firstRational - secondRational).toString shouldBe "3/1"
     (firstRational + secondRational).toString shouldBe "3/1"
+    (firstRational > secondRational) shouldBe True
+    (firstRational < secondRational) shouldBe False
+    (firstRational >= secondRational) shouldBe True
+    (firstRational <= secondRational) shouldBe False
+    firstRational.sqr.toString shouldBe "144/1"
   }
 }
