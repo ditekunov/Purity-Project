@@ -2,7 +2,6 @@ package rationalOperations
 
 import integerOperations.IntegerProperties._
 
-
 /**
   * Contains operations in a field of rational numbers.
   *
@@ -42,4 +41,12 @@ class Rational(numerator: Int, denominator: Int) {
 
   def <(secondRational: Rational): Boolean =
     this.num * secondRational.denom < this.denom * secondRational.num
+ 
+ def >=(secondRational: Rational): Boolean =
+    this.num * secondRational.denom >= this.denom * secondRational.num
+
+  def <=(secondRational: Rational): Boolean =
+    this.num * secondRational.denom =< this.denom * secondRational.num
+ 
+ def sqr = new Rational(num * num, denom * denom)
 }
