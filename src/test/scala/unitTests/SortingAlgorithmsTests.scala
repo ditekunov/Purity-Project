@@ -9,9 +9,11 @@ class SortingAlgorithmsTests extends FunSuite {
   final lazy val unsortedList = List(8, 4, 6, 1, 7, 3, 8, 4, 7, 9, 2, 7)
   final lazy val sortedList = List(1, 2, 3, 4, 5, 6, 7, 8)
   final lazy val emptyList = List()
+  
+  final lazy val unsortedToSortedList = List(1, 2, 3, 4, 4, 6, 7, 7, 7, 8, 8, 9)
 
   test("Testing of the quickSort") {
-    QuickSort.quickSort(unsortedList) shouldBe List(1, 2, 3, 4, 4, 6, 7, 7, 7, 8, 8, 9)
+    QuickSort.quickSort(unsortedList) shouldBe unsortedToSortedList
     QuickSort.quickSort(sortedList) shouldBe sortedList
     QuickSort.quickSort(emptyList) shouldBe emptyList
   }
@@ -30,31 +32,31 @@ class SortingAlgorithmsTests extends FunSuite {
 
   test("Testing of the bubbleSort") {
     BubbleSort.bubbleSort(sortedList) shouldBe sortedList
-    BubbleSort.bubbleSort(unsortedList) shouldBe List(1, 2, 3, 4, 4, 6, 7, 7, 7, 8, 8, 9)
+    BubbleSort.bubbleSort(unsortedList) shouldBe unsortedToSortedList
     BubbleSort.bubbleSort(emptyList) shouldBe emptyList
   }
 
   test("Testing of the mergeSort") {
     MergeSort.mergeSort(sortedList) shouldBe sortedList
-    MergeSort.mergeSort(unsortedList) shouldBe List(1, 2, 3, 4, 4, 6, 7, 7, 7, 8, 8, 9)
+    MergeSort.mergeSort(unsortedList) shouldBe unsortedToSortedList
     MergeSort.mergeSort(emptyList) shouldBe emptyList
   }
 
   test("Testing of the insertionSort") {
     InsertionSort.insertionSort(sortedList) shouldBe sortedList
-    InsertionSort.insertionSort(unsortedList) shouldBe List(1, 2, 3, 4, 4, 6, 7, 7, 7, 8, 8, 9)
+    InsertionSort.insertionSort(unsortedList) shouldBe unsortedToSortedList
     InsertionSort.insertionSort(emptyList) shouldBe emptyList
   }
   
   test("Testing of the selectionSort") {
     SelectionSort.selectionSort(sortedList) shouldBe sortedList
-    SelectionSort.selectionSort(unsortedList) shouldBe List(1, 2, 3, 4, 4, 6, 7, 7, 7, 8, 8, 9)
+    SelectionSort.selectionSort(unsortedList) shouldBe unsortedToSortedList
     SelectionSort.selectionSort(emptyList) shouldBe emptyList
   }
   
   test("Testing of the heapSort") {
     HeapSort.heapSort(sortedList) shouldBe sortedList
-    HeapSort.heapSort(unsortedList) shouldBe List(1, 2, 3, 4, 4, 6, 7, 7, 7, 8, 8, 9)
+    HeapSort.heapSort(unsortedList) shouldBe unsortedToSortedList
     HeapSort.heapSort(emptyList) shouldBe emptyList
   }
 }
