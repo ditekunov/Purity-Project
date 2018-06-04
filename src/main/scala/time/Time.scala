@@ -3,6 +3,11 @@ package time
 import utils.InputException
 import utils.ExceptionMessages.WrongTimeInput
 
+/**
+  * Contains functions, that affect time somehow.
+  *
+  * Purity project by Daniil Tekunov.
+  */
 class Time(val input: Int) {
   import Time._
 
