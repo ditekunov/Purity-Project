@@ -270,7 +270,23 @@ class IntegerProperties(val firstInt: Int) {
       case Failure(ex) => throw new InputException("\"isPrimeFermat\" " + ex)
     }
 
+  /**
+    * Returns lcm of two numbers
+    */
   def lcmWith(secondInt: Int): Int = (firstInt * secondInt) / firstInt.gcdWith(secondInt)
+
+  /**
+    * Convolutes the number like:
+    * 
+    * 127 -> 1+2+7 -> 10 -> 1+0 -> 1
+    */
+  def convolute: Int =
+    if (firstInt < 0) throw new InputException(NegativeInput)
+    else convoluteLogic(firstInt)
+
+  private def convoluteLogic(num: Int): Int =
+    if (num / 10 < 0) num
+    else convoluteLogic(num.toString.map(_.asDigit).toList.sum)
  
   /**
     * Returns factorial of a number.
