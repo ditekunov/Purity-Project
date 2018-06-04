@@ -214,6 +214,11 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 
 2) Complex numbers [`complexOperations.Complex`](src/main/scala/complexOperations/Complex.scala)
 
+### Time operations: 
+[`time.Time`](src/main/scala/time/Time.scala)
+
+1) Conversions of hours, seconds and minutes.
+
 ### Math constants: 
 [`MathConstants`](src/main/scala/utils/MathConstants.scala)
 1) Pi
