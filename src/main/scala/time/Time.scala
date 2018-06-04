@@ -3,41 +3,50 @@ package time
 import utils.InputException
 import utils.ExceptionMessages.WrongTimeInput
 
-/**
-  * Contains functions, that affect time somehow.
-  *
-  * Purity project by Daniil Tekunov.
-  */
 class Time(val input: Int) {
   import Time._
 
   /**
-    * Converts seconds to hours
+    * Service functions
     */
-  def hoursToSeconds: Int =
-    if (input < 0) throw new InputException(WrongTimeInput)
-    else input * 360
-
-  /**
-    * Converts minutes to hours
-    */
-  def minutesToSeconds: Int =
+  private def up60: Int = 
     if (input < 0) throw new InputException(WrongTimeInput)
     else input * 60
 
-  /**
-    * Converts seconds to minutes
-    */
-  def secondsToMinutes: Int =
+  private def down60: Int =
     if (input < 0) throw new InputException(WrongTimeInput)
     else input / 60
 
   /**
     * Converts seconds to hours
     */
-  def secondsToHours: Int =
-    if (input < 0) throw new InputException(WrongTimeInput)
-    else input / 360
+  def hoursToSeconds: Int = (input up60) up60
+
+  /**
+    * Converts minutes to hours
+    */
+  def minutesToSeconds: Int = input up60
+
+  /**
+    * Converts seconds to minutes
+    */
+  def secondsToMinutes: Int = input down60
+
+  /**
+    * Converts seconds to hours
+    */
+  def secondsToHours: Int = (input down60) down60
+
+  /**
+    * Converts hours to minutes
+    */
+  def hoursToMinutes: Int = input up60
+
+  /**
+    * Converts minutes to hours
+    */
+  def minutesToHours: Int = input down60
+  
 }
 
 object Time {
