@@ -14,4 +14,5 @@ object ExceptionMessages {
   lazy val StackOverflowInput: String = "function's recursion in too deep, expected smaller input"
   lazy val DeprecatedSymbolInput: String = "function got deprecated symbol"
   lazy val OverflowInput: String = "input is too big"
+  lazy val WrongTimeInput: String = "time converter got wrong input"
 }
