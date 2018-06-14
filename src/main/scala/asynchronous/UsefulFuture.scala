@@ -8,7 +8,7 @@ import scala.util.{Failure, Success}
 package object futureHelper {
 
   implicit class NiceFuture[T](future: Future[T])(implicit ec: ExecutionContext) {
-    
+
     def bypassOnComplete[A](function: T => A): Future[T] = {
       future onComplete {
         case Success(outcome) => function(outcome)
@@ -16,8 +16,8 @@ package object futureHelper {
       }
       future
     }
-    
-     def ifFailure(functionFail: => Unit, exception: Option[Throwable] = None): Future[T] = {
+
+    def ifFailure(functionFail: => Unit, exception: Option[Throwable] = None): Future[T] = {
       future transformWith {
         case Failure(ex) =>
           functionFail
@@ -26,18 +26,19 @@ package object futureHelper {
         case _ => future
       }
     }
-    
-    def result(awaitTime: Long, timeUnit: TimeUnit = TimeUnit.MICROSECONDS): T = 
+
+    def result(awaitTime: Long, timeUnit: TimeUnit = TimeUnit.MICROSECONDS): T =
       Await.result(future, Duration(awaitTime, timeUnit))
-    
+
+
     def completeAndThen(anotherFuture: Future[T]): Future[T] = {
       future andThen {
         case Success(_) => anotherFuture
         case Failure(ex) => ex
       }
     }
-    
-    def completeThenCompleteThis(anotherFuture: Future[T]): Future[T] = {
+
+    def completeAndThenComplete(anotherFuture: Future[T]): Future[T] = {
       future andThen {
         case Success(_) => anotherFuture andThen {
           case Success(x) => x
@@ -45,5 +46,6 @@ package object futureHelper {
         }
         case Failure(ex) => ex
       }
+    }
   }
 }
