@@ -36,5 +36,14 @@ package object futureHelper {
         case Failure(ex) => ex
       }
     }
+    
+    def completeThenCompleteThis(anotherFuture: Future[T]): Future[T] = {
+      future andThen {
+        case Success(_) => anotherFuture andThen {
+          case Success(x) => x
+          case Failure(ex) => ex
+        }
+        case Failure(ex) => ex
+      }
   }
 }
