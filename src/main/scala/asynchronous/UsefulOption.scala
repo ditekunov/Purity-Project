@@ -1,3 +1,8 @@
+ /**
+    * Contains functions that affect Option.
+    *
+    * Purity project by Daniil Tekunov.
+    */
 object UsefulOption {
 
   /**
