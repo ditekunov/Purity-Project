@@ -26,5 +26,8 @@ package object futureHelper {
         case _ => future
       }
     }
+    
+    def result(awaitTime: Long, timeUnit: TimeUnit = TimeUnit.MICROSECONDS): T = 
+      Await.result(future, Duration(awaitTime, timeUnit))
   }
 }
