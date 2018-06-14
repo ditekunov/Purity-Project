@@ -237,6 +237,32 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 
 8) Plastic number
 
+### Useful asynchronous functions with Futures:
+[`asynchronous.UsefulFuture`](src/main/scala/asynchronous/UsefulFuture.scala)
+
+1) .bypassOnComplete()
+
+2) .ifFailure()
+
+3) .result
+
+4) .completeAndThen()
+
+5) .completeAndThenComplete()
+
+### Useful asynchronous functions with Option:
+[`asynchronous.UsefulOption`](src/main/scala/asynchronous/UsefulOption.scala)
+
+1) .getOrZero
+
+2) .getOrZeroL
+
+3) .getOrThrow
+
+4) .getOrEmpty
+
+5) .getOrMax
+
 ##### Planned:
 1) Operations with double
 
