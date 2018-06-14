@@ -1,6 +1,6 @@
+package asynchronous
+
 import java.util.concurrent.TimeUnit
-
-
 import scala.concurrent.duration.{Duration, TimeUnit}
 import scala.concurrent.{Await, ExecutionContext, Future}
 import scala.util.{Failure, Success}
