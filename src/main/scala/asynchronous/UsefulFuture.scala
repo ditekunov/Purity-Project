@@ -29,5 +29,12 @@ package object futureHelper {
     
     def result(awaitTime: Long, timeUnit: TimeUnit = TimeUnit.MICROSECONDS): T = 
       Await.result(future, Duration(awaitTime, timeUnit))
+    
+    def completeAndThen(anotherFuture: Future[T]): Future[T] = {
+      future andThen {
+        case Success(_) => anotherFuture
+        case Failure(ex) => ex
+      }
+    }
   }
 }
