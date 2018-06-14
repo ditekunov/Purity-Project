@@ -7,6 +7,11 @@ import scala.util.{Failure, Success}
 
 package object futureHelper {
 
+  /**
+    * Contains functions, affecting futures.
+    *
+    * Purity project by Daniil Tekunov.
+    */
   implicit class NiceFuture[T](future: Future[T])(implicit ec: ExecutionContext) {
 
     /**
