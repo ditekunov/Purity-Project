@@ -16,5 +16,15 @@ package object futureHelper {
       }
       future
     }
+    
+     def ifFailure(functionFail: => Unit, exception: Option[Throwable] = None): Future[T] = {
+      future transformWith {
+        case Failure(ex) =>
+          functionFail
+          Future.failed(exception getOrElse ex)
+
+        case _ => future
+      }
+    }
   }
 }
