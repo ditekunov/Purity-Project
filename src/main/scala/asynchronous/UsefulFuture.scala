@@ -9,6 +9,9 @@ package object futureHelper {
 
   implicit class NiceFuture[T](future: Future[T])(implicit ec: ExecutionContext) {
 
+    /**
+      * Applies a given function to a result of a future without affecting the future itself
+      */
     def bypassOnComplete[A](function: T => A): Future[T] = {
       future onComplete {
         case Success(outcome) => function(outcome)
@@ -17,6 +20,9 @@ package object futureHelper {
       future
     }
 
+    /**
+      * Throws a given exception if a future failed and applies a given function to it
+      */
     def ifFailure(functionFail: => Unit, exception: Option[Throwable] = None): Future[T] = {
       future transformWith {
         case Failure(ex) =>
@@ -27,10 +33,16 @@ package object futureHelper {
       }
     }
 
+    /**
+      * Returns the result of a future within given time
+      */
     def result(awaitTime: Long, timeUnit: TimeUnit = TimeUnit.MICROSECONDS): T =
       Await.result(future, Duration(awaitTime, timeUnit))
 
 
+    /**
+      * Completes first future and returns second future if first one completes
+      */
     def completeAndThen(anotherFuture: Future[T]): Future[T] = {
       future andThen {
         case Success(_) => anotherFuture
@@ -38,6 +50,9 @@ package object futureHelper {
       }
     }
 
+    /**
+      * Completes first future and then completes second future
+      */
     def completeAndThenComplete(anotherFuture: Future[T]): Future[T] = {
       future andThen {
         case Success(_) => anotherFuture andThen {
