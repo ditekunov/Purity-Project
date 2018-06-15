@@ -35,14 +35,6 @@ class DoubleProperties(val firstDouble: Double) {
     * Returns double, converted to degrees
     */
   def toDegrees: Double = firstDouble * 180.0 / pi
- 
-  /**
-    * Increments double
-    */
-  def incDouble: Double =
-    if (a != Double.MAX_VALUE) a + 1
-    else throw new InputException(OverflowInput)
-
 }
 
 object DoubleProperties {
