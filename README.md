@@ -268,7 +268,7 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 
 # Some sources, that were used via development:
 
-0) Martin Odersky's "Functional Programming in Scala Specialization "https://www.coursera.org/specializations/scala"
+0) Martin Odersky's "Functional Programming in Scala Specialization "https://www.coursera.org/specializations/scala" (English)
 
 1) Chris Okasaki's "Purely Functional Data Structures" (English)
 
@@ -280,11 +280,15 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 
 5) Alvin Alexander's scala blog: https://alvinalexander.com (English)
 
-6) Richard G.E. Pinch "The Carmichael numbers up to 10^18" https://arxiv.org/pdf/math/0604376v1.pdf
+6) Richard G.E. Pinch "The Carmichael numbers up to 10^18" https://arxiv.org/pdf/math/0604376v1.pdf (English)
 
 7) Site about algorithms http://e-maxx.ru (Russian/English)
 
 8) "Rosetta code" website about algorithms: https://rosettacode.org/wiki/Rosetta_Code (English)
 
-9) Vladimir Kostykov's Scala algorithms library: https://github.com/vkostyukov/scalacaster
+9) Vladimir Kostykov's Scala algorithms library: https://github.com/vkostyukov/scalacaster (English)
+
+10) Raul Rojas's "A Tutorial Introduction to the Lambda Calculus": http://www.inf.fu-berlin.de/lehre/WS03/alpi/lambda.pdf (English)
+
+11) ITMO University's wiki: https://neerc.ifmo.ru/wiki/index.php?title=Лямбда-исчисление (Russian)
 
