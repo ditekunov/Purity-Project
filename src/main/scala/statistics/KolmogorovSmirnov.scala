@@ -1,5 +1,8 @@
 import scala.math.{abs, sqrt}
 
+/**
+  * Purity project by Daniil Tekunov.
+  */
 object KolmogorovSmirnovTest {
 
   /**
