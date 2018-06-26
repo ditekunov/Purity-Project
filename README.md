@@ -214,29 +214,6 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 
 2) Complex numbers [`complexOperations.Complex`](src/main/scala/complexOperations/Complex.scala)
 
-### Time operations: 
-[`time.Time`](src/main/scala/time/Time.scala)
-
-1) Conversions of hours, seconds and minutes.
-
-### Math constants: 
-[`MathConstants`](src/main/scala/utils/MathConstants.scala)
-1) Pi
-
-2) Tau
-
-3) E
-
-4) Pythagoras constant
-
-5) Theodorus constant
-
-6) Gamma
-
-7) Phi
-
-8) Plastic number
-
 ### Useful asynchronous functions with Futures:
 [`asynchronous.UsefulFuture`](src/main/scala/asynchronous/UsefulFuture.scala)
 
@@ -262,6 +239,30 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 4) .getOrEmpty
 
 5) .getOrMax
+
+### Math constants: 
+[`MathConstants`](src/main/scala/utils/MathConstants.scala)
+1) Pi
+
+2) Tau
+
+3) E
+
+4) Pythagoras constant
+
+5) Theodorus constant
+
+6) Gamma
+
+7) Phi
+
+8) Plastic number
+
+### Time operations: 
+[`time.Time`](src/main/scala/time/Time.scala)
+
+1) Conversions of hours, seconds and minutes.
+
 
 ##### Planned:
 1) Operations with double
