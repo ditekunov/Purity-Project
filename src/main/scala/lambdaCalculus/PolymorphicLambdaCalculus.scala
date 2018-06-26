@@ -1,5 +1,8 @@
 package lambdaCalculus
 
+/**
+    * Purity Project by Daniil Tekunov
+    */
 object PolymorphicDataCalculus {
 
   /**
