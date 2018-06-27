@@ -292,12 +292,26 @@ class IntegerProperties(val firstInt: Int) {
     * Returns factorial of a number.
     */
   def ! : Int = {
-    
     def logic(n: Int = firstInt, total: Int = 1): Int = n match {
       case 1 => total
       case _ => logic(n-1, total * n)
     }
     
+    if (firstInt > 0) logic()
+    else if (firstInt == 0) 1
+    else throw new InputException(NegativeInput)
+  }
+ 
+ /**
+   * Returns double factorial of a number.
+   */
+ def !! : Int = {
+    def logic(n: Int = firstInt, total: Int = 1): Int = n match {
+      case 1 => total
+      case 0 => total
+      case _ => logic(n-2, total * n)
+    }
+
     if (firstInt > 0) logic()
     else if (firstInt == 0) 1
     else throw new InputException(NegativeInput)
