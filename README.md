@@ -84,9 +84,11 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 
 20) .lcmWith(secondInt)
 
-21) factorial (!)
+21) Factorial (!)
 
-22) Convolution of a number (127 -> 1+2+7 -> 10 -> 1+0 -> 1)
+22) Double factorial (!!)
+
+23) Convolution of a number (127 -> 1+2+7 -> 10 -> 1+0 -> 1)
 
 ### Additional Integers math:
 [`integerOperations.IntegerMath`](src/main/scala/integerOperations/IntegerMath.scala)
