@@ -12,7 +12,7 @@ object UsefulFuture {
     *
     * Purity project by Daniil Tekunov.
     */
-  implicit class NiceFuture[T](future: Future[T])(implicit ec: ExecutionContext) {
+  implicit class UsefulFuture[T](future: Future[T])(implicit ec: ExecutionContext) {
 
     /**
       * Applies a given function to a result of a future without affecting the future itself
