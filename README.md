@@ -46,6 +46,12 @@ Would be great, if you contribute, in case that presented algorithms are not as 
 
 7) Red-Black Tree [`dataStructures.RedBlackTree`](src/main/scala/dataStructures/RedBlackTree.scala)
 
+### Lambda calculus basics:
+
+1) Polymorphic lambda calculus [`lambdaCalculus/PolymorphicLambdaCalculus`](/src/main/scala/lambdaCalculus/PolymorphicLambdaCalculus.scala)
+
+2) Pure Lambda Calculus PureLambdaCalculus.scala [`lambdaCalculus/PureLambdaCalculus`](/src/main/scala/lambdaCalculus/PureLambdaCalculus.scala)
+
 ### Integer operations:
 [`integerOperations.IntegerProperties`](src/main/scala/integerOperations/IntegerProperties.scala)
 1) .isOdd 
