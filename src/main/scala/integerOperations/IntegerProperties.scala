@@ -285,7 +285,7 @@ class IntegerProperties(val firstInt: Int) {
     else convoluteLogic(firstInt)
 
   private def convoluteLogic(num: Int): Int =
-    if (num / 10 < 0) num
+    if (num / 10 <= 0) num
     else convoluteLogic(num.toString.map(_.asDigit).toList.sum)
  
   /**
